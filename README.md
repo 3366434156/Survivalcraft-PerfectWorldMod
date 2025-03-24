@@ -1,9 +1,9 @@
 # Survivalcraft-完美世界Mod官网
 
 #### 介绍
-这是`完美世界MOD(Perfect World MOD)`官网
+这是`完美世界Mod(Perfect World Mod)`官网
 
-用于获取`完美世界MOD(Perfect World MOD)`最新资源，攻略，以及提出建议，进行反馈
+用于获取`完美世界Mod(Perfect World Mod)`最新资源，攻略，以及提出建议，进行反馈
 
 #### 赞助名单
 ```	
