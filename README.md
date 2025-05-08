@@ -232,9 +232,9 @@
 ## 📮 联系我们 
 | 渠道 | 链接 |
 |:----:|:----| 
-| 🐧 QQ1群 | [点击加入476074154](https://qm.qq.com/q/nqyyHMHs4g)   |
-| 🐧 QQ2群 | [点击加入1160376284](https://qm.qq.com/q/JRxg6p8eE8)   |
-| 🐧 QQ3群 | [点击加入617944401](https://qm.qq.com/q/MO7v3Edck0)   |
+| 🐧 QQ①群 | [点击加入QQ群:476074154](https://qm.qq.com/q/nqyyHMHs4g)   |
+| 🐧 QQ②群 | [点击加入QQ群:1160376284](https://qm.qq.com/q/JRxg6p8eE8)   |
+| 🐧 QQ③群 | [点击加入QQ群:617944401](https://qm.qq.com/q/MO7v3Edck0)   |
 | 🐛 Bug·反馈 | [提交Issue](https://gitee.com/invisible-guardian/PerfectWorldMod/issues/new)   |
  
 [▲ 返回顶部](#top) 
