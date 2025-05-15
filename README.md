@@ -1,7 +1,7 @@
 <a name="top"></a>
 # 🌍 完美世界Mod (PerfectWorldMod) 官方网站 
  
-![完美世界大合照](https://gitee.com/invisible-guardian/PerfectWorldMod/blob/master/%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/%E4%B8%BB%E7%95%8C%E9%9D%A2%E8%83%8C%E6%99%AF.webp)
+![完美世界大合照](https://gitee.com/invisible-guardian/PerfectWorldMod/raw/master/%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/%E4%B8%BB%E7%95%8C%E9%9D%A2%E8%83%8C%E6%99%AF.webp)
  
 ## 📑 目录 
 - [✨ 核心特色](#core-features)
