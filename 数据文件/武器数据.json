@@ -1,0 +1,84 @@
+{
+  "Weapons": [
+    {
+      "Name": "剑_承影定光",
+      "Description": "下品法器，攻击范围较小但攻速较快",
+      "TextureRoute": "纹理/武器/剑_承影定光",
+      "ModelRoute": "模型/武器/剑_承影定光",
+      "Grade": 1,
+      "Type": "法器",
+      "Attributes": {
+        "BaseAttackRange": 2.7,
+        "AttackRangePerLevel": 0.05,
+        "BaseAttackDistance": 2.2,
+        "AttackDistancePerLevel": 0.015,
+        "BaseAttackSpeed": 0.9,
+        "AttackSpeedPerLevel": -0.0075,
+        "BaseDurability": 300,
+        "DurabilityPerLevel": 30,
+        "BaseMeleePower": 70,
+        "MeleePowerPerLevel": 4,
+        "CriticalStrikeProbability": 0,
+        "PenetrationProbability": 0
+      },
+      "Effects": {
+        "HasSwordMeaning": true,
+        "ConstantSpeed": true,
+        "NoEffectInWater": true,
+        "WillNotBurn": true,
+        "Autoregression": false
+      },
+      "ModelOffsets": {
+        "IconPosition": [0, -0.05, 0],
+        "IconRotation": [-1, 0.5, 0],
+        "IconScale": 0.9,
+        "FirstPersonOffset": [0.5, -0.2, -0.6],
+        "FirstPersonRotation": [0, 40, 0],
+        "FirstPersonScale": 0.6,
+        "InHandOffset": [0, 0.4, 0],
+        "InHandRotation": [0, 0, 0],
+        "InHandScale": 0.6 
+      }
+    },
+    {
+      "Name": "剑_飘影茂陵",
+      "Description": "中品法器，攻击范围大且伤害高",
+      "TextureRoute": "纹理/武器/剑_飘影茂陵",
+      "ModelRoute": "模型/武器/剑_飘影茂陵",
+      "Grade": 3,
+      "Type": "法器",
+      "Attributes": {
+        "BaseAttackRange": 3.0,
+        "AttackRangePerLevel": 0.09,
+        "BaseAttackDistance": 2.24,
+        "AttackDistancePerLevel": 0.019,
+        "BaseAttackSpeed": 0.88,
+        "AttackSpeedPerLevel": -0.0079,
+        "BaseDurability": 400,
+        "DurabilityPerLevel": 40,
+        "BaseMeleePower": 150,
+        "MeleePowerPerLevel": 12,
+        "CriticalStrikeProbability": 0.1,
+        "PenetrationProbability": 0.05
+      },
+      "Effects": {
+        "HasSwordMeaning": true,
+        "ConstantSpeed": true,
+        "NoEffectInWater": true,
+        "WillNotBurn": true,
+        "Autoregression": false
+      },
+      "ModelOffsets": {
+        "IconPosition": [0, -0.05, 0],
+        "IconRotation": [-1, 0.5, 0],
+        "IconScale": 0.9,
+        "FirstPersonOffset": [0.5, -0.2, -0.6],
+        "FirstPersonRotation": [0, 40, 0],
+        "FirstPersonScale": 0.6,
+        "InHandOffset": [0, 0.27, 0],
+        "InHandRotation": [0, 0, 0],
+        "InHandScale": 0.6 
+      }
+    }
+  ]
+}
