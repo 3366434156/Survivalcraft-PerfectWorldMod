@@ -13,98 +13,113 @@
 二、枚举类型详解：
  
 1. 任务目标类型 (ObjectiveType):
-   - KillCreature   : 击杀生物（需配合 Target/Race/Camp 等属性）
-   - CollectItem    : 收集物品（需配合 Target 指定物品ID）
-   - ReachLocation  : 到达地点（需配合 Target 指定位置ID）
-   - TalkToNpc      : 与NPC对话（需配合 Target 指定NPC名称）
+   - Kill				: 击杀任务（需配合 Name/Race/Camp/MinEqualOrder/MaxEqualOrder/ReqAmount 等属性，自由组合）
+   - CollectItem		: 收集任务（需配合 Item 指定物品名称#数量）下品灵石#100=>100个下品灵石
+   - Explore		    : 探索任务（需配合 LocationName 指定建筑标识名称）
+   - Talk			    : 对话任务（需配合 Name 指定生物名称）
  
 2. 奖励领取方式 (RewardClaimType):
-   - Direct        : 自动领取（无需额外配置）
-   - AtLocation    : 到指定地点领取（需 ClaimTarget 指定位置ID）
-   - FromNpc       : 找指定NPC领取（需 ClaimTarget 指定NPC名称）
+   - Direct				: 在玩家的任务面板直接领取（无需 ClaimTarget）
+   - AtLocation			: 到指定地点领取（需 ClaimTarget 指定建筑标识名称）
+   - ToTasksPanel	    : 找指定生物任务面板领取（需 ClaimTarget 指定生物名称）
  
 3. 惩罚类型 (PenaltyType):
-   - AttributeReduction : 属性降低（需 Target 指定属性名）
-   - ItemRemoval        : 移除物品（需 Target 指定物品ID）
-   - ReputationLoss     : 声望降低（需 Target 指定声望类型）
-   - Debuff             : 施加负面状态（需 Target 指定状态ID）
+   - Attribute			: 属性降低（需 Name 指定属性名，Amount降低的数值，默认永久降低）
+   - Prestige			: 声望降低 （只需 Amount 就可以了）
+   - Debuff             : 施加负面状态（需 Name 指定Buff名称，Duration持续时间）
 
 二、其他详解：
    
 1. <Quest> 根节点属性：
-   - Name:         [必填]任务名称(唯一标识)
-   - Description:  [必填]任务描述(显示给玩家)
+   - Name:				[必填]任务名称(不超过10个字)
+   - Description:		[可选]任务描述(字数不限)
    - ReleaseEqualOrder: [可选]发布者最低等阶要求(默认0=无限制)
-   - IsRepeat:     [可选]是否可重复接取(true/false, 默认false)
-   - TimeSec:      [可选]时间限制(秒)，-1表示无限制(默认)
-   - PreReqQuest:  [可选]前置任务名称(需先完成指定任务)
-   - ReqEqualOrder:[可选]接取者最低等阶要求(默认0=无限制)
+   - IsRepeat:			[可选]是否可重复接取(true/false, 默认false)，为true时相当于一次性任务
+   - TimeSec:			[可选]时间限制(秒)，-1表示无限制(默认)
+   - PreReqQuest:		[可选]前置任务名称(需先完成指定任务)
+   - ReqEqualOrder:		[可选]接取者最低等阶要求(默认0=无限制)
  
 2. <Objective> 任务目标属性：
-   - Type:        [必填]目标类型(KillCreature/CollectItem/ReachLocation/TalkToNpc)
-   - Target:      [条件必填]具体目标标识(生物/物品/NPC名称等)
-   - ReqAmount:   [必填]需要完成的数量 
-   - Race:        [KillCreature专用]生物种族(如"狼妖")
-   - Camp:        [KillCreature专用]所属阵营(如"魔教")
-   - MinEqualOrder:[KillCreature专用]最低生物等阶(默认0)
-   - MaxEqualOrder:[KillCreature专用]最高生物等阶(默认9)
+   - Type:				[必填]目标类型(Kill/CollectItem/Explore/Talk)
+   - Target:			[条件必填]具体目标标识(生物/物品/NPC名称等)
+   - ReqAmount:			[必填]需要完成的数量 
+   - Race:				[Kill专用]生物种族(如"狼妖")
+   - Camp:				[Kill专用]所属阵营(如"魔教")
+   - MinEqualOrder:		[Kill专用]最低生物等阶(默认0)
+   - MaxEqualOrder:		[Kill专用]最高生物等阶(默认9)
  
 3. <Reward> 任务奖励属性：
-   - Prestige:    [可选]奖励声望值 
-   - BlocksId:    [可选]奖励物品类名(多个用逗号分隔)
-   - UnlockId:    [可选]解锁的成就/功能标识(待定) 
-   - ClaimType:   [可选]领取方式(Direct/AtLocation/FromNpc)
-   - ClaimTarget: [条件必填]当ClaimType非Direct时需指定 AtLocation/NPC 
+   - Prestige:			[可选]奖励声望值 
+   - Items:				[可选]奖励物品类名(多个用逗号分隔,#处理数量=>下品灵石#100 表示100个下品灵石)
+   - UnlockId:			[可选]解锁的成就/功能标识(待定) 
+   - ClaimType:			[可选]领取方式(Direct/AtLocation/ToTasksPanel)
+   - ClaimTarget:		[条件必填]当ClaimType非Direct时需指定 建筑标识名称/生物名称 
  
 4. <Penalty> 失败惩罚属性：
-   - Type:        [必填]惩罚类型(AttributeReduction/ItemRemoval/ReputationLoss/Debuff)
-   - Target:      [必填]影响目标(属性名/物品ID/声望类型等)
-   - Amount:      [必填]影响数值(属性降低比例/物品数量等)
-   - Duration:    [可选]持续时间(秒)，不填表示永久 
+   - Type:				[必填]惩罚类型(Attribute/Prestige/Debuff)
+   - Target:			[必填]影响目标(属性名/物品ID/声望类型等)
+   - Amount:			[必填]影响数值(属性降低比例/物品数量等)
+   - Duration:			[可选]持续时间(秒)，不填表示永久 
+   
+   
+5. 一个完整的任务可以由多个目标组成，多个奖励(只需写一行)，多个惩罚组成
+   <Quest Name="任务名称" Description="任务描述" IsRepeat="false" TimeSec="30">
+		<Objective Type="Kill" Name="灰狼" ReqAmount="10" />  这是目标1 击杀目标
+		<Objective Type="Explore" LocationName="Village" />  这是目标2 探索
+		
+		<Reward Prestige="500" ClaimType="ToTasksPanel" ClaimTarget="Mayor"/> 这是奖励
+		
+		<Penalty Type="Debuff" Name="Weakness" Duration="60"/> 这是惩罚1
+		<Penalty Type="Attribute" Name="Strength" Amount="0.1" Duration="3600"/> 这是惩罚2
+	</Quest>
+	
 -->
 
 
 <Quests>
 	<!-- 简单击杀任务 -->
-	<Quest Name="动物之友" Description="使用你的武器渡化动物" IsRepeat="true" TimeSec="300">
-		<Objective Type="KillCreature" Target="灰狼" ReqAmount="10" />
+	<Quest Name="动物之友" Description="使用你的武器渡化动物" IsRepeat="true" >
+		<Objective Type="Kill" Name="灰狼" ReqAmount="10" />
+		<Reward Prestige="100" />
+	</Quest>
+
+	<Quest Name="对话" Description="" IsRepeat="true" >
+		<Objective Type="Talk" Name="灰狼" />
 		<Reward Prestige="100" />
 	</Quest>
 
 	<!-- 限时任务示例 -->
 	<Quest Name="紧急救援" Description="30秒内救出被困村民" IsRepeat="false" TimeSec="30">
-		<Objective Type="ReachLocation" Target="Village" ReqAmount="1"/>
-		<Penalty Type="ReputationLoss" Target="Village" Amount="10"/>
-		<Penalty Type="Debuff" Target="Weakness" Duration="60"/>
-		<Reward Prestige="500" ClaimType="FromNpc" ClaimTarget="Mayor"/>
+		<Objective Type="Explore" LocationName="Village" />
+		<Reward Prestige="500" ClaimType="ToTasksPanel" ClaimTarget="Mayor"/>
+		<Penalty Type="Debuff" Name="Weakness" Duration="60"/>
 	</Quest>
 
 	<!-- 高难度任务示例 -->
 	<Quest Name="巨龙讨伐" Description="击败远古巨龙" IsRepeat="false" TimeSec="600" ReleaseEqualOrder="5" ReqEqualOrder="3">
-		<Objective Type="KillCreature" Target="远古巨龙" ReqAmount="1"/>
-		<Penalty Type="AttributeReduction" Target="Strength" Amount="0.1" Duration="3600"/>
-		<Penalty Type="ItemRemoval" Target="DragonSlayerSword" Amount="1"/>
-		<Reward Prestige="1000" BlocksId="DragonScaleArmor"/>
+		<Objective Type="Kill" Name="远古巨龙" ReqAmount="1"/>
+		<Reward Prestige="1000" Items="DragonScaleArmor"/>
+		<Penalty Type="Attribute" Name="Strength" Amount="0.1" Duration="3600"/>
 	</Quest>
 
 	<!-- 复合条件任务示例 -->
 	<Quest Name="除妖卫道" Description="除妖卫道" IsRepeat="true" TimeSec="1000" PreReqQuest="入门试炼">
 		<!-- 精确目标 -->
-		<Objective Type="KillCreature" Target="赤瞳狼王" ReqAmount="1"/>
+		<Objective Type="Kill" Name="赤瞳狼王" ReqAmount="1"/>
 
 		<!-- 种族目标 -->
-		<Objective Type="KillCreature" Race="狼妖" ReqAmount="5"/>
+		<Objective Type="Kill" Race="狼妖" ReqAmount="5"/>
 
 		<!-- 阵营目标 -->
-		<Objective Type="KillCreature" Camp="魔教" ReqAmount="3"/>
+		<Objective Type="Kill" Camp="魔教" ReqAmount="3"/>
 
 		<!-- 等阶范围目标 -->
-		<Objective Type="KillCreature" MinEqualOrder="2" MaxEqualOrder="4" ReqAmount="10"/>
+		<Objective Type="Kill" MinEqualOrder="2" MaxEqualOrder="4" ReqAmount="10"/>
 
 		<!-- 复合条件目标 -->
 		<Objective
-            Type="KillCreature"
-            Target="赤瞳狼王"
+            Type="Kill"
+            Name="赤瞳狼王"
             Race="狼妖"
             Camp="魔教"
             MinEqualOrder="3"
@@ -113,14 +128,15 @@
 
 		<Reward
             Prestige="500"
-            BlocksId="WolfFang,SpiritStone"
+            Items="WolfFang,SpiritStone"
             ClaimType="AtLocation"
             ClaimTarget="除魔堂"/>
 	</Quest>
 
 	<!-- 收集类任务示例 -->
 	<Quest Name="灵药采集" Description="收集10株七星草" TimeSec="1200">
-		<Objective Type="CollectItem" Target="七星草" ReqAmount="10"/>
-		<Reward Prestige="300" BlocksId="HealingPotion"/>
+		<Objective Type="CollectItem" Item="七星草#10" />
+		<Reward Prestige="300" Items="下品灵石,极品灵石#100"/>
+		<!--没有#数字就是默认为1-->
 	</Quest>
 </Quests>
