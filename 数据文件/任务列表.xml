@@ -24,6 +24,7 @@
 	* TimeSec			[可选] 时间限制（秒，默认-1无限制）
 	* PreReqQuest		[可选] 前置任务（需先完成）
 	* ReqEqualOrder		[可选] 接取者最低等阶（默认0）
+	* PublisherName		[可选] 限制该任务只能由指定者发布
 	
 
 二、目标类型专属属性（按Type分类）：
@@ -51,8 +52,10 @@
 示例：
  <Objective 
      Type="CollectItem"
-     Items="升仙草#10"   → 收集10株升仙草
+     Items="升仙草#10"			 → 收集10株升仙草
+	 Collectors="多人君"/>		 → [必填]收集者
    />               
+   说明:收集10株升仙草给多人君
 
 3. 探索目标 (Type="Explore")：
 - LocationName			[必填] 地点标识（如"悦灵城"）
@@ -76,12 +79,17 @@
 三、任务奖励：
 
 <Reward 
-	Prestige="100"          → 奖励的声望值（数字越大奖励越好）
-	Items="金币,药水#3"      → 奖励物品（多个用逗号隔开）
-	ClaimType="Direct"      → 领取方式：
-						    → Direct：在玩家自己的任务面板领取 
-						    → AtLocation：去指定地点领 
-						    → ToTasksPanel：找NPC领 
+	Prestige="100"					 → 奖励的声望值（数字越大奖励越好）
+	
+	Items="金币,药水#3"				 → 奖励物品（多个物品可以用逗号分隔，使用#隔开数量）
+	Buffs="生命恢复#100,清心#100"      → 奖励Buff（多个用逗号隔开，使用#隔开持续时间）
+	Skills="瞬移#1,闪现#3"			 → 奖励技能（多个用逗号隔开，使用#隔开等级）
+	Attributes="血量#25,寿元#30"		 → 奖励属性（多个用逗号隔开，使用#隔开增加值）
+	
+	ClaimType="Direct"			→ 领取方式：
+								→ Direct：在玩家自己的任务面板领取 
+								→ AtLocation：去指定地点领 
+								→ ToTasksPanel：找NPC领 
 					   
    ClaimTarget="隐形守护者"  → ClaimType 为 AtLocation或者ToTasksPanel时需要填写
 						      否则不需要
@@ -93,6 +101,7 @@
                         → Prestige：扣声望 
                         → Attribute：降低属性 
                         → Debuff：获得负面状态 
+						
   Name="虚弱"           → 惩罚效果名称 
   Amount="0.2"          → 惩罚强度（扣多少/降多少）
   Duration="3600"       → 持续时间（秒，-1=永久）
@@ -159,7 +168,7 @@
 
 收集类任务示例 
 <Quest Name="灵药采集" Description="收集10株升仙草" TimeSec="1200">
-	<Objective Type="CollectItem" Items="七星草#10" />
+	<Objective Type="CollectItem" Items="升仙草#10"  Collectors="多人君"/>
 	<Reward Prestige="300" Items="下品灵石,极品灵石#100"/>	
 </Quest>
 	
@@ -171,5 +180,619 @@
 
 <Quests>
 
+	<QuestGroup Name="新手任务">
+
+	</QuestGroup>
+
+	<!--千里共婵娟 专属任务-->
+	<QuestGroup Publisher="千里共婵娟" >
+
+		<Quest Name = "欢迎来到完美世界1" Description = "这里有份委托 : 由于委托人行动不便 让你替他打个招呼(手持灵石点击目标）初次见面 介绍下，我是个中间人 以后可叫我 婵 在人群里你是我见过最特别的 背后有位至高无上的人物" IsRepeat = "false" TimeSec = "7200" >
+			<Objective Type = "Talk" Name = "隐形守护者" />
+			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "帮忙咨询丹药进度2" Description = "哈 我们又见面了 这里有份委托： 由于委托人重伤，请你帮忙咨询丹药制作进度(手持灵石点击目标)" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "欢迎来到完美世界1" >
+			<Objective Type = "Talk" Name ="筠槛" />
+			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "寻找适合的功法3" Description = "钉钉 又有委托任务了 委托人 经过上次的教训 觉得在这个世界上 拥有一份功法 是很有必要的事 希望你帮忙去看看(手持灵石点击目标)" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "帮忙咨询丹药进度2" >
+			<Objective Type ="Talk" Name ="多人君" />
+			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "购买武器4" Description = "有了功法之后 也要搭配趁手的武器装备 委托人想让你 去看看有没有好装备" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "寻找适合的功法3" >
+			<Objective Type ="Talk" Name = "lstx" />
+			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "置换极品灵石5" Description = "手上有一堆下品灵石 但物品得用极品买 可怎么办 委托人希望 让你去天空之城 找笑问哈哈哈 还有没极品灵石卖" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "购买武器4" >
+			<Objective Type ="Talk" Name = "笑问哈哈哈" />
+			<Reward Prestige = "14" Items = "下品灵石#28" ClaimType = "ToTasksPanel"  ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "想要有个家6" Description = "在江湖闯荡了几百年 刀光剑影 快意恩仇的日子过得太久 忽然感到一丝疲惫 或许是某个夕阳西下的黄昏 或许是某次醉酒后的清晨 望着空荡荡的屋檐 心中萌生了一个从未有过的念头 委托人 希望你能挖点泥土 他想建个房子" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "置换极品灵石5" >
+			<Objective Type = "CollectItem" Items = "泥土#98" />
+			<Reward Prestige = "30" Items = "下品灵石#54" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "想睡个好觉7" Description = "最近几个星期 每当夜幕降临 边缘的小镇居民就会被一阵阵低沉的熊吼声惊醒 起初 人们以为只是偶然的野兽活动 但渐渐地 熊的叫声越来越频繁 甚至开始在深夜撞击围栏 翻找垃圾 让整个镇子人心惶惶 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "想要有个家6" >
+			<Objective Type = "Kill" Name = "黑熊" ReqAmount = "4" />
+			<Reward Prestige = "70" Items = "中品灵石#14" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "消失的牛8" Description = "勇敢的冒险者 城镇已经失去了三头牛和两只马 更糟的是 昨天有个孩子差点遇袭 需要你去查明真相并解决这个问题 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "想睡个好觉7" >
+			<Objective Type = "Kill" Name = "狮子" ReqAmount = "4" />
+			<Reward Prestige = "40" Items = "下品灵石#80" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "恢复商道的安全9" Description = "酒馆里遇到了 狼狈逃回的商人霍拉斯 他的手臂上有一道深深的爪痕 那东西 不是普通的豹子 他颤抖着说 它像影子一样移动 我们的武器根本碰不到它" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "消失的牛8" >
+			<Objective Type = "Kill" Name = "豹子" ReqAmount = "4" />
+			<Reward Prestige = "25" Items = "下品灵石#50" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "料理家10" Description = "委托人 要举办年度火焰盛宴 食火鸡是主菜 确保你抓到的食材符合烹饪标准" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "恢复商道的安全9" >
+			<Objective Type = "Kill" Name = "食火鸡" ReqAmount = "4" />
+			<Reward Prestige = "15" Items = "下品灵石#30" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "闹鬼啦11" Description = "有许多居民无端殒命家中 像是惊吓所致 经过调查原来是这么回事" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "料理家10" >
+			<Objective Type = "Kill" Name = "小幽灵" ReqAmount = "4" />
+			<Reward Prestige = "80" Items = "中品灵石#16" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "清明节12" Description = "路上行人欲断肠 清明时节 阴雨绵绵 踏上返乡祭祖的路途 然而 荒野小径上突然涌现出诡异的骷髅怪 它们眼眶中跳动着鬼火 骸骨间缠绕着未散的执念 这些亡魂因无法与亲人相见而化作怨灵 如今竟阻挡生者通往墓园的道路" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "闹鬼啦11" >
+			<Objective Type = "Kill" Name = "小骷髅" ReqAmount = "4" />
+			<Reward Prestige = "140" Items = "中品灵石#28" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "袭击人的大象13" Description = "最近 附近的密林中频频发生大象袭击人的事件 这些温顺的巨兽突然变得狂暴 甚至冲毁农田 践踏房屋 忧心忡忡地请求冒险者调查真相 它们眼中泛着不祥的红光 仿佛被什么控制了 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "清明节12" >
+			<Objective Type = "Kill" Name = "大象" ReqAmount = "4" />
+			<Reward Prestige = "170" Items = "中品灵石#34" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "一阶妖马的叛变14" Description = "在幽暗森林深处 偶然发现一群本该温顺的一阶妖马突然变得狂暴 攻击过往商队和村民 更令人不安的是 这些低阶妖兽似乎获得了某种异常力量 行为举止显示出不寻常的智慧 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "袭击人的大象13" >
+			<Objective Type = "Kill" Name = "妖马" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "190" Items = "中品灵石#38" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "渔民的烦恼15" Description = "最近 东海渔民们陷入了恐慌 原本温顺的虎鲨突然变得狂暴 体型增大 双眼泛着诡异的红光 这些 一阶妖化虎鲨 不仅袭击渔船 甚至开始攻击近海的渔民 束手无策 只能向路过的冒险者求助" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "一阶妖马的叛变14" >
+			<Objective Type = "Kill" Name = "妖化虎鲨" ReqAmount = "2" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "200" Items = "中品灵石#40" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "一切都变了16" Description = "走在路上 突然看到空间出现裂缝 靠近它 发觉里面有恐怖的气息 让人毛骨悚然 貌似被封印 经过调查 最终发现 需要配合某种东西才能打开" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "渔民的烦恼15" >
+			<Objective Type = "Kill" Name = "血色禁地指引者" ReqAmount = "2" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "240" Items = "下品灵石#48" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "可爱的窃贼17" Description = "一个神秘的盗贼团体 正活跃于上流的宴会中 他们专门窃取贵族们的珍宝 却总是留下一个可爱的标记 最近 城主的传家宝 石头 也在众目睽睽之下被盗 委托你来调查这起案件 但随着调查深入 你发现这些盗窃背后似乎隐藏着更大的秘密" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "一切都变了16" >
+			<Objective Type = "Kill" Name = "窃贼" ReqAmount = "2" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "240" Items = "中品灵石#48" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "红蜘蛛18" Description = "一种可怕的变异生物正在蔓延 这些原本普通的洞穴蜘蛛 因接触了某种未知的炼金废料而发生了恐怖的异变 体型巨大 毒性极强 且具有异常的侵略性 更可怕的是 它们似乎受到某种更高阶存在的控制 正在有组织地向附近逼近 
+最近一支矿工小队失踪 只留下几具被蛛丝缠绕 血液被吸干的尸体 当地村民陷入恐慌 这些蜘蛛的变异可能并非偶然" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "可爱的窃贼17" >
+			<Objective Type = "Kill" Name = "血腥蜘蛛" ReqAmount = "2" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "290" Items = "中品灵石#58" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "解救19" Description = "村庄频繁遭到 血腥蜘蛛 的袭击 村民被其毒液侵蚀 陷入昏迷 据药师诊断 唯有 清蕴丹 能化解此毒 然而 村庄库存的清蕴丹早已耗尽 急需新的来源 希望你可以去购买或制作。" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "红蜘蛛18" >
+			<Objective Type = "CollectItem" Items = "清蕴丹" />
+			<Reward Prestige = "140" Items = "中品灵石#28" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+		<Quest Name = "牲畜暴动20" Description = "牧民们最近陷入了恐慌 驼鹿群突然变得狂暴 袭击人类 更诡异的是 这些驼鹿的瞳孔泛着幽绿色光芒 蹄下凝结冰霜 仿佛被某种力量侵蚀 老猎人发现 驼鹿群的异变可能与苏醒有关 传说中 那里封印着 一位被放逐的冰雪精灵 裂痕正渗出扭曲自然的妖力" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "解救19" >
+			<Objective Type = "Kill" Name = "妖驼鹿" ReqAmount = "2" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "210" Items = "中品灵石#42" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "准备21" Description = "妖兽频频出现 感觉大事不妙 最近一个月 周边的妖兽袭击事件激增3倍 城防军疲于奔命 而更令人不安的是 有人在黑市贩卖 染血的妖兽 而幕后黑手正在策划一场兽潮" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "牲畜暴动20" >
+			<Objective Type = "CollectItem" Items = "复生丹#2" />
+			<Reward Prestige = "210" Items = "中品灵石#42" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "气息22" Description = "村民们报告地面裂缝中渗出诡异气息 接触雾气的动物要么发狂 要么变异成凶残的怪物 气息从地下深处而来" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "准备21" >
+			<Objective Type = "Kill" Name = "妖牛" ReqAmount = "4" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "180" Items = "中品灵石#36" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "大鸟23" Description = "某一天 平静的天空突然被一道巨大的阴影撕裂 一只传说中的狮鹫降临了 它并非普通的猛禽 而是拥有狮子的身躯与雄鹰的羽翼，传说中守护古老宝藏的圣兽 然而 这只狮鹫似乎陷入了某种狂躁状态 不断袭击附近的村庄 甚至摧毁了商队的货物" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "气息22" >
+			<Objective Type = "Kill" Name = "狮鹫" />
+			<Reward Prestige = "160" Items = "中品灵石#32" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "烤鸭24" Description = "宁静的湖畔和湿地突然变得危机四伏 一群原本温顺的野鸭不知为何发生了可怕的异变 变成了狂暴的妖鸭 它们体型巨大 羽毛如钢铁般坚硬 喙部能喷吐腐蚀性液体 甚至袭击渔民和旅人 村民们惊恐万分 请求勇敢的冒险者调查真相 并消灭这些凶残的妖鸭" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "大鸟23" >
+			<Objective Type = "Kill" Name = "妖化野鸭" ReqAmount = "4" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "170" Items = "中品灵石#34" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "碧晶矿石25" Description = "最近 矿工们在深山中 发现了一种散发诡异绿光的奇特矿石 碧晶矿 而长期接触的矿工则开始离奇失踪 更可怕的是 附近的野兽也开始变异 眼睛泛着同样的绿光 需要大量的样品进行研究" IsRepeat = "true" TimeSec = "7200" PreReqQuest = "烤鸭24" >
+			<Objective Type = "CollectItem" Items = "碧晶矿石#40" />
+			<Reward Prestige = "40" Items = "下品灵石#80" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "沉银矿石26" Description = "矿工们在幽暗的地下矿脉中 发现了一种散发冰冷银光的奇异矿石 沉银矿 这种矿石能让人产生诡异的宁静感 然而随着开采的深入 矿工们开始一个接一个地陷入沉睡 再也无法醒来" IsRepeat = "true" TimeSec = "7200" PreReqQuest = "碧晶矿石25" >
+			<Objective Type = "CollectItem" Items = "沉银矿石#40" />
+			<Reward Prestige = "40" Items = "下品灵石#80" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "赤阳矿石27" Description = "在烈焰山脉深处 矿工们发现了一种散发炽烈红光的奇异晶体 赤阳矿 这种矿石触碰时滚烫如火 偶尔能在黑暗中自主发光 偶尔甚至让周围的金属武器变得异常锋利 然而 随着开采的进行 矿工们陆续出现怪病 他们的皮肤开始龟裂 渗出熔岩般的纹路 最终在某个夜晚自燃成灰烬 更可怕的是 那些带着赤阳矿离开的人 他们的开始扭曲蠕动 最终脱离本体 化作嗜火的暗影怪物 这不是矿石 这是太阳的碎片" IsRepeat = "true" TimeSec = "7200" PreReqQuest = "沉银矿石26" >
+			<Objective Type = "CollectItem" Items = "赤阳矿石#40" />
+			<Reward Prestige = "40" Items = "下品灵石#80" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "寒冰矿石28" Description = "冰川裂缝中 探险队发现了一种深蓝色的奇异晶体 寒冰矿 这种矿石散发着刺骨寒气 却能让周围的水源永远保持纯净 然而接触过矿石的人逐渐变得情感淡漠 脸上凝固着诡异的微笑 更令人不安的是 那些携带寒冰矿离开的人 他们的开始被同一个画面入侵 一座由冰晶构成的巨大宫殿 以及宫殿深处传来的低沉呼唤 不是我们在开采矿石 是矿石在挑选它的奴仆" IsRepeat = "true" TimeSec = "7200" PreReqQuest = "赤阳矿石27" >
+			<Objective Type = "CollectItem" Items = "寒冰矿石#40" />
+			<Reward Prestige = "40" Items = "下品灵石#80" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "星钢矿石29" Description = "在峡谷深处勘探者发现了一种褐色金属矿脉 星钢矿 这种矿石坚硬程度远超普通钢铁 表面布满星辰般的纹路 偶尔能自发发出微弱的脉动光芒 凡是用星钢锻造的武器都锋利无比 但使用者会逐渐出现金属化症状 皮肤浮现钢纹 痛觉消失 最终在月圆之夜 化为一座金属雕像 它不是矿是活着的天外来客" IsRepeat = "true" TimeSec = "7200" PreReqQuest = "寒冰矿石28" >
+			<Objective Type = "CollectItem" Items = "星钢矿石#40" />
+			<Reward Prestige = "40" Items = "下品灵石#80" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "生气的驴30" Description = "村外的 暴躁妖驴 突然集体进化了 它们不再满足于踢飞路人 而是学会了 闪现 甚至组队打劫商队" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "星钢矿石29" >
+			<Objective Type = "Kill" Name = "妖驴" ReqAmount = "4" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "210" Items = "中品灵石#42" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "长长的脖子31" Description = "草原上的长颈鹿突然集体妖化了 眼睛泛着幽蓝的鬼火甚至开始有组织地收割整片森林的树冠 它们不再吃草 而是吸食树木的灵魂" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "生气的驴30" >
+			<Objective Type = "Kill" Name = "二阶妖长颈鹿" ReqAmount = "4" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "220" Items = "中品灵石#44" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "药不能停32" Description = "最近 修仙界出了大乱子 炼丹炉集体罢工 ，所有丹药成丹率暴跌至1 连最基础的辟谷丹都成了奢侈品 修士们饿得啃剑 门派长老急得薅光胡子 而黑市上 一颗劣质筑基丹的价格已经炒到卖肾级 更诡异的是 那些强行服用失败丹药的人 开始出现 反向修仙症状 修为倒退 灵根萎缩 甚至有人 退化成猴子 这不是技术问题 是天道在拒绝我们的丹方" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "长长的脖子31" >
+			<Objective Type = "CollectItem" Items = "一阶妖丹#20" />
+			<Reward Prestige = "240" Items = "中品灵石#48" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "妖丹狂潮33" Description = "修仙界突然爆发妖丹通胀 原本稀有的妖兽内丹像雨后蘑菇般涌现 炼丹师们欣喜若狂 纷纷推出 妖丹特供版 但很快 服药者陆续出现妖化暴走 某长老长出狐狸尾巴当众跳起艳舞 剑修弟子开始用嘴叼着剑御空飞行 最惨的是灵兽园 仙鹤们集体绝食 抗议主人比自己更像禽兽" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "药不能停32" >
+			<Objective Type = "CollectItem" Items = "清心丹#2" />
+			<Reward Prestige = "100" Items = "中品灵石#20" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "撕裂荒漠的狂禽34" Description = "商道附近的村庄接连遭受袭击 不是被劫掠 而是被彻底屠戮 幸存者颤抖着描述 夜幕降临 狂风骤起 巨大的黑影如死神般掠过 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "妖丹狂潮33" >
+			<Objective Type = "Kill" Name = "鸵鸟" ReqAmount = "6" />
+			<Reward Prestige = "240" Items = "中品灵石#48" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "血浪狂噬35" Description = "最近 渔村接连发生恐怖事件 渔民们离奇失踪 只留下被啃噬殆尽的船只残骸 幸存者描述 每当夜幕降临 河水偶尔会翻涌出诡异的血色泡沫水中 传来令人毛骨悚然的牙齿摩擦声 萨满占卜后惊恐地发现 一群二阶妖化食人鱼正在聚集 它们比普通食人鱼凶残 鳞片如黑铁 牙齿能咬碎精钢 更可怕的是 它们似乎受到了某种远古水神的诅咒" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "撕裂荒漠的狂禽34" >
+			<Objective Type = "Kill" Name = "妖化食人鱼" ReqAmount = "4" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "240" Items = "中品灵石#48" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "铁蹄震岳36" Description = "黑岩山脉的矿工村落频繁遭受袭击 不是野兽而是一头 体型堪比小山的独角妖犀 它浑身覆盖着黑曜石般的甲壳 每次冲锋都能撞碎岩壁 它的犀角会释放 震荡波 让大地龟裂山石崩塌" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "血浪狂噬35" >
+			<Objective Type = "Kill" Name = "妖犀" ReqAmount = "2" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "肢畜魔影37" Description = "猎户们最近流传着一个恐怖的传说 每当满月之夜 森林深处会传来沉重的蹄声 随后便是树木倒塌 血肉撕裂的声音 有人目睹了一头 直立行走的妖牛 它身高近多丈 浑身缠绕血色妖气 所过之处生灵尽灭" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "铁蹄震岳36" >
+			<Objective Type = "Kill" Name = "二阶化形妖牛" ReqAmount = "2" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "270" Items = "中品灵石#54" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "妖母智牧38" Description = "在边陲小镇 最近发生了诡异的牲畜失踪事件 每到月圆之夜 就会有母牛离奇消失 只留下满地发黑的牛蹄印和腥臭的黏液 更可怕的是 有牧民声称看到一头双目赤红背生骨刺的巨型妖化母牛 在迷雾中游荡 它的嚎叫声能让活物凝固" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "肢畜魔影37" >
+			<Objective Type = "Kill" Name = "妖母牛" ReqAmount = "6" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "280" Items = "中品灵石#56" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "妖月狼歌39" Description = "附近的村庄 最近接连发生恐怖的袭击事件 每到深夜 村民会听到凄厉的狼嚎 随后便是牲畜被撕碎的惨叫声 更可怕的是 有人目睹了一头 体型皮毛泛着幽蓝光芒 双眼猩红的二阶妖狼 它率领着狼群 似乎在有组织地猎杀人类 村民传言这头妖狼曾是村中猎人驯养的幼狼 因一次错误的围猎被抛弃 如今它带着仇恨归来" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "妖母智牧38" >
+			<Objective Type = "Kill" Name = "妖狼" ReqAmount = "7" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "260" Items = "中品灵石#52" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "影纹妖虎40" Description = "村中牲畜接连被神秘野兽袭击 林陌追踪发现竟是一阶妖兽 影纹妖虎 所为这种凶兽通常不会出现在人类村庄附近" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "妖月狼歌39" >
+			<Objective Type = "Kill" Name = "妖虎" ReqAmount = "4" MinEqualOrder = "1" MaxEqualOrder = "2" />
+			<Reward Prestige = "240" Items = "中品灵石#48" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "凝崩危机41" Description = "村民女儿突发血崩症 急需凝血草救命村口被狂奔的村民拦住 少侠救命 小姐她 撑不过几炷香了" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "影纹妖虎40" >
+			<Objective Type = "CollectItem" Items = "凝血草#20" />
+			<Reward Prestige = "40" Items = "中品灵石#8" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "黑头绿42" Description = "还记得有个人叫 婵 吗  这是个有趣的委托 当然这个委托是一个朋友说的 要想生活过得去 绿油油的东西最美丽 他想要摆满整个房间 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "凝崩危机41" >
+			<Objective Type = "CollectItem" Items = "青岚草#16" />
+			<Reward Prestige = "16" Items = "中品灵石#2" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "侵师灵谋43" Description = "世界存在灵气能量 修士通过修炼可延年益寿 施展法术 聚灵花是能大幅提升修为的传说灵药 千年开花一次 遭噬心魔入侵 师尊为保护弟子身中剧毒 需要传说中的聚灵花解毒" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "黑头绿42" >
+			<Objective Type = "CollectItem" Items = "聚灵花#20" />
+			<Reward Prestige = "20" Items = "中品灵石#2" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "阴煞兽变44" Description = "派外门弟子发现门派领地内出现异常阴煞之气 导致灵植枯萎 灵兽变异，普通村民离奇死亡 情况日益恶化" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "侵师灵谋43" >
+			<Objective Type = "Kill" Name = "妖马" ReqAmount = "6" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "试屎污剩45" Description = "妖兽成群结队攻击村庄 裂隙边缘 遭遇被阴煞侵蚀的变异灵兽袭击 道友在它们进食的时候才勉强逃脱" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "阴煞兽变44" >
+			<Objective Type = "Kill" Name = "鬣狗" ReqAmount = "6" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "370" Items = "中品灵石#74" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "蝎子癞睐46" Description = "地下裂隙中孕育的邪物 由阴煞之气凝聚而成双眼赤红 以吞噬生灵精气为生 行为反常毫无畏惧 村中防御阵法被破坏殆尽" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "试屎污剩45" >
+			<Objective Type = "Kill" Name = "蝎子" ReqAmount = "20"/>
+			<Reward Prestige = "230" Items = "中品灵石#46" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "气沉丹添47" Description = "突然间蝎子大爆增 多名修士在小树林里欢快玩耍后陨落 传闻这是一场大阴谋 是憎恨还是 用于解毒丹供不应求 尝试以毒攻毒 蝎毒变丹毒" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "蝎子癞睐46" >
+			<Objective Type = "CollectItem" Items = "二阶妖丹#16" />
+			<Reward Prestige = "370" Items = "中品灵石#74" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "风浪越大48" Description = "渔民们纷纷传言 海上出现了一种诡异的妖鱼它们形似巨鲸 却生有尖牙 双眼赤红如血 能发出惑人心智 凡是靠近它们的渔船 要么失踪" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "气沉丹添47" >
+			<Objective Type = "Kill" Name = "二阶妖化虎鲸" ReqAmount = "2" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "270" Items = "中品灵石#54" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "暗夜妖豹暴49" Description = "齐墨发现这是一只罕见的三阶暗影妖豹所为 这种妖兽速度极快且能隐匿身形 专门在夜间捕食人类 布置的符阵陷阱被妖豹识破并破坏 反而激怒了妖兽 导致它开始更频繁地袭击村庄" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "风浪越大48" >
+			<Objective Type = "Kill" Name = "豹妖" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "煮猪侠50" Description = "野猪人只是受害者 真正的污染是某位堕落德鲁伊在举行禁忌仪式 二阶妖化是初期症状 但若不阻止将诞生完全体瘟疫巨兽" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "暗夜妖豹暴49" >
+			<Objective Type = "Kill" Name = "妖化野猪人" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "210" Items = "中品灵石#42" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "三阶妖狼51" Description = "悬剑外围突然出现妖兽暴动 多位村民离奇死亡 尸体呈现被吸干精血的诡异状态 外门弟子查看受害者尸体时 感应到残留的阴寒妖力 在山林中发现三阶幽影妖狼的踪迹 这种妖兽以吸食精血 狡猾异常" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "煮猪侠50" >
+			<Objective Type = "Kill" Name = "三阶妖狼" ReqAmount = "6" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "330" Items = "中品灵石#66" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "月夜妖斑52" Description = "遇袭商队附近 沙地上总会留下燃烧的蹄印 妖斑马似乎有智慧 会故意放过几个活口传播恐惧" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "三阶妖狼51" >
+			<Objective Type = "Kill" Name = "妖斑马" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "360" Items = "中品灵石#72" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "三阶药虎53" Description = "山脉本是灵药产地，近来被几头三阶妖虎占据，导致村民无法进山采药" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "月夜妖斑52" >
+			<Objective Type = "Kill" Name = "妖虎" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "390" Items = "中品灵石#78" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "三阶妖寿鬣狗54" Description = "在调查过程中 发现妖鬣狗并非普通妖兽 而是被某种邪术改造的生物 体内藏有炼制延寿丹的关键材料" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "三阶药虎53" >
+			<Objective Type = "Kill" Name = "妖鬣狗" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "雪堡鹿55" Description = "边境的雪松堡地区 这里常年被冰雪覆盖 森林与山脉交错 是各种危险生物栖息的地方 调查一起魔兽袭击事件 当地已有数名猎人和村民遇害" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "三阶妖寿鬣狗54" >
+			<Objective Type = "Kill" Name = "妖驼鹿" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "360" Items = "中品灵石#72" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "山河清牛56" Description = "山脉下的清河镇，一个被原始森林环绕的边陲小镇，常年受妖兽侵扰，居民生活艰难" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "雪堡鹿55" >
+			<Objective Type = "Kill" Name = "妖野牛" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "冬神祭驯57" Description = "在雪山村落参加冬神祭 村民正欢庆每年驯鹿群迁徙带来的丰收 老长请求调查今年迟到的鹿群" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "山河清牛56" >
+			<Objective Type = "Kill" Name = "妖驯鹿" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "330" Items = "中品灵石#66" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "长影响鸣58" Description = "郊外的村庄接连发生诡异命案 死者皆被斩首 伤口平滑如镜 且尸体周围总有 异常拉长的影子 更可怕的是 有幸存者称 在遇袭前曾听鹿鸣声 但抬头却只看见一道细长的黑影闪过" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "冬神祭驯57" >
+			<Objective Type = "Kill" Name = "妖长颈鹿" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "320" Items = "中品灵石#64" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "威兽御角59" Description = "人与妖兽共存的世界 妖兽分为不同等级 三阶妖角马是极具威胁性的存在 拥有操控金属的能力和极强的防御力" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "长影响鸣58" >
+			<Objective Type = "Kill" Name = "妖角马" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "320" Items = "中品灵石#64" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "青狮猎妖60" Description = "神秘的猎妖人 追踪三阶妖狮来到青林镇 发现这里已经有多名村民失踪 情况比预想的更为严重" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "威兽御角59" >
+			<Objective Type = "Kill" Name = "妖狮" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "330" Items = "中品灵石#66" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "泽马溪崖61" Description = "青岚山脉与暮霭沼泽交界地带 这里既有陡峭的山崖又有危险 形成了独特的生态系统 也是妖兽频繁出没的危险区域 三阶妖马是介于普通野兽与高阶妖兽之间的存在 拥有特殊能力但还未完全脱离动物形态 其晶核是珍贵材料" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "青狮猎妖60" >
+			<Objective Type = "Kill" Name = "妖马" ReqAmount = "6" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "390" Items = "中品灵石#78" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "熊出美62" Description = "雷恩发现森林出现反常现象 树木被暴力破坏 动物踪迹全无 空气中弥漫着不寻常的腥臭味 暗示有强大妖兽出没" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "泽马溪崖61" >
+			<Objective Type = "Kill" Name = "妖熊" ReqAmount = "3" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "390" Items = "中品灵石#78" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "等嘛犀亚63" Description = "妖族按实力分为不同阶位 三阶妖犀属于中阶妖族，不仅力量强大 还具备操控土石的天赋能力 对边境城镇构成严重威胁" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "熊出美62" >
+			<Objective Type = "Kill" Name = "妖犀" ReqAmount = "3" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "390" Items = "中品灵石#78" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "利鲨维坦64" Description = "海洋生物秘密进行基因强化实验 意外导致海洋生物变异 代号利维坦 的三阶妖化大白鲨成为顶级掠食者 威胁航道安全" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "等嘛犀亚63" >
+			<Objective Type = "Kill" Name = "妖化大白鲨" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "360" Items = "中品灵石#72" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "血浪鳍妖65" Description = "在东海渔村浪歌坞 连续发生渔船被巨型虎鲨袭击事件 幸存渔民描述这头虎鲨背鳍呈现不祥的血红色 能操控小型水龙卷 村中老祭司认出这是三百年前被镇压的血鳍妖鲨后代 如今受海底魔气影响已进化成三阶妖兽" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "利鲨维坦64" >
+			<Objective Type = "Kill" Name = "妖化虎鲨" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "360" Items = "中品灵石#72" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "海港渔牛66" Description = "海港城市塞壬港近期频繁发生渔船失踪事件 渔民们人心惶惶 经验丰富的赏金猎人埃里克 霍恩接受委托调查真相 发现这一切与一头三阶妖化牛鲨有关" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "血浪鳍妖65" >
+			<Objective Type = "Kill" Name = "妖化牛鲨" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "360" Items = "中品灵石#72" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "古化妖鸵67" Description = "一片因远古生化实验而生态畸变的世界 这里的生物在紫色辐射雾影响下发生了各种妖化变异" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "海港渔牛66" >
+			<Objective Type = "Kill" Name = "妖化鸵鸟" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "崔狩黑蹄68" Description = "调查村民失踪事件 发现所有线索都指向一头传说中的三阶妖驴 崔狩在森林中遭遇黑蹄 发现这头妖驴不仅力大无穷、速度惊人 还能释放腐蚀性黑雾 初次交手便险些丧命 依靠多年猎妖经验才勉强逃脱" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "古化妖鸵67" >
+			<Objective Type = "Kill" Name = "妖驴" ReqAmount = "4" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "340" Items = "中品灵石#68" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "夺命机缘69" Description = "希望能活着回来 地下的恐怖气息越来越浑浊 是时候前往一探究竟 玄霄界突然出现多处浊气泄漏点 五大仙门联合派出精英探查源头 委托你派往最危险的地下位面" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "崔狩黑蹄68" >
+			<Objective Type = "Kill" Name = "瘟疫蛾蚊" ReqAmount = "20" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "540" Items = "上品灵石#11" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "智头慧脑70" Description = "长头怪本就罕见 它们以吸食人类脑髓为生 头部会随着吞噬的智慧而不断膨胀 普通长头怪已经足够危险 而二阶那是吞噬了足够多智慧后发生变异的怪物 据说拥有接近人类的狡诈" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "夺命机缘69" >
+			<Objective Type = "Kill" Name = "长头怪" ReqAmount = "20" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "540" Items = "上品灵石#11" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "命运森林71" Description = "边境小镇黑松镇及其周边森林 小镇被黑暗森林环绕 常年受魔物侵扰 居民生活在恐惧之中" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "智头慧脑70" >
+			<Objective Type = "Kill" Name = "命运之轮" ReqAmount = "20" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "540" Items = "上品灵石#11" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "悚然低吼72" Description = "居民最近在夜晚听到了令人毛骨悚然的低吼声 起初他们以为只是野兽的骚扰 直到一名守夜人的尸体在晨雾中被发" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "命运森林71" >
+			<Objective Type = "Kill" Name = "双头血魔" ReqAmount = "20" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "540" Items = "上品灵石#11" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "暗影裂骨73" Description = "已有十七名樵夫和猎户在此失踪 只留下黏附在岩壁上的鳞片状焦痕 以及被某种酸性黏液腐蚀成蜂窝状的骸骨" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "悚然低吼72" >
+			<Objective Type = "Kill" Name = "胖子丧尸" ReqAmount = "2" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "440" Items = "中品灵石#88" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "卡杜拉74" Description = "这种生物是上古魔神战争时期的次级造物代号卡杜拉 以吞噬活体能量为生 其核心能扭曲半径三十米内的物理法则" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "暗影裂骨73" >
+			<Objective Type = "Kill" Name = "重锤血魔" ReqAmount = "2" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "440" Items = "中品灵石#88" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "腐烂魔素75" Description = "这种由腐烂魔素与死者怨念构成的怪物 其核心已检测到能量波动 若任其吞噬活物进化至三阶 整个边境要塞将化作血肉沼泽" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "卡杜拉74" >
+			<Objective Type = "Kill" Name = "螳刀丧尸" ReqAmount = "2" MinEqualOrder = "2" MaxEqualOrder = "3" />
+			<Reward Prestige = "440" Items = "中品灵石#88" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "深渊76" Description = "当你凝视二阶魔时 二阶魔也在通过你的眼睛学习你 前任执行者最后通讯记录" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "腐烂魔素75" >
+			<Objective Type = "Kill" Name = "冰域魂士" ReqAmount = "18" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "甲壳邪眼77" Description = "扭曲生物撕开了次元裂缝 它的甲壳上镶嵌着六颗蠕动的邪眼 每次呼吸都会喷出腐蚀性的暗影毒雾" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "深渊76" >
+			<Objective Type = "Kill" Name = "冰域毒蛛" ReqAmount = "14" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "终焉之噬78" Description = "戈尔贡克斯曾是守护世界之一 但在第一次深渊入侵时 它被邪神低语腐蚀 吞噬了自己的同胞最终堕落" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "甲壳邪眼77" >
+			<Objective Type = "Kill" Name = "冰龙" ReqAmount = "14" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "冰髓怨灵79" Description = "一种违背自然法则的生物正在苏醒 由古代冰髓与怨灵融合而成的冰魂蛾蚊 其翅翼扇动时会释放足以冻结灵魂的霜尘" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "终焉之噬78" >
+			<Objective Type = "Kill" Name = "冰魂蛾蚊" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "寒冰双翼80" Description = "三阶魔兽冰鸳玄鸟苏醒了 它的双翼掀起暴雪 利爪凝结千年寒冰 每一次振翅都让山脉化作冰窟 曾有整支佣兵团葬身于它制造的冰晶牢狱中 他们的尸体至今封存在透明的寒冰里 宛如一场永恒的葬礼" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "冰髓怨灵79" >
+			<Objective Type = "Kill" Name = "冰鸳玄鸟" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "远古祭品81" Description = "她并非纯粹的魔兽 而是远古冰凰血脉的继承者 她的泪滴凝结成永不融化的冰晶 她的叹息能让灵魂冻结 传说她仍在等待某个背叛者的转世 而所有踏入冰宫的活物 都会成为她宣泄哀伤的祭品" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "寒冰双翼80" >
+			<Objective Type = "Kill" Name = "玄姬" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "幽暗精血82" Description = "幽暗沼泽的深处 潜伏着一群被腐化能量侵蚀的血魂毒蛛 它们以生灵的精血为食 蛛丝蕴含剧毒甚至能腐蚀钢铁" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "远古祭品81" >
+			<Objective Type = "Kill" Name = "血魂毒蛛" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "致幻血魂83" Description = "这些怪物频繁袭击边境村庄 已有数十名猎户和商队护卫惨死能释放致幻毒雾 连低阶修士都难以抵挡" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "幽暗精血82" >
+			<Objective Type = "Kill" Name = "血魂魂士" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "夜魇之翼84" Description = "那些磷粉在黑暗里亮起来的时候 你会听见自己脑浆沸腾的声音它的翅膀划过机枪阵地时 那些铜弹壳全都开出了玫瑰花记住 当你看见自己的倒影在复眼里微笑时 那已经不再是你了" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "致幻血魂83" >
+			<Objective Type = "Kill" Name = "噬血蛾蚊" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "绯狱双生85" Description = "那根本不是剑术 是两把活着的恶魔在跳死亡圆舞曲当你看到自己的倒影在剑身上微笑时它已经赢了 他们根本不是人类 是两把有生命的剑在互相厮杀 而我们只是被卷进去的祭品" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "夜魇之翼84" >
+			<Objective Type = "Kill" Name = "血魂双剑士" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "虚空之噬86" Description = "环境诡异阴森 空间出现异常波动 元空魂士突然出现拥有空间扭曲能力 能制造幻象和瞬间移动 普通猎魂手段难以对付 需要特殊准备" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "绯狱双生85" >
+			<Objective Type = "Kill" Name = "元空魂士" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "影裂双星87" Description = "在次元裂隙的深处，诞生了一对由虚空能量具象化的剑士 他们是上古剑神分裂的意志 左手持时隙之刃斩断未来 右手握空痕之刃撕裂过去" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "虚空之噬86" >
+			<Objective Type = "Kill" Name = "元空双剑士" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "弑神之刃88" Description = "传说他们的每一次交剑都会引发时空乱流 甚至让整支冒险者小队在时空中湮灭若放任不管 整个主大陆的时空结构都将崩坏" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "影裂双星87" >
+			<Objective Type = "Kill" Name = "暗幽双剑士" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "暗影终结89" Description = "它是精心培育的杀戮机器 全身由虚无与暗影能量构成 能在实体与灵体间自由切换 最近它屠戮了数支途经裂谷的商队 甚至让白银级的佣兵团全军覆没" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "弑神之刃88" >
+			<Objective Type = "Kill" Name = "暗幽影卫" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "暗影究章90" Description = "它并非普通的亡灵 而是由古老怨念与暗影魔法糅合而成的杀戮机器 能操控阴影撕裂肉体 低语直接腐蚀心智" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "暗影终结89" >
+			<Objective Type = "Kill" Name = "暗幽魂士" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "暗影猎杀者91" Description = "这只变异的巨型蛛类魔兽不仅拥有堪比精钢的甲壳 还能喷射腐蚀性极强的暗影毒液" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "暗影究章90" >
+			<Objective Type = "Kill" Name = "暗幽毒蛛" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "幽影之刺92" Description = "被暗影能量腐化的杀戮机器 通体覆盖着紫黑色甲壳 复眼能释放短暂致盲的幽光 最致命的是其尾针携带的灵魂麻痹毒素 受害者会陷入剧痛与幻听 最终在清醒中窒息而亡" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "暗影猎杀者91" >
+			<Objective Type = "Kill" Name = "幽蜂" ReqAmount = "24" MinEqualOrder = "3" MaxEqualOrder = "4" />
+			<Reward Prestige = "640" Items = "上品灵石#13" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "五首环魔93" Description = "一头由混沌邪能孕育的终极恶魔 它的五颗头颅分别掌控着 烈焰寒霜剧毒暗影与雷霆之力 身躯如巨蛇般盘绕成环无始无终 唯有同时斩断五首 方能彻底终结它的存在" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "幽影之刺92" >
+			<Objective Type = "Kill" Name = "五头环" ReqAmount = "3" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "540" Items = "上品灵石#8" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "弑血之巅94" Description = "两条存活超过八百年的太古龙变种，其鳞片浸透无数屠龙者的怨血，呼吸间喷吐的腐蚀龙息足以融化精钢" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "五首环魔93" >
+			<Objective Type = "Kill" Name = "血龙" ReqAmount = "2" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "740" Items = "上品灵石#14" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "血晶雕像95" Description = "它摧毁了边境要塞铁砧城将整支圣骑士团化为血晶雕像 学者发现其左眼旧伤处正在侵蚀 这或许是它狂暴化的原因" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "弑血之巅94" >
+			<Objective Type = "Kill" Name = "暗幽混沌守护者" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "740" Items = "上品灵石#14" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "蝰皇焚世96" Description = "在古老的传说中炼狱蝰 曾是熔核深渊的守护者 以烈焰净化污秽 维系地脉平衡 但在千年前的大灾变中 它被深渊的腐化之力侵蚀 神智癫狂最终堕落为吞噬生命的灭世之兽" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "血晶雕像95" >
+			<Objective Type = "Kill" Name = "炼狱蝰" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "740" Items = "上品灵石#14" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "深渊低语97" Description = "盘踞在深处 苏醒偶尔会引发火山喷发 生灵涂炭 无数勇者试图讨伐 却无人生还 他们的灵魂被囚禁在蝰蛇的鳞片之中 化作永不熄灭的怨火" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "蝰皇焚世96" >
+			<Objective Type = "Kill" Name = "紫龙" MinEqualOrder = "4" MaxEqualOrder = "5" />
+			<Reward Prestige = "640" Items = "上品灵石#11" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "弑鳞之怒98" Description = "一道黑影撞碎了半座山壁 那头庞然巨物展开残破的右翼 左翼仅剩的骨刺狰狞地划裂岩层 五阶残翅岩龙的黄金竖瞳在烟尘中亮起 像两盏宣告死亡的灯" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "深渊低语97" >
+			<Objective Type = "Kill" Name = "残翅岩龙" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "840" Items = "上品灵石#18" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "蚀天尼99" Description = "在最里层 一头被称为蚀天者尼德霍格的五阶蚀龙已然苏醒 它是上古灾厄的化身 鳞片由吞噬光明的暗影铸造每一次振翼都会引发空间崩裂 传说它的吐息能腐蚀时间 凡人仅是直视其双眼便会化为虚无" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "弑鳞之怒98" >
+			<Objective Type = "Kill" Name = "蚀龙" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "840" Items = "上品灵石#18" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "遗书100" Description = "五阶雷电黑龙已从千年封印中苏醒 它的吐息能撕裂山脉 鳞甲疫九阶以下魔法 双翼掀起的风暴足以摧毁一座城池 冒险者若你仍执意挑战 请带上你的勇气盟友以及 遗书" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "蚀天尼99" >
+			<Objective Type = "Kill" Name = "雷电黑龙" MinEqualOrder = "5" MaxEqualOrder = "8" />
+			<Reward Prestige = "840" Items = "上品灵石#18" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+		<Quest Name = "干的漂亮101" Description = "委托人期待见面 去看看吧 婵委托的任务 总能完成真让人感到安心 干得漂亮 合作很是愉快 " IsRepeat = "false" TimeSec = "7200" PreReqQuest = "遗书100" >
+			<Objective Type = "Talk" Name = "千里共婵娟"  />
+			<Reward Prestige = "1" Items = "极品灵石#1" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
+			<Penalty Type = "Prestige" Amount = "1" />
+		</Quest>
+
+	</QuestGroup>
 
 </Quests>
