@@ -182,24 +182,153 @@
 
 	<QuestGroup Name="新手任务">
 
+		<Quest Name = "新手任务1" Description = "欢迎来到完美世界，初入此世界有诸多不懂 我将指引你前进：出入此地，第一步，先找到悦灵城" >
+			<Objective Type = "Talk" Name = "隐形守护者" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+		<Quest Name = "新手任务2" Description = "凡人修行需要本源 野外会随机刷新本源脉 杀死凡阶生物也会掉落本源 "  >
+			<Objective Type ="Talk" Name = "嫦梦留痕" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+		<Quest Name = "新手任务3" Description = "武器可以从商人购买 也可以自己挖坟挖到破损武器 练制武器 武器有境界之分 使用比自己高于两个大境界的武器 将会被反噬 练器与炼丹相差不多 练器可以使武器更加强大 精炼武器需要将武器放在格子中心 然后围一圈八个灵石 但精炼武器必须使用与武器同品质或高于武器品质的灵石 修复武器也相同  在武器周围随便放灵石便可修复"  >
+			<Objective Type ="Talk" Name = "lstx" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+		<Quest Name = "新手任务4" Description = "在悦灵城或野外之中 有机率会遇到黄色字体NPC 可以与之交易"  >
+			<Objective Type ="Talk" Name ="浮世三千" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+		<Quest Name = "新手任务5" Description = "凡人修仙的前提便是灵根 使用基础修行功法 便可拥有灵根 灵根可以通过使用清心玉脂改变 改变灵根为随机 基础修行功法可以从坟墓中在机率挖出 也可以与商人交易获得 使用基础修炼功法之后 必须再使用其他功法 否则突破之后吃不到属性加成 凡人没有使用基础修炼功法最多可突破14次 当然你什么时候都可以使用基础修行功法"  >
+			<Objective Type ="Talk" Name ="多人君" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+		<Quest Name = "新手任务6" Description = "突破一阶初期后 可以使用灵石打坐代替本源继续突破 突破到达一阶巅峰后 则需要灵值提升 灵值的获取方式有三种 一是攻击自身同等级或者高于自身等级的修士和妖兽 会有概率获得 二是 服用二阶以上妖丹 服用妖丹需要配合 融血丹或清蕴丹使用 不然容易暴毙 配合溶血丹需要打坐 打坐拥有少量减伤 三是 服用丹药 服用玄元丹 不同境界需要服用的丹药不同" >
+			<Objective Type ="Talk" Name ="筠槛" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+		<Quest Name = "新手任务7" Description = "在地图上会随机刷新灵火 将九个本源合成为一个本源珠 向灵火丢本源珠 有几率使灵火掉落 也可以去商人购买灵火 有了灵火便可炼丹 炼丹需要炼丹炉和灵草 炼丹炉可以去炼丹塔挖 也可以挖坟获得 商人有时也会售卖 灵草大世界会刷新 商人也会售卖 练丹也需要丹方 但不是必须 丹方只是增加成功概率 无丹方也可练丹 丹方点开可以看到其炼制丹药需要的材料 可单独放一格灵草进炼丹炉 练完之后会获得灵草种子 种植灵草需要聚灵阵 耕地和灵石粉 灵石粉分解灵石即可获得" >
+			<Objective Type ="Talk" Name ="不满的汤" />
+			<Reward Items = "上品灵石#6" />
+		</Quest>
+
+
 	</QuestGroup>
+
+
+	<QuestGroup Publisher = "筠槛">
+		<Quest Name = "练丹师助手0" Description = " 年轻的修士 我们又见面了 我遇到了一些问题 你能否帮我解决 事成之后必有重谢 最近筠槛状态不太好 练丹速度大幅降低 所以我希望你能去帮助一下筠槛 毕竟我看你炼丹也蛮有天赋的" IsRepeat = "false" TimeSec = "7200" >
+			<Objective Type = "Talk" Name = "隐形守护者" />
+			<Reward Prestige = "5" Items = "上品灵石#6" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "5" />
+		</Quest>
+
+		<Quest Name = "练丹师助手1" Description = " 年轻的修士 请问你找我有什么事吗 你说你是隐形让你来的 助手吗 我确实也挺需要一个打下手的 如果你能扛下我的考验 我就让你当我的助手：练制一颗丹药，收集三株灵草" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手0" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "增气丹，地藏花#3"  Collectors = "筠槛"/>
+			<Reward Prestige = "15" Items = "中品灵石#300" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手2" Description = " 恭喜你成为我的助手 但丑话先说在前头 我可是很严格的 我叫啥你就做啥 懂了吗 好了 现在我要练制 大量本源丹 给我迅速去准备材料：收集本源丹所需要的材料" IsRepeat = "false" TimeSec = "7200"  PreReqQuest = "练丹师助手1" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "一阶妖丹#10，凝露草#50"  Collectors = "筠槛"/>
+			<Reward Prestige = "15" Items = "中品灵石#372" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手3" Description = " 你怎么现在才来了 时间就是金钱 懂吗 好了 说正事 隔壁浮世三千想要收购一批融血丹 限时为两天 所以说我们得加紧速度 你先去采购一批材料 然后跟我一起炼制丹药：找其他商人采购材料，随后炼制融血丹" IsRepeat = "false" TimeSec = "4800"  PreReqQuest = "练丹师助手2" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "凝血草#30，血晶草#30，血藤#30，融血丹#10"  Collectors = "筠槛"/>
+			<Reward Prestige = "20" Items = "中品灵石#3000，融血丹丹方" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手4" Description = " 你怎么又迟到了 唉 算了 不想多说了 来吧 说一下今天你的任务 最近修士们丹药的消耗都很高 特别是准备突破筑基的小修士们 所以咱们今天的任务就是炼制筑基丹：收集材料炼制筑基丹" IsRepeat = "false" TimeSec = "7200"  PreReqQuest = "练丹师助手3" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "筑基丹#10"  Collectors = "筠槛"/>
+			<Reward Prestige = "30" Items = "上品灵石#50，筑基丹丹方#1" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手5" Description = " 今天还挺准时的 好了继续开始今天的任务吧 听说最近灵魄丹价格很高 所以说今天我们来练灵魄丹：收集材料练制灵魄丹" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手4" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "灵魄丹#10"  Collectors = "筠槛"/>
+			<Reward Prestige = "45" Items = "上品灵石#500" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手5" Description = " 早啊 今天也来的挺早的 这样才对吗 勤奋的员工 我最喜欢了 好了 不开玩笑了 今天有人委托炼制一颗化神丹 这可是个大单子 这次就交给我吧 你收购材料就行：收集炼制化神丹的材料" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手4" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "升仙草#5，六阶妖丹#2，龙蕨草#10，凛冬冰兰#3" Collectors = "筠槛"/>
+			<Reward Prestige = "50" Items = "极品灵石#50，化神丹丹方#1" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手6" Description = " 今天天气真好 是个炼丹的好时候 练了这么多次丹 我想你已经很熟练了 所以这次任务我决定交给你一人练制 隔壁多人君 订购了一批五阶本源丹 你应该能完成任务吧：练制五阶本源丹" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手5" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "五阶本源丹#20"  Collectors = "筠槛"/>
+			<Reward Prestige = "100" Items = "极品灵石#50，六阶本源丹丹方#1" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手7" Description = " 今天情况有点急迫 我收到消息 一群筑基修士在猎杀蛛妖时 不慎遇到一只金丹巅峰大蛛妖 虽然说他们死里逃生 但都全员中毒 所以我们需要练制一些清蕴丹救助他们：练制清蕴丹救助伤者" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手6" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "清蕴丹#10"  Collectors = "筠槛"/>
+			<Reward Prestige = "150" Items = "上品灵石#50，清蕴丹丹方#1" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手8" Description = " 时间一晃而过 从你当我助手开始 已经过去这么久了 刚开始你炼制丹药还不太熟练 总是炸炉 现在的你已经成为了一流的炼丹师 真怀念啊 那段美好的时光 嗯 扯远了 来吧 开始咱们今天的任务 峥嵘岁月最近在冲击元婴 让我给他练制元婴丹 可刚好我没材料了 你去买多点材料回来：购买元婴丹材料给予筠槛" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手7" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "寒灵幽魂花#5，五阶妖丹#10，银丝花#12，水灵藕#12，魂石300"  Collectors = "筠槛"/>
+			<Reward Prestige = "150" Items = "极品灵石#10，元婴丹#1" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+		<Quest Name = "练丹师助手9" Description = " 最近 一名叫做忆清欢的修士找上我 说是要做我的奴隶 我觉得很奇怪 这人可能是伤到脑子了 所以你帮我练制一颗复生丹给予忆清欢修士吧 你问我为什么不自己去 因为我不想看见他：练制复生丹给予忆清欢" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "练丹师助手8" >
+			<Objective Type = "Talk" Name = "筠槛" />
+			<Objective Type = "CollectItem" Items = "复生丹#1"  Collectors = "忆清欢"/>
+			<Reward Prestige = "60" Items = "上品灵石#61，复生丹丹方#1" ClaimType ="Direct" />
+			<Penalty Type = "Prestige" Amount = "10" />
+		</Quest>
+
+	</QuestGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!--千里共婵娟 专属任务-->
 	<QuestGroup Publisher="千里共婵娟" >
 
-		<Quest Name = "欢迎来到完美世界1" Description = "这里有份委托 : 由于委托人行动不便 让你替他打个招呼(手持灵石点击目标）初次见面 介绍下，我是个中间人 以后可叫我 婵 在人群里你是我见过最特别的 背后有位至高无上的人物" IsRepeat = "false" TimeSec = "7200" >
+		<Quest Name = "欢迎来到完美世界1" Description = "这里有份委托 : 由于委托人行动不便 让你替他打个招呼，初次见面 介绍下，我是个中间人 以后可叫我“婵”在人群里你是我见过最特别的 背后有位至高无上的人物" IsRepeat = "false" TimeSec = "7200" >
 			<Objective Type = "Talk" Name = "隐形守护者" />
 			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
 			<Penalty Type = "Prestige" Amount = "1" />
 		</Quest>
 
-		<Quest Name = "帮忙咨询丹药进度2" Description = "哈 我们又见面了 这里有份委托： 由于委托人重伤，请你帮忙咨询丹药制作进度(手持灵石点击目标)" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "欢迎来到完美世界1" >
+		<Quest Name = "帮忙咨询丹药进度2" Description = "哈 我们又见面了 这里有份委托： 由于委托人重伤，请你帮忙咨询丹药制作进度" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "欢迎来到完美世界1" >
 			<Objective Type = "Talk" Name ="筠槛" />
 			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
 			<Penalty Type = "Prestige" Amount = "1" />
 		</Quest>
 
-		<Quest Name = "寻找适合的功法3" Description = "钉钉 又有委托任务了 委托人 经过上次的教训 觉得在这个世界上 拥有一份功法 是很有必要的事 希望你帮忙去看看(手持灵石点击目标)" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "帮忙咨询丹药进度2" >
+		<Quest Name = "寻找适合的功法3" Description = "钉钉 又有委托任务了 委托人 经过上次的教训 觉得在这个世界上 拥有一份功法 是很有必要的事 希望你帮忙去看看" IsRepeat = "false" TimeSec = "7200" PreReqQuest = "帮忙咨询丹药进度2" >
 			<Objective Type ="Talk" Name ="多人君" />
 			<Reward Prestige = "1" Items = "下品灵石#22" ClaimType = "ToTasksPanel" ClaimTarget = "千里共婵娟" />
 			<Penalty Type = "Prestige" Amount = "1" />
