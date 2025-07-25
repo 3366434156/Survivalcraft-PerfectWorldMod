@@ -180,7 +180,7 @@
 
 <Quests>
 
-	<QuestGroup Name="新手任务">
+	<QuestGroup Publisher="新手任务" >
 
 		<Quest Name = "新手任务1" Description = "欢迎来到完美世界，初入此世界有诸多不懂 我将指引你前进：出入此地，第一步，先找到悦灵城" >
 			<Objective Type = "Talk" Name = "隐形守护者" />
@@ -216,7 +216,6 @@
 			<Objective Type ="Talk" Name ="不满的汤" />
 			<Reward Items = "上品灵石#6" />
 		</Quest>
-
 
 	</QuestGroup>
 
