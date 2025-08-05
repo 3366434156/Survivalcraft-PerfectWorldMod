@@ -1,47 +1,71 @@
 <AlchemyRecipe>
 	<!--最多6个材料-->
-	<Recipe Result="本源珠,1" Material1="本源,9" />
-	<Recipe Result="聚气丹,1" Material1="抱朴子,2" Material2="聚灵花,4"/>
-	<Recipe Result="引气丹,1" Material1="黄灵根,3" Material2="青岚草,5"/>
-	<Recipe Result="凝气丹,1" Material1="天蝉灵叶,4" Material2="煌炎血心芝,1"/>
-	<Recipe Result="增气丹,1" Material1="金陵花,3" Material2="飞星花叶根,1"/>
-	<Recipe Result="练气丹,1" Material1="紫灵悠云菊,1" Material2="天蝉灵叶,2" Material3="煌炎血心芝,3" Material4="飞星花叶根,3" Material5="一阶妖丹,2"/>
-	<Recipe Result="培元丹,1" Material1="玄霜花,3" Material2="一阶妖丹,1" Material3="地心火芝,1"/>
-	<Recipe Result="精元丹,1" Material1="虎爪根,4" Material2="一阶妖丹,1" Material3="厚土芝,1"/>
-	<Recipe Result="凝元丹,1" Material1="地藏花,4" Material2="一阶妖丹,1" Material3="地心火芝,3"/>
-	<Recipe Result="筑基丹,1" Material1="龙须根,1" Material2="二阶妖丹,2" Material3="云霖菇,5" Material4="地沧菇,3" Material5="地皇精,2"/>
-	<Recipe Result="广陵丹,1" Material1="蓝参草,4" Material2="三阶妖丹,1" Material3="地疱,1" Material5="幽蓝花,1"/>
-	<Recipe Result="玄元丹,1" Material1="蓝幽疱,5" Material2="三阶妖丹,1" Material3="紫幽草,1" Material4="八陵魔草,2"/>
-	<Recipe Result="金丹,1" Material1="灵龙天芝,3" Material2="四阶妖丹,2" Material3="天刑草,3" Material4="祸心兰,2" Material5="赤血神龙草,1"/>
-	<Recipe Result="养魂丹,1" Material1="香蚀草,5" Material2="四阶妖丹,1" Material3="龙蕨草,1" Material4="魂石,20"/>
-	<Recipe Result="灵魄丹,1" Material1="蚀心菇,6" Material2="四阶妖丹,1" Material3="鬼手草,1" Material4="魂石,30"/>
-	<Recipe Result="结婴丹,1" Material1="寒灵幽魂花,1" Material2="五阶妖丹,2" Material3="银丝花,3" Material4="魂石,100" Material5="水灵藕,3"/>
-	<Recipe Result="血莲丹,1" Material1="血莲,1" Material2="五阶妖丹,1"/>
-	<Recipe Result="绛云丹,1" Material1="天麻翡石精果,1" Material2="五阶妖丹,1" Material3="秋肠草,2"/>
-	<Recipe Result="化神丹,1" Material1="升仙草,5" Material2="六阶妖丹,2" Material3="龙蕨草,10" Material4="尸泉花,5" Material5="凛冬冰兰,3"/>
-	<Recipe Result="辟谷丹,1" Material1="烟罗花,1" Material2="石楠草,1"/>
-	<Recipe Result="化瘀丹,1" Material1="凝血草,6"/>
-	<Recipe Result="活血丹,1" Material1="凝血草,3" Material2="血藤,1"/>
-	<Recipe Result="融血丹,1" Material1="凝血草,3" Material2="血藤,3" Material3="血晶草,3"/>
-	<Recipe Result="复生丹,1" Material1="血莲,1" Material2="血精草,1" Material3="血晶草,3" Material4="血蟒草,4"/>
-	<Recipe Result="清心丹,1" Material1="幻菇,3"/>
-	<Recipe Result="清蕴丹,1" Material1="血纹元苗,6" Material2="幻神花,1" Material3="尸泉花,1" Material4="宁神花,1"/>
-	<Recipe Result="一阶本源丹,1" Material1="凝露草,3" Material2="一阶妖丹,1"/>
-	<Recipe Result="二阶本源丹,1" Material1="凝露草,6" Material2="二阶妖丹,1"/>
-	<Recipe Result="三阶本源丹,1" Material1="凝露草,10" Material2="三阶妖丹,1"/>
-	<Recipe Result="四阶本源丹,1" Material1="凝露草,13" Material2="四阶妖丹,1"/>
-	<Recipe Result="五阶本源丹,1" Material1="凝露草,15" Material2="五阶妖丹,1"/>
-	<Recipe Result="六阶本源丹,1" Material1="凝露草,20" Material2="六阶妖丹,1"/>
-	<Recipe Result="七阶本源丹,1" Material1="凝露草,26" Material2="七阶妖丹,1"/>
-	<Recipe Result="八阶本源丹,1" Material1="凝露草,33" Material2="八阶妖丹,1"/>
-	<Recipe Result="九阶本源丹,1" Material1="凝露草,41" Material2="九阶妖丹,1"/>
-	<Recipe Result="一阶饲灵丹,1" Material1="烟罗花,3" Material2="石楠草,3" Material3="一阶妖丹,4"/>
-	<Recipe Result="二阶饲灵丹,1" Material1="烟罗花,6" Material2="石楠草,6" Material3="二阶妖丹,4"/>
-	<Recipe Result="三阶饲灵丹,1" Material1="烟罗花,10" Material2="石楠草,10" Material3="三阶妖丹,4"/>
-	<Recipe Result="四阶饲灵丹,1" Material1="烟罗花,13" Material2="石楠草,13" Material3="四阶妖丹,4"/>
-	<Recipe Result="五阶饲灵丹,1" Material1="烟罗花,15" Material2="石楠草,15" Material3="五阶妖丹,4"/>
-	<Recipe Result="六阶饲灵丹,1" Material1="烟罗花,20" Material2="石楠草,20" Material3="六阶妖丹,4"/>
-	<Recipe Result="七阶饲灵丹,1" Material1="烟罗花,26" Material2="石楠草,26" Material3="七阶妖丹,4"/>
-	<Recipe Result="八阶饲灵丹,1" Material1="烟罗花,33" Material2="石楠草,33" Material3="八阶妖丹,4"/>
-	<Recipe Result="九阶饲灵丹,1" Material1="烟罗花,41" Material2="石楠草,41" Material3="九阶妖丹,4"/>
+	<零阶>
+		<Recipe Result="聚气丹,1" Material1="抱朴子,2" Material2="聚灵花,4"/>
+		<Recipe Result="引气丹,1" Material1="黄灵根,3" Material2="青岚草,5"/>
+		<Recipe Result="本源珠,1" Material1="本源,9" />
+		<Recipe Result="辟谷丹,1" Material1="烟罗花,1" Material2="石楠草,1"/>
+		<Recipe Result="化瘀丹,1" Material1="凝血草,6"/>
+	</零阶>
+
+	<一阶>
+		<Recipe Result="练气丹,1" Material1="紫灵悠云菊,1" Material2="天蝉灵叶,2" Material3="煌炎血心芝,3" Material4="飞星花叶根,3" Material5="一阶妖丹,2"/>
+		<Recipe Result="凝气丹,1" Material1="天蝉灵叶,4" Material2="煌炎血心芝,1"/>
+		<Recipe Result="增气丹,1" Material1="金陵花,3" Material2="飞星花叶根,1"/>
+		<Recipe Result="培元丹,1" Material1="玄霜花,3" Material2="一阶妖丹,1" Material3="地心火芝,1"/>
+		<Recipe Result="精元丹,1" Material1="虎爪根,4" Material2="一阶妖丹,1" Material3="厚土芝,1"/>
+		<Recipe Result="凝元丹,1" Material1="地藏花,4" Material2="一阶妖丹,1" Material3="地心火芝,3"/>
+		<Recipe Result="活血丹,1" Material1="凝血草,3" Material2="血藤,1"/>
+		<Recipe Result="清心丹,1" Material1="幻菇,3"/>
+	</一阶>
+
+	<二阶>
+		<Recipe Result="筑基丹,1" Material1="龙须根,1" Material2="二阶妖丹,2" Material3="云霖菇,5" Material4="地沧菇,3" Material5="地皇精,2"/>
+		<Recipe Result="广陵丹,1" Material1="蓝参草,4" Material2="三阶妖丹,1" Material3="地疱,1" Material5="幽蓝花,1"/>
+		<Recipe Result="玄元丹,1" Material1="蓝幽疱,5" Material2="三阶妖丹,1" Material3="紫幽草,1" Material4="八陵魔草,2"/>
+		<Recipe Result="融血丹,1" Material1="凝血草,3" Material2="血藤,3" Material3="血晶草,3"/>
+	</二阶>
+
+	<三阶>
+		<Recipe Result="金丹,1" Material1="灵龙天芝,3" Material2="四阶妖丹,2" Material3="天刑草,3" Material4="祸心兰,2" Material5="赤血神龙草,1"/>
+		<Recipe Result="养魂丹,1" Material1="香蚀草,5" Material2="四阶妖丹,1" Material3="龙蕨草,1" Material4="魂石,20"/>
+		<Recipe Result="灵魄丹,1" Material1="蚀心菇,6" Material2="四阶妖丹,1" Material3="鬼手草,1" Material4="魂石,30"/>
+		<Recipe Result="清蕴丹,1" Material1="血纹元苗,6" Material2="幻神花,1" Material3="尸泉花,1" Material4="宁神花,1"/>
+	</三阶>
+
+	<四阶>
+		<Recipe Result="结婴丹,1" Material1="寒灵幽魂花,1" Material2="五阶妖丹,2" Material3="银丝花,3" Material4="魂石,100" Material5="水灵藕,3"/>
+		<Recipe Result="血莲丹,1" Material1="血莲,1" Material2="五阶妖丹,1"/>
+		<Recipe Result="绛云丹,1" Material1="天麻翡石精果,1" Material2="五阶妖丹,1" Material3="秋肠草,2"/>
+		<Recipe Result="复生丹,1" Material1="血莲,1" Material2="血精草,1" Material3="血晶草,3" Material4="血蟒草,4"/>
+	</四阶>
+
+	<五阶>
+		<Recipe Result="化神丹,1" Material1="升仙草,5" Material2="六阶妖丹,2" Material3="龙蕨草,10" Material4="尸泉花,5" Material5="凛冬冰兰,3"/>
+	</五阶>
+
+	<本源丹>
+		<Recipe Result="一阶本源丹,1" Material1="凝露草,3" Material2="一阶妖丹,1"/>
+		<Recipe Result="二阶本源丹,1" Material1="凝露草,6" Material2="二阶妖丹,1"/>
+		<Recipe Result="三阶本源丹,1" Material1="凝露草,10" Material2="三阶妖丹,1"/>
+		<Recipe Result="四阶本源丹,1" Material1="凝露草,13" Material2="四阶妖丹,1"/>
+		<Recipe Result="五阶本源丹,1" Material1="凝露草,15" Material2="五阶妖丹,1"/>
+		<Recipe Result="六阶本源丹,1" Material1="凝露草,20" Material2="六阶妖丹,1"/>
+		<Recipe Result="七阶本源丹,1" Material1="凝露草,26" Material2="七阶妖丹,1"/>
+		<Recipe Result="八阶本源丹,1" Material1="凝露草,33" Material2="八阶妖丹,1"/>
+		<Recipe Result="九阶本源丹,1" Material1="凝露草,41" Material2="九阶妖丹,1"/>
+	</本源丹>
+
+	<饲灵丹>
+		<Recipe Result="一阶饲灵丹,1" Material1="烟罗花,3" Material2="石楠草,3" Material3="一阶妖丹,4"/>
+		<Recipe Result="二阶饲灵丹,1" Material1="烟罗花,6" Material2="石楠草,6" Material3="二阶妖丹,4"/>
+		<Recipe Result="三阶饲灵丹,1" Material1="烟罗花,10" Material2="石楠草,10" Material3="三阶妖丹,4"/>
+		<Recipe Result="四阶饲灵丹,1" Material1="烟罗花,13" Material2="石楠草,13" Material3="四阶妖丹,4"/>
+		<Recipe Result="五阶饲灵丹,1" Material1="烟罗花,15" Material2="石楠草,15" Material3="五阶妖丹,4"/>
+		<Recipe Result="六阶饲灵丹,1" Material1="烟罗花,20" Material2="石楠草,20" Material3="六阶妖丹,4"/>
+		<Recipe Result="七阶饲灵丹,1" Material1="烟罗花,26" Material2="石楠草,26" Material3="七阶妖丹,4"/>
+		<Recipe Result="八阶饲灵丹,1" Material1="烟罗花,33" Material2="石楠草,33" Material3="八阶妖丹,4"/>
+		<Recipe Result="九阶饲灵丹,1" Material1="烟罗花,41" Material2="石楠草,41" Material3="九阶妖丹,4"/>
+	</饲灵丹>
+
 </AlchemyRecipe>
