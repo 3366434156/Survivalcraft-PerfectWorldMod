@@ -83,6 +83,11 @@
 	</Recipe>
 
 	<!-- 法器 -->
+	<Recipe Result="天魂,1" a="灵石" b="天魂" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
 	<Recipe Result="DragonHeadBow,1" a="灵石" b="龙头弓" Strengthen="true" Description="强化龙头弓，提高射程和攻击力,最好使用上品和极品强化">
 		"aaa"
 		"aba"
@@ -161,70 +166,70 @@
 		"aaaaa"
 		"aaaaa"
 	</Recipe>
-	<Recipe Result="枪_沥泉锋隐,1" a="ironingot" b="破损_沥泉锋隐" c="灵石:0" d="ironblock" Description="修复枪_沥泉锋隐">
+	<Recipe Result="枪_沥泉锋隐,1" a="ironingot" b="破损_沥泉锋隐" c="灵石" d="ironblock" Description="修复枪_沥泉锋隐">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="枪_九曲六合,1" a="ironingot" b="破损_九曲六合" c="灵石:0" d="ironblock" Description="修复枪_九曲六合">
+	<Recipe Result="枪_九曲六合,1" a="ironingot" b="破损_九曲六合" c="灵石" d="ironblock" Description="修复枪_九曲六合">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="枪_雷霆破军,1" a="ironingot" b="破损_雷霆破军" c="灵石:0" d="ironblock" Description="修复枪_雷霆破军">
+	<Recipe Result="枪_雷霆破军,1" a="ironingot" b="破损_雷霆破军" c="灵石" d="ironblock" Description="修复枪_雷霆破军">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="枪_红盟血契,1" a="ironingot" b="破损_红盟血契" c="灵石:0" d="ironblock" Description="修复枪_红盟血契">
+	<Recipe Result="枪_红盟血契,1" a="ironingot" b="破损_红盟血契" c="灵石" d="ironblock" Description="修复枪_红盟血契">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="枪_破影万灵,1" a="ironingot" b="破损_破影万灵" c="灵石:0" d="ironblock" Description="修复枪_破影万灵">
+	<Recipe Result="枪_破影万灵,1" a="ironingot" b="破损_破影万灵" c="灵石" d="ironblock" Description="修复枪_破影万灵">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="剑_穆清灼华,1" a="ironingot" b="破损_穆清灼华" c="灵石:0" d="ironblock" Description="修复剑_穆清灼华">
+	<Recipe Result="剑_穆清灼华,1" a="ironingot" b="破损_穆清灼华" c="灵石" d="ironblock" Description="修复剑_穆清灼华">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="剑_承影定光,1" a="ironingot" b="破损_承影定光" c="灵石:0" d="ironblock" Description="修复剑_承影定光">
+	<Recipe Result="剑_承影定光,1" a="ironingot" b="破损_承影定光" c="灵石" d="ironblock" Description="修复剑_承影定光">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="剑_飘影茂陵,1" a="ironingot" b="破损_飘影茂陵" c="灵石:0" d="ironblock" Description="修复剑_飘影茂陵">
+	<Recipe Result="剑_飘影茂陵,1" a="ironingot" b="破损_飘影茂陵" c="灵石" d="ironblock" Description="修复剑_飘影茂陵">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="剑_耀光沙华,1" a="ironingot" b="破损_耀光沙华" c="灵石:0" d="ironblock" Description="修复剑_耀光沙华">
+	<Recipe Result="剑_耀光沙华,1" a="ironingot" b="破损_耀光沙华" c="灵石" d="ironblock" Description="修复剑_耀光沙华">
 		"ccccc"
 		"cadac"
 		"cdbdc"
 		"cadac"
 		"ccccc"
 	</Recipe>
-	<Recipe Result="剑_暗渊残梦,1" a="ironingot" b="断剑_暗渊残梦" c="灵石:0" d="ironblock" Description="修复剑_暗渊残梦">
+	<Recipe Result="剑_暗渊残梦,1" a="ironingot" b="断剑_暗渊残梦" c="灵石" d="ironblock" Description="修复剑_暗渊残梦">
 		"ccccc"
 		"cadac"
 		"cdbdc"
@@ -277,25 +282,25 @@
 		"a a"
 	</Recipe>
 	<!--灵化铜头盔-->
-	<Recipe Result="ClothingBlock:58,1" a="clothing:33" b="灵石"  Description="将灵石内蕴含的能量炼制进铜头盔，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:58,1" a="铜头盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铜头盔，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化铜胸甲-->
-	<Recipe Result="ClothingBlock:59,1"  a="clothing:34" b="灵石"  Description="将灵石内蕴含的能量炼制进铜胸甲，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:59,1"  a="铜胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铜胸甲，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化铜护腿-->
-	<Recipe Result="ClothingBlock:60,1"  a="clothing:35" b="灵石"  Description="将灵石内蕴含的能量炼制进铜护腿，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:60,1"  a="铜护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铜护腿，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化铜靴-->
-	<Recipe Result="ClothingBlock:61,1"  a="clothing:36" b="灵石"  Description="将灵石内蕴含的能量炼制进铜靴，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:61,1"  a="铜靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铜靴，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
@@ -303,25 +308,25 @@
 
 
 	<!--灵化铁头盔-->
-	<Recipe Result="ClothingBlock:62,1"  a="clothing:10" b="灵石"  Description="将灵石内蕴含的能量炼制进铁头盔，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:62,1"  a="铁盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铁头盔，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化铁胸甲-->
-	<Recipe Result="ClothingBlock:63,1"  a="clothing:3" b="灵石"  Description="将灵石内蕴含的能量炼制进铁胸甲，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:63,1"  a="铁胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铁胸甲，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化铁护腿-->
-	<Recipe Result="ClothingBlock:64,1"  a="clothing:4" b="灵石"  Description="将灵石内蕴含的能量炼制进铁护腿，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:64,1"  a="铁护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铁护腿，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化铁靴-->
-	<Recipe Result="ClothingBlock:65,1"  a="clothing:9" b="灵石"  Description="将灵石内蕴含的能量炼制进铁靴，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:65,1"  a="铁靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铁靴，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
@@ -329,25 +334,25 @@
 
 
 	<!--灵化钻头盔-->
-	<Recipe Result="ClothingBlock:66,1"  a="clothing:21" b="灵石"  Description="将灵石内蕴含的能量炼制进钻头盔，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:66,1"  a="钻石盔" b="灵石"  Description="将灵石内蕴含的能量炼制进钻头盔，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化钻胸甲-->
-	<Recipe Result="ClothingBlock:67,1"  a="clothing:19" b="灵石"  Description="将灵石内蕴含的能量炼制进钻胸甲，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:67,1"  a="钻石胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进钻胸甲，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化钻护腿-->
-	<Recipe Result="ClothingBlock:68,1"  a="clothing:20" b="灵石"  Description="将灵石内蕴含的能量炼制进钻护腿，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:68,1"  a="钻石护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进钻护腿，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化钻靴-->
-	<Recipe Result="ClothingBlock:69,1"  a="clothing:22" b="灵石"  Description="将灵石内蕴含的能量炼制进钻靴，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:69,1"  a="钻石靴" b="灵石"  Description="将灵石内蕴含的能量炼制进钻靴，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
@@ -355,25 +360,25 @@
 
 
 	<!--灵化血晶头盔-->
-	<Recipe Result="ClothingBlock:70,1"  a="clothing:54" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶头盔，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:70,1"  a="血晶头甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶头盔，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化血晶胸甲-->
-	<Recipe Result="ClothingBlock:71,1"  a="clothing:55" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶胸甲，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:71,1"  a="血晶胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶胸甲，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化血晶护腿-->
-	<Recipe Result="ClothingBlock:72,1"  a="clothing:56" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶护腿，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:72,1"  a="血晶护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶护腿，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	<!--灵化血晶靴-->
-	<Recipe Result="ClothingBlock:73,1"  a="clothing:57" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶靴，灵石品质越高成功率越高">
+	<Recipe Result="ClothingBlock:73,1"  a="血晶靴" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶靴，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
