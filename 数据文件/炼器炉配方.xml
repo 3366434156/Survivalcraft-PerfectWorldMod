@@ -6,22 +6,13 @@
 	    但是Result这里是使用 "方块类名:data"形式-->
 	<!-- 武器强化 -->
 	<!-- 灵器 -->
+	<!-- 剑 -->
+	<Recipe Result="剑_承影定光,1" a="灵石" b="剑_承影定光" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
 	<Recipe Result="剑_穆清灼华,1" a="灵石" b="剑_穆清灼华" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
-	<Recipe Result="剑_暗渊残梦,1" a="灵石" b="剑_暗渊残梦" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
-	<Recipe Result="剑_耀光沙华,1" a="灵石" b="剑_耀光沙华" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
-	<Recipe Result="剑_魔界之地,1" a="灵石" b="剑_魔界之地" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
@@ -31,32 +22,38 @@
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_龙举云兴,1" a="灵石" b="剑_龙举云兴" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
 	<Recipe Result="剑_凤凰来仪,1" a="灵石" b="剑_凤凰来仪" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="晶陌,1" a="灵石" b="晶陌" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="冷色,1" a="灵石" b="冷色" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="西麓,1" a="灵石" b="西麓" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="骨刺,1" a="灵石" b="骨刺" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
+	<!-- 枪 -->
 	<Recipe Result="枪_红盟血契,1" a="灵石" b="枪_红盟血契" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
 	<Recipe Result="枪_雷霆破军,1" a="灵石" b="枪_雷霆破军" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
+	<Recipe Result="枪_沥泉锋隐,1" a="灵石" b="枪_沥泉锋隐" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
+	<Recipe Result="枪_太康烈焰,1" a="灵石" b="枪_太康烈焰" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
@@ -71,49 +68,36 @@
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_长生璇玑,1" a="灵石" b="枪_长生璇玑" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
-	<Recipe Result="枪_太康烈焰,1" a="灵石" b="枪_太康烈焰" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
 
 	<!-- 法器 -->
-	<Recipe Result="天魂,1" a="灵石" b="天魂" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<!-- 剑 -->
+	<Recipe Result="剑_耀光沙华,1" a="灵石" b="剑_耀光沙华" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="DragonHeadBow,1" a="灵石" b="龙头弓" Strengthen="true" Description="强化龙头弓，提高射程和攻击力,最好使用上品和极品强化">
+	<Recipe Result="剑_暗渊残梦,1" a="灵石" b="剑_暗渊残梦" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="骨刺,1" a="灵石" b="骨刺" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_魔界之地,1" a="灵石" b="剑_魔界之地" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="冷色,1" a="灵石" b="冷色" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_龙举云兴,1" a="灵石" b="剑_龙举云兴" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="冷萧,1" a="灵石" b="冷萧" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="晶陌,1" a="灵石" b="晶陌" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_承影定光,1" a="灵石" b="剑_承影定光" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
-		"aaa"
-		"aba"
-		"aaa"
-	</Recipe>
-	<Recipe Result="剑_飘影茂陵,1" a="灵石" b="剑_飘影茂陵" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<!-- 枪 -->
+	<Recipe Result="枪_长生璇玑,1" a="灵石" b="枪_长生璇玑" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
 		"aaa"
 		"aba"
 		"aaa"
@@ -123,7 +107,31 @@
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_沥泉锋隐,1" a="灵石" b="枪_沥泉锋隐" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+
+	<!-- 魂器 -->
+	<!-- 剑 -->
+	<Recipe Result="剑_飘影茂陵,1" a="灵石" b="剑_飘影茂陵" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
+	<Recipe Result="西麓,1" a="灵石" b="西麓" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
+	<Recipe Result="冷萧,1" a="灵石" b="冷萧" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
+	<Recipe Result="天魂,1" a="灵石" b="天魂" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+		"aaa"
+		"aba"
+		"aaa"
+	</Recipe>
+
+	<Recipe Result="DragonHeadBow,1" a="灵石" b="龙头弓" Strengthen="true" Description="强化龙头弓，提高射程和攻击力,最好使用上品和极品强化">
 		"aaa"
 		"aba"
 		"aaa"
@@ -133,6 +141,13 @@
 	<Recipe Result="空间魂石,1" a="魂石" b="空间石" Description="合成空间魂石">
 		"aaa"
 		"aba"
+		"aaa"
+	</Recipe>
+
+	<!-- 合成本源珠 -->
+	<Recipe Result="本源珠,1" a="本源" Description="使用9颗本源凝练成本源珠">
+		"aaa"
+		"aaa"
 		"aaa"
 	</Recipe>
 
@@ -166,221 +181,445 @@
 		"aaaaa"
 		"aaaaa"
 	</Recipe>
-	<Recipe Result="枪_沥泉锋隐,1" a="ironingot" b="破损_沥泉锋隐" c="灵石" d="ironblock" Description="修复枪_沥泉锋隐">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="剑_承影定光,1" a="破损_承影定光" b="灵石,5" c="ironingot,40" d="沉银矿石,5"  Description="修复承影定光">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="枪_九曲六合,1" a="ironingot" b="破损_九曲六合" c="灵石" d="ironblock" Description="修复枪_九曲六合">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="枪_红盟血契,1" a="破损_红盟血契" b="灵石,5" c="ironingot,40" d="沉银矿石,5"  Description="修复红盟血契">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="枪_雷霆破军,1" a="ironingot" b="破损_雷霆破军" c="灵石" d="ironblock" Description="修复枪_雷霆破军">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="剑_耀光沙华,1" a="破损_耀光沙华" b="灵石,5" c="ironingot,40" d="一阶妖丹,15"  Description="修复耀光沙华">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="枪_红盟血契,1" a="ironingot" b="破损_红盟血契" c="灵石" d="ironblock" Description="修复枪_红盟血契">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="长矛_流水,1" a="diamondspear" b="下品灵石,5000" c="ironingot,40" d="一阶妖丹,2"  Description="炼制长矛_流水">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="枪_破影万灵,1" a="ironingot" b="破损_破影万灵" c="灵石" d="ironblock" Description="修复枪_破影万灵">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="长矛_火焰,1" a="diamondspear" b="下品灵石,5000" c="ironingot,40" d="元空_魂石核心,5"  Description="炼制长矛_火焰">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="剑_穆清灼华,1" a="ironingot" b="破损_穆清灼华" c="灵石" d="ironblock" Description="修复剑_穆清灼华">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="剑_穆清灼华,1" a="破损_穆清灼华" b="灵石,5" c="ironingot,40" d="星钢矿石,5"  Description="修复穆清灼华">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="剑_承影定光,1" a="ironingot" b="破损_承影定光" c="灵石" d="ironblock" Description="修复剑_承影定光">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="枪_雷霆破军,1" a="破损_雷霆破军" b="灵石,5" c="ironingot,40" d="星钢矿石,5"  Description="修复雷霆破军">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="剑_飘影茂陵,1" a="ironingot" b="破损_飘影茂陵" c="灵石" d="ironblock" Description="修复剑_飘影茂陵">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="剑_暗渊残梦,1" a="破损_暗渊残梦" b="灵石,5" c="ironingot,40" d="元空_守护者晶核,5"  Description="修复暗渊残梦">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="剑_耀光沙华,1" a="ironingot" b="破损_耀光沙华" c="灵石" d="ironblock" Description="修复剑_耀光沙华">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="降魔杵,1" a="rod,5" b="中品灵石,300" c="ironingot,40" d="血魂_魂石核心,10"  Description="炼制降魔杵">
+		" b "
+		"cad"
 	</Recipe>
-	<Recipe Result="剑_暗渊残梦,1" a="ironingot" b="断剑_暗渊残梦" c="灵石" d="ironblock" Description="修复剑_暗渊残梦">
-		"ccccc"
-		"cadac"
-		"cdbdc"
-		"cadac"
-		"ccccc"
+	<Recipe Result="剑_玲珑荒流,1" a="剑坯_玲珑荒流" b="灵石,5" c="赤阳矿石,3" d="碧玉鳞,2"  Description="炼制玲珑荒流">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="枪_沥泉锋隐,1" a="破损_沥泉锋隐" b="灵石,5" c="赤阳矿石,4" d="寒洋鳞,2"  Description="修复沥泉锋隐">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="剑_魔界之地,1" a="剑坯_魔界之地" b="灵石,5" c="血魂_守护者晶核,3" d="炎阳鳞,2"  Description="炼制魔界之地">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="枪_长生璇玑,1" a="枪坯_长生璇玑" b="灵石,5" c="血魂_守护者晶核,3" d="地归鳞,2"  Description="炼制长生璇玑">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="剑_飘影茂陵,1" a="破损_飘影茂陵" b="灵石,5" c="冰域_魂石核心,5" d="元空_蛛魂精华,2"  Description="修复飘影茂陵">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="恶魔叉,1" a="rod,5" b="中品灵石,300" c="暗幽_魂石核心,5" d="幻月鳞,5" e="血魂_守护者晶核,3" Description="炼制恶魔叉">
+		" be"
+		"cad"
+	</Recipe>
+	<Recipe Result="剑_凤凰来仪,1" a="剑坯_凤凰来仪" b="灵石,5" c="寒冰矿石,5" d="迷幻心晶,2"  Description="炼制凤凰来仪">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="枪_太康烈焰,1" a="枪坯_太康烈焰" b="灵石,5" c="寒冰矿石,10" d="炽阳心晶,2"  Description="炼制太康烈焰">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="剑_龙举云兴,1" a="剑坯_龙举云兴" b="灵石,5" c="血魂心晶,4" d="冰域_守护者晶核,2"  Description="炼制龙举云兴">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="西麓,1" a="剑坯_西麓" b="灵石,5" c="炽阳心晶,3" d="血魂_蛛魂精华,2"  Description="炼制西麓">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="魔棘杖,1" a="rod,5" b="上品灵石,100" c="淬毒心晶,5" d="寒冰心晶,3" e="暗幽_守护者晶核,2" Description="炼制魔棘杖">
+		" be"
+		"cad"
+	</Recipe>
+	<Recipe Result="冷色,1" a="剑坯_冷色" b="灵石,5" c="碧晶矿石,5" d="冰域_蛛魂精华,3"  Description="炼制冷色">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="枪_九曲六合,1" a="破损_九曲六合" b="灵石,5" c="碧晶矿石,8" d="大地耀晶,3"  Description="修复九曲六合">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="晶陌,1" a="剑坯_晶陌" b="灵石,5" c="深海耀晶,3" d="寒冰心晶,6"  Description="炼制晶陌">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="斩魔斧戟,1" a="铁长矛" b="极品灵石,5" c="碧晶矿石,5" d="暗幽_蛛魂精华,3" e="森林耀晶,3" f="ironaxe" Description="炼制斩魔斧戟">
+		"dce"
+		"faf"
+		" b "
+	</Recipe>
+	<Recipe Result="冷萧,1" a="剑坯_冷萧" b="灵石,5" c="深海耀晶,3" d="冰域_守护者晶核,10"  Description="炼制冷萧">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="猩红之镰,1" a="rod,5" b="极品灵石,5" c="太阳耀晶,3" d="深渊耀晶,3" e="暗幽_蛛魂精华,3" f="血魂_蛛魂精华,15" g="ironmachete" Description="炼制猩红之镰">
+		"gcd"
+		"eaf"
+		" b "
+	</Recipe>
+	<Recipe Result="骨刺,1" a="剑坯_骨刺" b="极品灵石,20" c="冰域_蛛魂精华,10" d="碧晶矿石,10"  Description="炼制骨刺">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="枪_破影万灵,1" a="破损_破影万灵" b="极品灵石,20" c="太阳耀晶,8" d="暗幽_蛛魂精华,8"  Description="修复破影万灵">
+		" b "
+		"cad"
+	</Recipe>
+	<Recipe Result="枪_海月清辉,1" a="枪坯_海月清辉" b="极品灵石,50" c="深海耀晶,10" d="太阳耀晶,10"  Description="炼制海月清辉">
+		" b "
+		"cad"
 	</Recipe>
 
-	<!--血晶头甲-->
-	<Recipe Result="ClothingBlock:54,1" a="血晶" Description="使用血晶炼制血晶头盔">
-		" a "
-		"a a"
+	<!--炼制武器模坯-->
+	<Recipe Result="剑坯_玲珑荒流,1" a="铁剑" b="赤阳矿石,2" c="星钢矿石,5" d="血魂_守护者晶核,2"  Description="炼制剑坯_玲珑荒流">
+		" d "
+		"bac"
 	</Recipe>
-	<!--血晶胸甲-->
-	<Recipe Result="ClothingBlock:55,1" a="血晶" Description="使用血晶炼制血晶胸甲">
-		"a a"
-		"aaa"
-		"aaa"
+	<Recipe Result="剑坯_魔界之地,1" a="铁剑" b="赤阳矿石,2" c="星钢矿石,5" d="冰域_魂石核心,2"  Description="炼制剑坯_魔界之地">
+		" d "
+		"bac"
 	</Recipe>
-	<!--血晶护腿-->
-	<Recipe Result="ClothingBlock:56,1" a="血晶" Description="使用血晶炼制血晶护腿">
-		"aaa"
-		"a a"
-		"a a"
+	<Recipe Result="枪坯_长生璇玑,1" a="铁长矛" b="赤阳矿石,3" c="星钢矿石,5" d="元空_蛛魂精华,3"  Description="炼制枪坯_长生璇玑">
+		" d "
+		"bac"
 	</Recipe>
-	<!--血晶靴-->
-	<Recipe Result="ClothingBlock:57,1" a="血晶" Description="使用血晶炼制血晶靴子">
-		"a a"
-		"a a"
+	<Recipe Result="剑坯_凤凰来仪,1" a="铁剑" b="寒冰矿石,2" c="赤阳矿石,5" d="暗幽_守护者晶核,2"  Description="炼制剑坯_凤凰来仪">
+		" d "
+		"bac"
 	</Recipe>
-	<!--骸骨头盔-->
-	<Recipe Result="ClothingBlock:74,1" a="灵骨" Description="使用灵骨炼制骸骨头盔">
-		" a "
-		"a a"
+	<Recipe Result="剑坯_龙举云兴,1" a="铁剑" b="寒冰矿石,2" c="赤阳矿石,5" d="冰域_守护者晶核,2"  Description="炼制剑坯_龙举云兴">
+		" d "
+		"bac"
 	</Recipe>
-	<!--骸骨胸甲-->
-	<Recipe Result="ClothingBlock:75,1" a="灵骨" Description="使用灵骨炼制骸骨胸甲">
-		"a a"
-		"aaa"
-		"aaa"
+	<Recipe Result="剑坯_西麓,1" a="铁剑" b="寒冰矿石,2" c="赤阳矿石,5" d="血魂_守护者晶核,2"  Description="炼制剑坯_西麓">
+		" d "
+		"bac"
 	</Recipe>
-	<!--骸骨护腿-->
-	<Recipe Result="ClothingBlock:76,1" a="灵骨" Description="使用灵骨炼制骸骨护腿">
-		"aaa"
-		"a a"
-		"a a"
+	<Recipe Result="枪坯_太康烈焰,1" a="铁长矛" b="寒冰矿石,3" c="赤阳矿石,5" d="炽阳心晶,2"  Description="炼制枪坯_太康烈焰">
+		" d "
+		"bac"
 	</Recipe>
-	<!--骸骨靴-->
-	<Recipe Result="ClothingBlock:77,1" a="灵骨" Description="使用灵骨炼制骸骨靴">
-		"a a"
-		"a a"
+	<Recipe Result="剑坯_冷色,1" a="铁剑" b="碧晶矿石,2" c="寒冰矿石,5" d="冰域_蛛魂精华,2"  Description="炼制剑坯_冷色">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化铜头盔-->
-	<Recipe Result="ClothingBlock:58,1" a="铜头盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铜头盔，灵石品质越高成功率越高">
+	<Recipe Result="剑坯_晶陌,1" a="铁剑" b="碧晶矿石,2" c="寒冰矿石,5" d="暗幽_蛛魂精华,2"  Description="炼制剑坯_晶陌">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="剑坯_冷萧,1" a="铁剑" b="碧晶矿石,3" c="寒冰矿石,5" d="冰域_蛛魂精华,1" e="暗幽_蛛魂精华,1"  Description="炼制剑坯_冷萧">
+		" d "
+		"bac"
+		" e "
+	</Recipe>
+	<Recipe Result="剑坯_骨刺,1" a="铁剑" b="碧晶矿石,2" c="寒冰矿石,3" d="赤阳矿石,5" e="星钢矿石,8" f="沉银矿石,10" g="深渊耀晶,2" h="深海耀晶,2" i="冰域_蛛魂精华,2" Description="炼制剑坯_骨刺">
+		"gih"
+		"fae"
+		"cbd"
+	</Recipe>
+	<Recipe Result="枪坯_海月清辉,1" a="铁长矛" b="碧晶矿石,2" c="寒冰矿石,3" d="赤阳矿石,5" e="星钢矿石,8" f="沉银矿石,10" g="深渊耀晶,3" h="深海耀晶,3" i="暗幽_蛛魂精华,3" Description="炼制枪坯_海月清辉">
+		"gih"
+		"fae"
+		"cbd"
+	</Recipe>
+
+	<!--炼制灵甲-->
+	<Recipe Result="骸骨盔,1" a="铁盔" b="灵骨,10" c="沉银矿石,5" d="元空_魂石核心" Description="炼制骸骨头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="骸骨胸甲,1" a="铁胸甲" b="灵骨,18" c="沉银矿石,5" d="元空_魂石核心" Description="炼制骸骨胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="骸骨护腿,1" a="铁护腿" b="灵骨,10" c="沉银矿石,5" d="元空_魂石核心" Description="炼制骸骨护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="骸骨靴,1" a="铁靴" b="灵骨,15" c="沉银矿石,5" d="元空_魂石核心" Description="炼制骸骨靴">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="血晶头甲,1" a="铁盔" b="血晶,10" c="星钢矿石,5" d="血魂_魂石核心" Description="炼制血晶头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="血晶胸甲,1" a="铁胸甲" b="血晶,18" c="星钢矿石,5" d="血魂_魂石核心" Description="炼制血晶胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="血晶护腿,1" a="铁护腿" b="血晶,10" c="星钢矿石,5" d="血魂_魂石核心" Description="炼制血晶护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="血晶靴,1" a="铁靴" b="血晶,15" c="星钢矿石,5" d="血魂_魂石核心" Description="炼制血晶靴">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="灵化铜头盔,1" a="铜盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铜头盔，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<!--灵化铜胸甲-->
-	<Recipe Result="ClothingBlock:59,1"  a="铜胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铜胸甲，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜胸甲,1"  a="铜胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铜胸甲，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<!--灵化铜护腿-->
-	<Recipe Result="ClothingBlock:60,1"  a="铜护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铜护腿，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜护腿,1"  a="铜护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铜护腿，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<!--灵化铜靴-->
-	<Recipe Result="ClothingBlock:61,1"  a="铜靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铜靴，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜靴,1"  a="铜靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铜靴，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化铁头盔,1"  a="铁盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铁头盔，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化铁胸甲,1"  a="铁胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铁胸甲，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化铁护腿,1"  a="铁护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铁护腿，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化铁靴,1"  a="铁靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铁靴，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化钻头盔,1"  a="钻石盔" b="灵石"  Description="将灵石内蕴含的能量炼制进钻头盔，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化钻胸甲,1"  a="钻石胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进钻胸甲，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化钻护腿,1"  a="钻石护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进钻护腿，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化钻靴,1"  a="钻石靴" b="灵石"  Description="将灵石内蕴含的能量炼制进钻靴，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	
+	<Recipe Result="灵化血晶头盔,1"  a="血晶头甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶头盔，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化血晶胸甲,1"  a="血晶胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶胸甲，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化血晶护腿,1"  a="血晶护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶护腿，灵石品质越高成功率越高">
+		" b "
+		"bab"
+		" b "
+	</Recipe>
+	<Recipe Result="灵化血晶靴,1"  a="血晶靴" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶靴，灵石品质越高成功率越高">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 
-
-	<!--灵化铁头盔-->
-	<Recipe Result="ClothingBlock:62,1"  a="铁盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铁头盔，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="冰魄银甲头盔,1" a="铁盔" b="寒洋鳞,4" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制冰魄银甲头盔">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化铁胸甲-->
-	<Recipe Result="ClothingBlock:63,1"  a="铁胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铁胸甲，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="冰魄银甲胸甲,1" a="铁胸甲" b="寒洋鳞,4" c="赤阳矿石,5" d="暗幽_魂石核心" Description="炼制冰魄银甲胸甲">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化铁护腿-->
-	<Recipe Result="ClothingBlock:64,1"  a="铁护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铁护腿，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="冰魄银甲护腿,1" a="铁护腿" b="寒洋鳞,4" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制冰魄银甲护腿">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化铁靴-->
-	<Recipe Result="ClothingBlock:65,1"  a="铁靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铁靴，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="冰魄银甲靴子,1" a="铁靴" b="寒洋鳞,5" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制冰魄银甲头靴子">
+		" d "
+		"bac"
 	</Recipe>
 
-
-	<!--灵化钻头盔-->
-	<Recipe Result="ClothingBlock:66,1"  a="钻石盔" b="灵石"  Description="将灵石内蕴含的能量炼制进钻头盔，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="狱焱银甲头盔,1" a="铁盔" b="炎阳鳞,4" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制狱焱银甲头盔">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化钻胸甲-->
-	<Recipe Result="ClothingBlock:67,1"  a="钻石胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进钻胸甲，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="狱焱银甲胸甲,1" a="铁胸甲" b="炎阳鳞,4" c="赤阳矿石,5" d="暗幽_魂石核心" Description="炼制狱焱银甲胸甲">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化钻护腿-->
-	<Recipe Result="ClothingBlock:68,1"  a="钻石护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进钻护腿，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="狱焱银甲护腿,1" a="铁护腿" b="炎阳鳞,4" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制狱焱银甲护腿">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化钻靴-->
-	<Recipe Result="ClothingBlock:69,1"  a="钻石靴" b="灵石"  Description="将灵石内蕴含的能量炼制进钻靴，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="狱焱银甲靴子,1" a="铁靴" b="炎阳鳞,5" c="赤阳矿石,5" d="暗幽_魂石核心" Description="炼制狱焱银甲靴子">
+		" d "
+		"bac"
 	</Recipe>
 
+	<Recipe Result="噬魂银甲头盔,1" a="铁盔" b="幻月鳞,4" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制噬魂银甲头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="噬魂银甲胸甲,1" a="铁胸甲" b="幻月鳞,4" c="赤阳矿石,5" d="暗幽_魂石核心" Description="炼制噬魂银甲胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="噬魂银甲护腿,1" a="铁护腿" b="幻月鳞,4" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制噬魂银甲护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="噬魂银甲靴子,1" a="铁靴" b="幻月鳞,5" c="赤阳矿石,4" d="暗幽_魂石核心" Description="炼制噬魂银甲靴子">
+		" d "
+		"bac"
+	</Recipe>
 
-	<!--灵化血晶头盔-->
-	<Recipe Result="ClothingBlock:70,1"  a="血晶头甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶头盔，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="怒焰金甲头盔,1" a="铁盔" b="炽阳心晶,4" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制怒焰金甲头盔">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化血晶胸甲-->
-	<Recipe Result="ClothingBlock:71,1"  a="血晶胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶胸甲，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="怒焰金甲胸甲,1" a="铁胸甲" b="炽阳心晶,5" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制怒焰金甲胸甲">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化血晶护腿-->
-	<Recipe Result="ClothingBlock:72,1"  a="血晶护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶护腿，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="怒焰金甲护腿,1" a="铁护腿" b="炽阳心晶,4" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制怒焰金甲护腿">
+		" d "
+		"bac"
 	</Recipe>
-	<!--灵化血晶靴-->
-	<Recipe Result="ClothingBlock:73,1"  a="血晶靴" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶靴，灵石品质越高成功率越高">
-		" b "
-		"bab"
-		" b "
+	<Recipe Result="怒焰金甲靴子,1" a="铁靴" b="炽阳心晶,5" c="寒冰矿石,6" d="暗幽_守护者晶核,2" Description="炼制怒焰金甲靴子">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="寒焰金甲头盔,1" a="铁盔" b="寒冰心晶,4" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制寒焰金甲头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="寒焰金甲胸甲,1" a="铁胸甲" b="寒冰心晶,5" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制寒焰金甲胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="寒焰金甲护腿,1" a="铁护腿" b="寒冰心晶,4" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制寒焰金甲护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="寒焰金甲靴子,1" a="铁靴" b="寒冰心晶,5" c="寒冰矿石,6" d="暗幽_守护者晶核,2" Description="炼制寒焰金甲靴子">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="魂焰金甲头盔,1" a="铁盔" b="迷幻心晶,4" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制魂焰金甲头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="魂焰金甲胸甲,1" a="铁胸甲" b="迷幻心晶,5" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制魂焰金甲胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="魂焰金甲护腿,1" a="铁护腿" b="迷幻心晶,4" c="寒冰矿石,5" d="暗幽_守护者晶核,2" Description="炼制魂焰金甲护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="魂焰金甲靴子,1" a="铁靴" b="迷幻心晶,5" c="寒冰矿石,6" d="暗幽_守护者晶核,2" Description="炼制魂焰金甲靴子">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="战凰魂甲头盔,1" a="铁盔" b="大地耀晶,4" c="碧晶矿石,4" d="太阳耀晶,3" Description="炼制战凰魂甲头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="战凰魂甲胸甲,1" a="铁胸甲" b="大地耀晶,4" c="碧晶矿石,5" d="太阳耀晶,3" Description="炼制战凰魂甲胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="战凰魂甲护腿,1" a="铁护腿" b="大地耀晶,4" c="碧晶矿石,4" d="太阳耀晶,3" Description="炼制战凰魂甲护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="战凰魂甲靴子,1" a="铁靴" b="大地耀晶,5" c="碧晶矿石,5" d="太阳耀晶,3" Description="炼制战凰魂甲靴子">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="冰凰魂甲头盔,1" a="铁盔" b="深海耀晶,4" c="碧晶矿石,4" d="太阳耀晶,3" Description="炼制冰凰魂甲头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="冰凰魂甲胸甲,1" a="铁胸甲" b="深海耀晶,4" c="碧晶矿石,5" d="太阳耀晶,3" Description="炼制冰凰魂甲胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="冰凰魂甲护腿,1" a="铁护腿" b="深海耀晶,4" c="碧晶矿石,4" d="太阳耀晶,3" Description="炼制冰凰魂甲护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="冰凰魂甲靴子,1" a="铁靴" b="深海耀晶,5" c="碧晶矿石,5" d="太阳耀晶,3" Description="炼制冰凰魂甲靴子">
+		" d "
+		"bac"
+	</Recipe>
+
+	<Recipe Result="幻凰魂甲头盔,1" a="铁盔" b="深渊耀晶,4" c="碧晶矿石,4" d="太阳耀晶,3" Description="炼制幻凰魂甲头盔">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="幻凰魂甲胸甲,1" a="铁胸甲" b="深渊耀晶,4" c="碧晶矿石,5" d="太阳耀晶,3" Description="炼制幻凰魂甲胸甲">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="幻凰魂甲护腿,1" a="铁护腿" b="深渊耀晶,4" c="碧晶矿石,4" d="太阳耀晶,3" Description="炼制幻凰魂甲护腿">
+		" d "
+		"bac"
+	</Recipe>
+	<Recipe Result="幻凰魂甲靴子,1" a="铁靴" b="深渊耀晶,5" c="碧晶矿石,5" d="太阳耀晶,3" Description="炼制幻凰魂甲靴子">
+		" d "
+		"bac"
 	</Recipe>
 </RefiningFormulaRecipe>
