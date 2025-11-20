@@ -1,52 +1,52 @@
 <a name="top"></a>
-# 🌍 PerfectWorldMod Official Website 
+# 🌍 完美世界Mod 官方网站 
  
-![PerfectWorld Group Photo](https://gitee.com/invisible-guardian/PerfectWorldMod/raw/master/%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/%E4%B8%BB%E7%95%8C%E9%9D%A2%E8%83%8C%E6%99%AF.webp)
+![完美世界大合照](https://gitee.com/invisible-guardian/PerfectWorldMod/raw/master/%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/%E4%B8%BB%E7%95%8C%E9%9D%A2%E8%83%8C%E6%99%AF.webp)
  
-## 📑 Table of Contents 
-- [✨ Core Features](#core-features)
-- [👥 Development Team](#dev-team)
-- [💖 Sponsorship Acknowledgements](#sponsors)
-- [🌟 Core Contributions](#core-contributions)
-- [📥 Resource Download](#download)
-- [📮 Contact Us](#contact)
+## 📑 目录 
+- [✨ 核心特色](#core-features)
+- [👥 开发团队](#dev-team)
+- [💖 赞助鸣谢](#sponsors)
+- [🌟 核心贡献](#core-contributions)
+- [📥 资源下载](#download)
+- [📮 联系我们](#contact)
  
 ---
  
 <a name="core-features"></a>
-## ✨ Core Features 
-This is a Mod centered around cultivation, with rich gameplay. Every time your cultivation level is enhanced, you will gain attribute points, which you need to allocate autonomously to boost your capabilities. You can improve yourself through learning cultivation methods, skill books, refining elixirs, forging artifacts, taming beasts, setting up formations, and so on. There are numerous creatures here, and they possess more advanced AI, species classification, creature level settings, cultivation level settings, and creature skill settings. Additionally, it links multiple dimensions and introduces more planes, fitting the cultivation world. You can enter other small worlds to seek opportunities, ascend to the Spirit Realm, or dig through the Underworld... Although this is a cultivation Mod, Perfect World is more than just cultivation！！！
+## ✨ 核心特色 
+这是一个围绕修仙的Mod，玩法丰富，每次修为的提升，你都会获得属性点，你得自主分配属性点来提升自己的能力，通过学习功法，技能书，炼丹，炼器，驯兽，布置阵法等等来提升自己，这里拥有非常多的生物，并且生物具有更加高级的AI，种族划分，生物等级设定，生物修为设定，生物技能设定等等，另外还联动多维世界，推出更多的位面，符合修仙世界，你可以进去其他小世界寻找机缘，你可以飞升灵界，挖通地府......虽然这是一个修仙Mod，但是完美世界不止修仙！！！
  
-[▲ Back to Top](#top)
+[▲ 返回顶部](#top)
  
 ---
  
 <a name="dev-team"></a>
-## 👥 Development Team 
+## 👥 开发团队 
  
-### 👑 Lead Developer 
-| member | QQ | Main contributions |
+### 👑 主开发者 
+| 成员 | QQ | 主要贡献 |
 |:-----------:|:----------:|:-----------------:|
-| **隐形守护者** |  [3366434156](https://wpa.qq.com/msgrd?v=3&uin=3366434156&site=qq&menu=yes)   | Original creator of PerfectWorldMod, oversees mod development direction, implements core features, and authors majority of source code|
-### 🛠️ Core members 
-| member | QQ | Main contributions |
+| **隐形守护者** |  [3366434156](https://wpa.qq.com/msgrd?v=3&uin=3366434156&site=qq&menu=yes)   | SC 完美世界Mod原作者，规划完美世界Mod的发展方向，制作功能，完成完美世界Mod几乎所有源码工作|
+### 🛠️ 核心成员 
+| 成员 | QQ | 主要贡献 |
 |:-----------:|:----------:|:-----------------:|
-| **再回首** | 1926***138 | Multi-dimensional systems, trading mechanics, massive procedural structures, critical bug fixes |
-| **筠槛** | 3308***767 | Buff/Debuff icons, creature/plant textures, main architect of Yue Ling City (95% completion), trade pricing systems |
-| **多人君** | 1920***653 | Sword Intent system design |
-| **gg** | 4196***83 | Model adaptation (excluding invasion pack), self-funded model purchases, item design |
-| **星途** | 1635***562 | Creature/plant texture creation |
-| **峥嵘岁月** | 3590***354 | Veteran player turned balance designer (pre-0.5.4 versions) |
+| **再回首** | 1926***138 | 多维度，交易，超大型建筑自然生成，修复部分难以解决的bug |
+| **筠槛** | 3308***767 | 制作各种buff图标，以及部分生物贴图的染色，以及植物贴图，完成悦灵城的主体建筑(95%)，给交易定价 |
+| **多人君** | 1920***653 | 剑意系统 |
+| **gg** | 4196***83 | 除了入侵包模型系列的模型都是他进行改制，有些模型更是从淘宝进行自掏钱包购买，制作部分物品 |
+| **星途** | 1635***562 | 制作部分生物贴图，以及部分植物贴图 |
+| **峥嵘岁月** | 3590***354 | 完美世界Mod高玩，2024.3.4加入制作组，负责0.5.4版本之前的数值平衡 |
  
-[▲ Back to Top](#top)
+[▲ 返回顶部](#top)
  
 ---
  
 <a name="sponsors"></a>
-## 💖 Sponsorship Acknowledgements 
+## 💖 赞助鸣谢 
  
-### 🏆 Top Sponsors 
-| Sponsor | Amount | QQ |
+### 🏆 头部赞助 
+| 赞助者 | 金额 | QQ |
 |:-----------:|:----------:|:-----------------:|
 | 笑问哈哈哈 | **¥5000.00** | 1622***952 |
 | 但愿人长久 | **¥1543.00** | 1049***465 |
@@ -69,11 +69,11 @@ This is a Mod centered around cultivation, with rich gameplay. Every time your c
 | 筠槛 | **¥200.00** | 3308***767 |
 | 闲心 | **¥200.00** | 1556***182 |
 | 羽轩 | **¥200.00** | 2490***162 |
-| 大古 | **¥200.00** | 2350***039 | 
+| 大古 | **¥200.00** | 2350***039 |
 | 七 | **¥200.00** | 3464***932 |
-
+  
 <details>
-  <summary>📜 Full Sponsor List</summary>
+  <summary>📜 点击展开完整赞助名单</summary>
   
 
 | 赞助者 | 金额 | QQ |
@@ -193,49 +193,48 @@ This is a Mod centered around cultivation, with rich gameplay. Every time your c
 | 唤雨 | **¥5.00** | - |
 | AwA | **¥5.00** | - |
 | 一纸荒凉 | **¥5.00** | - | 
- 
 </details>
 
 
-[▲ Back to Top](#top)
+[▲ 返回顶部](#top)
 
 ---
  
 <a name="core-contributions"></a>
-## 🌟 Core Contributions
-| Contributor | QQ | Description |
+## 🌟 核心贡献
+| 贡献者 | QQ | 说明 |
 |:-----------:|:----------:|:-----------------:|
 | *** | *** | *** |
 | *** |  *** | *** |
 | *** | *** | *** |
 
-[▲ Back to Top](#top)
+[▲ 返回顶部](#top)
 
 ---
 
 <a name="download"></a>
-## 📥 Resource Download 
+## 📥 资源下载 
  
 - [ 🟢 Gitee Releases](https://gitee.com/invisible-guardian/PerfectWorldMod/releases) 
-- [🎨 HD Resource Pack](https://example.com/textures.zip) 
+- [🎨 高清材质包](https://example.com/textures.zip) 
  
-### ⚠️ Download Notes 
-1.Beta versions are for testing only - not recommended for serious playthroughs
-2.If Gitee links expire, obtain latest files via QQ groups
-3.Use in-game updater when possible. Manual updates require QQ group access
-4.New versions invalidate all previous test builds
+### ⚠️ 下载声明 
+1. 测试版仅供体验，不建议用于正式存档 
+2. Gitee Releases链接失效请加QQ群获取最新资源
+3. 游戏内置更新，如果无法更新，请到自行到QQ群获取最新资源
+4. 一旦出现新版本，所有测试版本将无法使用
  
-[▲ Back to Top](#top)
+[▲ 返回顶部](#top)
 
 ---
 
 <a name="contact"></a>
-## 📮 Contact Us 
-| Channel | Link |
+## 📮 联系我们 
+| 渠道 | 链接 |
 |:----:|:----| 
-| 🐧 QQ Group ① | [Join:476074154](https://qm.qq.com/q/nqyyHMHs4g)   |
-| 🐧 QQ Group ② | [Join:1160376284](https://qm.qq.com/q/JRxg6p8eE8)   |
-| 🐧 QQ Group ③ | [Join:617944401](https://qm.qq.com/q/MO7v3Edck0)   |
-| 🐛 Bug·Feedback | [Submit Issue](https://gitee.com/invisible-guardian/PerfectWorldMod/issues/new)   |
+| 🐧 QQ①群 | [点击加入QQ群:476074154](https://qm.qq.com/q/nqyyHMHs4g)   |
+| 🐧 QQ②群 | [点击加入QQ群:1160376284](https://qm.qq.com/q/JRxg6p8eE8)   |
+| 🐧 QQ③群 | [点击加入QQ群:617944401](https://qm.qq.com/q/MO7v3Edck0)   |
+| 🐛 Bug·反馈 | [提交Issue](https://gitee.com/invisible-guardian/PerfectWorldMod/issues/new)   |
  
-[▲ Back to Top](#top) 
+[▲ 返回顶部](#top) 
