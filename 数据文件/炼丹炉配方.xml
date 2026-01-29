@@ -43,6 +43,7 @@
 
 	<五阶>
 		<Recipe Result="化神丹,1" Material1="升仙草,5" Material2="五阶妖丹,2" Material3="龙蕨草,10" Material4="尸泉花,5" Material5="凛冬冰兰,3"/>
+		<Recipe Result="涅槃丹,1" Material1="血莲,1" Material2="血精草,3" Material3="血蟒草,5" Material4="升仙草,2" Material5="赤血神龙草,9" Material6="香蚀草,1"/>
 	</五阶>
 
 	<六阶>

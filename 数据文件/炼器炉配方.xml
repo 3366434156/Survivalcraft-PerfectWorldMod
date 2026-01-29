@@ -7,63 +7,63 @@
 	<!-- 武器强化 -->
 	<!-- 灵器 -->
 	<!-- 剑 -->
-	<Recipe Result="剑_承影定光,1" a="灵石" b="剑_承影定光" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_承影定光,1" a="灵石" b="剑_承影定光" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_穆清灼华,1" a="灵石" b="剑_穆清灼华" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_穆清灼华,1" a="灵石" b="剑_穆清灼华" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_玲珑荒流,1" a="灵石" b="剑_玲珑荒流" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_玲珑荒流,1" a="灵石" b="剑_玲珑荒流" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_凤凰来仪,1" a="灵石" b="剑_凤凰来仪" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_凤凰来仪,1" a="灵石" b="剑_凤凰来仪" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="冷色,1" a="灵石" b="冷色" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="冷色,1" a="灵石" b="冷色" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="骨刺,1" a="灵石" b="骨刺" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="骨刺,1" a="灵石" b="骨刺" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
 	<!-- 枪 -->
-	<Recipe Result="枪_红盟血契,1" a="灵石" b="枪_红盟血契" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_红盟血契,1" a="灵石" b="枪_红盟血契" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_雷霆破军,1" a="灵石" b="枪_雷霆破军" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_雷霆破军,1" a="灵石" b="枪_雷霆破军" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_沥泉锋隐,1" a="灵石" b="枪_沥泉锋隐" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_沥泉锋隐,1" a="灵石" b="枪_沥泉锋隐" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_太康烈焰,1" a="灵石" b="枪_太康烈焰" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_太康烈焰,1" a="灵石" b="枪_太康烈焰" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_九曲六合,1" a="灵石" b="枪_九曲六合" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_九曲六合,1" a="灵石" b="枪_九曲六合" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_破影万灵,1" a="灵石" b="枪_破影万灵" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_破影万灵,1" a="灵石" b="枪_破影万灵" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
@@ -71,38 +71,38 @@
 
 	<!-- 法器 -->
 	<!-- 剑 -->
-	<Recipe Result="剑_耀光沙华,1" a="灵石" b="剑_耀光沙华" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_耀光沙华,1" a="灵石" b="剑_耀光沙华" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_暗渊残梦,1" a="灵石" b="剑_暗渊残梦" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_暗渊残梦,1" a="灵石" b="剑_暗渊残梦" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_魔界之地,1" a="灵石" b="剑_魔界之地" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_魔界之地,1" a="灵石" b="剑_魔界之地" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="剑_龙举云兴,1" a="灵石" b="剑_龙举云兴" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_龙举云兴,1" a="灵石" b="剑_龙举云兴" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="晶陌,1" a="灵石" b="晶陌" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="晶陌,1" a="灵石" b="晶陌" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
 	<!-- 枪 -->
-	<Recipe Result="枪_长生璇玑,1" a="灵石" b="枪_长生璇玑" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_长生璇玑,1" a="灵石" b="枪_长生璇玑" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="枪_海月清辉,1" a="灵石" b="枪_海月清辉" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="枪_海月清辉,1" a="灵石" b="枪_海月清辉" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
@@ -110,22 +110,22 @@
 
 	<!-- 魂器 -->
 	<!-- 剑 -->
-	<Recipe Result="剑_飘影茂陵,1" a="灵石" b="剑_飘影茂陵" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="剑_飘影茂陵,1" a="灵石" b="剑_飘影茂陵" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="西麓,1" a="灵石" b="西麓" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="西麓,1" a="灵石" b="西麓" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="冷萧,1" a="灵石" b="冷萧" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="冷萧,1" a="灵石" b="冷萧" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="天魂,1" a="灵石" b="天魂" Strengthen="true" Description="武器强化，其他品质的强化和下品一样(只有下品武器显示强化配分)。">
+	<Recipe Result="天魂,1" a="灵石" b="天魂" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
@@ -145,10 +145,8 @@
 	</Recipe>
 
 	<!-- 合成本源珠 -->
-	<Recipe Result="本源珠,1" a="本源" Description="使用9颗本源凝练成本源珠">
-		"aaa"
-		"aaa"
-		"aaa"
+	<Recipe Result="本源珠,1" a="本源,9" Description="使用9颗本源凝练成本源珠，无灵火也可以炼制，不过速度更慢">
+		"a"
 	</Recipe>
 
 	<!-- 修复配方 -->
@@ -181,6 +179,12 @@
 		"aaaaa"
 		"aaaaa"
 	</Recipe>
+	<Recipe Result="探灵镜,1" a="一阶妖丹,5" b="沉银矿石" c="ironingot" d="魂石,100" e="glass" f="空间石" g="极品灵石" h="rod"  Description="炼制探灵镜">
+		"abcbd"
+		" cec "
+		"fbcbg"
+		"  h  "
+	</Recipe>
 	<Recipe Result="剑_承影定光,1" a="破损_承影定光" b="灵石,5" c="ironingot,40" d="沉银矿石,5"  Description="修复承影定光">
 		" b "
 		"cad"
@@ -209,7 +213,7 @@
 		" b "
 		"cad"
 	</Recipe>
-	<Recipe Result="剑_暗渊残梦,1" a="破损_暗渊残梦" b="灵石,5" c="ironingot,40" d="元空_守护者晶核,5"  Description="修复暗渊残梦">
+	<Recipe Result="剑_暗渊残梦,1" a="断剑_暗渊残梦" b="灵石,5" c="ironingot,40" d="元空_守护者晶核,5"  Description="修复暗渊残梦">
 		" b "
 		"cad"
 	</Recipe>
@@ -388,83 +392,83 @@
 		"bac"
 	</Recipe>
 
-	<Recipe Result="灵化铜头盔,1" a="铜盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铜头盔，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜头盔,1" a="铜盔" b="下品灵石,850"  Description="将灵石内蕴含的能量炼制进铜头盔">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铜胸甲,1"  a="铜胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铜胸甲，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜胸甲,1"  a="铜胸甲" b="下品灵石,850"  Description="将灵石内蕴含的能量炼制进铜胸甲">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铜护腿,1"  a="铜护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铜护腿，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜护腿,1"  a="铜护腿" b="下品灵石,850"  Description="将灵石内蕴含的能量炼制进铜护腿">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铜靴,1"  a="铜靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铜靴，灵石品质越高成功率越高">
+	<Recipe Result="灵化铜靴,1"  a="铜靴" b="下品灵石,850"  Description="将灵石内蕴含的能量炼制进铜靴">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铁头盔,1"  a="铁盔" b="灵石"  Description="将灵石内蕴含的能量炼制进铁头盔，灵石品质越高成功率越高">
+	<Recipe Result="灵化铁头盔,1"  a="铁盔" b="下品灵石,1700"  Description="将灵石内蕴含的能量炼制进铁头盔">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铁胸甲,1"  a="铁胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进铁胸甲，灵石品质越高成功率越高">
+	<Recipe Result="灵化铁胸甲,1"  a="铁胸甲" b="下品灵石,1700"  Description="将灵石内蕴含的能量炼制进铁胸甲">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铁护腿,1"  a="铁护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进铁护腿，灵石品质越高成功率越高">
+	<Recipe Result="灵化铁护腿,1"  a="铁护腿" b="下品灵石,1700"  Description="将灵石内蕴含的能量炼制进铁护腿">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化铁靴,1"  a="铁靴" b="灵石"  Description="将灵石内蕴含的能量炼制进铁靴，灵石品质越高成功率越高">
+	<Recipe Result="灵化铁靴,1"  a="铁靴" b="下品灵石,1700"  Description="将灵石内蕴含的能量炼制进铁靴">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化钻头盔,1"  a="钻石盔" b="灵石"  Description="将灵石内蕴含的能量炼制进钻头盔，灵石品质越高成功率越高">
+	<Recipe Result="灵化钻头盔,1"  a="钻石头盔" b="下品灵石,2500"  Description="将灵石内蕴含的能量炼制进钻头盔">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化钻胸甲,1"  a="钻石胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进钻胸甲，灵石品质越高成功率越高">
+	<Recipe Result="灵化钻胸甲,1"  a="钻石胸甲" b="下品灵石,2500"  Description="将灵石内蕴含的能量炼制进钻胸甲">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化钻护腿,1"  a="钻石护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进钻护腿，灵石品质越高成功率越高">
+	<Recipe Result="灵化钻护腿,1"  a="钻石护腿" b="下品灵石,2500"  Description="将灵石内蕴含的能量炼制进钻护腿">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化钻靴,1"  a="钻石靴" b="灵石"  Description="将灵石内蕴含的能量炼制进钻靴，灵石品质越高成功率越高">
+	<Recipe Result="灵化钻靴,1"  a="钻石靴" b="下品灵石,2500"  Description="将灵石内蕴含的能量炼制进钻靴">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
 	
-	<Recipe Result="灵化血晶头盔,1"  a="血晶头甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶头盔，灵石品质越高成功率越高">
+	<Recipe Result="灵化血晶头盔,1"  a="血晶头甲" b="中品灵石,580"  Description="将灵石内蕴含的能量炼制进血晶头盔">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化血晶胸甲,1"  a="血晶胸甲" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶胸甲，灵石品质越高成功率越高">
+	<Recipe Result="灵化血晶胸甲,1"  a="血晶胸甲" b="中品灵石,580"  Description="将灵石内蕴含的能量炼制进血晶胸甲">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化血晶护腿,1"  a="血晶护腿" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶护腿，灵石品质越高成功率越高">
+	<Recipe Result="灵化血晶护腿,1"  a="血晶护腿" b="中品灵石,580"  Description="将灵石内蕴含的能量炼制进血晶护腿">
 		" b "
 		"bab"
 		" b "
 	</Recipe>
-	<Recipe Result="灵化血晶靴,1"  a="血晶靴" b="灵石"  Description="将灵石内蕴含的能量炼制进血晶靴，灵石品质越高成功率越高">
+	<Recipe Result="灵化血晶靴,1"  a="血晶靴" b="中品灵石,580"  Description="将灵石内蕴含的能量炼制进血晶靴">
 		" b "
 		"bab"
 		" b "
