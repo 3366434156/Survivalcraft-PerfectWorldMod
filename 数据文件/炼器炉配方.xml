@@ -32,7 +32,7 @@
 		"aba"
 		"aaa"
 	</Recipe>
-	<Recipe Result="骨刺,1" a="灵石" b="骨刺" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
+	<Recipe Result="霜华凝晶剑,1" a="灵石" b="霜华凝晶剑" Strengthen="true" Description="武器强化配方，这里默认显示下品灵石，其他品质的强化也是一样的摆放，但是需要将灵石换成对应品质">
 		"aaa"
 		"aba"
 		"aaa"
@@ -291,7 +291,7 @@
 		"eaf"
 		" b "
 	</Recipe>
-	<Recipe Result="骨刺,1" a="剑坯_骨刺" b="极品灵石,20" c="冰域_蛛魂精华,10" d="碧晶矿石,10"  Description="炼制骨刺">
+	<Recipe Result="霜华凝晶剑,1" a="剑坯_霜华凝晶剑" b="极品灵石,20" c="冰域_蛛魂精华,10" d="碧晶矿石,10"  Description="炼制霜华凝晶剑">
 		" b "
 		"cad"
 	</Recipe>
@@ -346,7 +346,7 @@
 		"bac"
 		" e "
 	</Recipe>
-	<Recipe Result="剑坯_骨刺,1" a="铁剑" b="碧晶矿石,2" c="寒冰矿石,3" d="赤阳矿石,5" e="星钢矿石,8" f="沉银矿石,10" g="深渊耀晶,2" h="深海耀晶,2" i="冰域_蛛魂精华,2" Description="炼制剑坯_骨刺">
+	<Recipe Result="剑坯_霜华凝晶剑,1" a="铁剑" b="碧晶矿石,2" c="寒冰矿石,3" d="赤阳矿石,5" e="星钢矿石,8" f="沉银矿石,10" g="深渊耀晶,2" h="深海耀晶,2" i="冰域_蛛魂精华,2" Description="炼制剑坯_霜华凝晶剑">
 		"gih"
 		"fae"
 		"cbd"
