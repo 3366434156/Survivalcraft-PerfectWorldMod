@@ -215,12 +215,12 @@
 <a name="download"></a>
 ## 📥 资源下载 
  
-- [ 🟢 Gitee Releases](https://gitee.com/invisible-guardian/PerfectWorldMod/releases) 
+- [ 🟢 模组以及游戏本体](https://gitee.com/invisible-guardian/PerfectWorldMod/releases) 
 - [🎨 高清材质包](https://example.com/textures.zip) 
  
 ### ⚠️ 下载声明 
 1. 测试版仅供体验，不建议用于正式存档 
-2. Gitee Releases链接失效请加QQ群获取最新资源
+2. 链接失效请加QQ群获取最新资源
 3. 游戏内置更新，如果无法更新，请到自行到QQ群获取最新资源
 4. 一旦出现新版本，所有测试版本将无法使用
  
