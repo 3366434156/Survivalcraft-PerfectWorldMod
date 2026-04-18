@@ -41,6 +41,19 @@
             scroll-behavior: smooth;
         }
 
+        /* 滚动进度条 */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s;
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+
         body {
             font-family: 'Noto Serif SC', serif;
             background: var(--darker);
@@ -90,16 +103,18 @@
             background: 
                 radial-gradient(ellipse at 20% 80%, var(--bg-gradient-1) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 20%, var(--bg-gradient-2) 0%, transparent 50%),
-                radial-gradient(ellipse at 40% 40%, var(--bg-gradient-3) 0%, transparent 40%);
+                radial-gradient(ellipse at 40% 40%, var(--bg-gradient-3) 0%, transparent 40%),
+                radial-gradient(ellipse at 60% 80%, rgba(124,77,255,0.15) 0%, transparent 40%),
+                radial-gradient(ellipse at 10% 30%, rgba(0,230,118,0.1) 0%, transparent 30%);
             animation: gradientFlow 20s ease-in-out infinite;
             z-index: -1;
         }
 
         @keyframes gradientFlow {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(2%, -2%) scale(1.1); }
-            50% { transform: translate(-1%, 1%) scale(1); }
-            75% { transform: translate(-2%, -1%) scale(1.05); }
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            25% { transform: translate(2%, -2%) scale(1.1) rotate(1deg); }
+            50% { transform: translate(-1%, 1%) scale(1) rotate(-1deg); }
+            75% { transform: translate(-2%, -1%) scale(1.05) rotate(0.5deg); }
         }
 
         /* 导航栏 */
@@ -471,6 +486,27 @@
                 0 0 120px rgba(0,212,255,0.3);
         }
 
+        .btn-primary:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* 按钮波纹效果 */
+        .btn-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
         .btn-secondary {
             background: transparent;
             color: var(--primary);
@@ -582,7 +618,33 @@
             overflow: hidden;
             transform-style: preserve-3d;
             cursor: pointer;
+            animation: cardAppear 0.6s ease backwards;
         }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 特色卡片随机效果边框 */
+        .feature-card.effect-tilt { border-left: 3px solid var(--primary); }
+        .feature-card.effect-bounce { border-top: 3px solid var(--accent); }
+        .feature-card.effect-rotate { border-right: 3px solid var(--secondary); }
+        .feature-card.effect-wave { border-bottom: 3px solid #7c4dff; }
+        .feature-card.effect-perspective { border-left: 3px solid #00e676; }
 
         .feature-card::before {
             content: '';
@@ -615,13 +677,19 @@
             display: inline-block;
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             filter: drop-shadow(0 0 10px rgba(255,215,0,0.3));
-            animation: emojiFloat 3s ease-in-out infinite;
+            animation: emojiFloat 3s ease-in-out infinite, emojiGlow 4s ease-in-out infinite;
         }
 
         @keyframes emojiFloat {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-5px) rotate(-3deg); }
-            75% { transform: translateY(5px) rotate(3deg); }
+            25% { transform: translateY(-8px) rotate(-5deg); }
+            75% { transform: translateY(8px) rotate(5deg); }
+        }
+
+        @keyframes emojiGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255,215,0,0.4)); }
+            33% { filter: drop-shadow(0 0 15px rgba(255,107,107,0.5)); }
+            66% { filter: drop-shadow(0 0 15px rgba(0,212,255,0.5)); }
         }
 
         .feature-card:hover .feature-icon {
@@ -679,6 +747,26 @@
             position: relative;
             overflow: hidden;
             transform-style: preserve-3d;
+            animation: teamCardAppear 0.5s ease backwards;
+        }
+
+        .team-card:nth-child(1) { animation-delay: 0.1s; }
+        .team-card:nth-child(2) { animation-delay: 0.15s; }
+        .team-card:nth-child(3) { animation-delay: 0.2s; }
+        .team-card:nth-child(4) { animation-delay: 0.25s; }
+        .team-card:nth-child(5) { animation-delay: 0.3s; }
+        .team-card:nth-child(6) { animation-delay: 0.35s; }
+        .team-card:nth-child(7) { animation-delay: 0.4s; }
+
+        @keyframes teamCardAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
         }
 
         .team-card::before {
@@ -691,13 +779,63 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
         }
 
-        .team-card:hover {
-            transform: translateY(-10px) rotateX(5deg) rotateY(-3deg);
+        /* 随机3D效果 - 效果1: 倾斜翻转 */
+        .team-card.effect-tilt:hover {
+            transform: translateY(-10px) rotateX(10deg) rotateY(-5deg);
             box-shadow: 
                 0 25px 50px rgba(0,0,0,0.3),
-                0 0 30px rgba(255,215,0,0.15),
-                inset 0 0 20px rgba(255,255,255,0.05);
+                0 0 30px rgba(255,215,0,0.15);
             border-color: rgba(255,215,0,0.3);
+        }
+
+        /* 随机3D效果 - 效果2: 弹跳缩放 */
+        .team-card.effect-bounce:hover {
+            transform: translateY(-15px) scale(1.05);
+            animation: cardBounce 0.5s ease;
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.4),
+                0 0 40px rgba(0,212,255,0.2);
+            border-color: rgba(0,212,255,0.4);
+        }
+
+        @keyframes cardBounce {
+            0% { transform: translateY(-15px) scale(1.05); }
+            50% { transform: translateY(-20px) scale(1.08); }
+            100% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        /* 随机3D效果 - 效果3: 旋转立体 */
+        .team-card.effect-rotate:hover {
+            transform: translateY(-10px) rotateY(15deg) rotateX(5deg);
+            box-shadow: 
+                -20px 20px 40px rgba(0,0,0,0.3),
+                0 0 30px rgba(255,107,107,0.2);
+            border-color: rgba(255,107,107,0.4);
+        }
+
+        /* 随机3D效果 - 效果4: 翻转 */
+        .team-card.effect-flip:hover {
+            transform: translateY(-10px) rotateX(180deg);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        /* 随机3D效果 - 效果5: 波浪倾斜 */
+        .team-card.effect-wave:hover {
+            transform: translateY(-10px) skewY(-3deg) skewX(3deg);
+            box-shadow: 
+                15px 15px 30px rgba(0,0,0,0.3),
+                0 0 25px rgba(124,77,255,0.2);
+            border-color: rgba(124,77,255,0.4);
+        }
+
+        /* 随机3D效果 - 效果6: 透视变形 */
+        .team-card.effect-perspective:hover {
+            transform: perspective(500px) translateY(-10px) rotateX(20deg);
+            box-shadow: 
+                0 40px 60px rgba(0,0,0,0.4),
+                0 0 30px rgba(255,215,0,0.2);
+            border-color: rgba(255,215,0,0.4);
         }
 
         .team-card.main-dev {
@@ -1044,12 +1182,37 @@
             opacity: 1;
         }
 
-        .contact-card:hover {
+        /* 联系卡片随机3D效果 */
+        .contact-card.effect-tilt:hover {
             border-color: var(--accent);
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px) rotateX(8deg) rotateY(-5deg);
             box-shadow: 
-                0 20px 40px rgba(0,212,255,0.2),
-                0 0 30px rgba(0,212,255,0.1);
+                0 25px 50px rgba(0,212,255,0.25),
+                0 0 35px rgba(0,212,255,0.15);
+        }
+
+        .contact-card.effect-bounce:hover {
+            border-color: var(--primary);
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 
+                0 30px 60px rgba(255,215,0,0.25),
+                0 0 40px rgba(255,215,0,0.15);
+        }
+
+        .contact-card.effect-rotate:hover {
+            border-color: var(--secondary);
+            transform: translateY(-10px) rotateY(12deg);
+            box-shadow: 
+                -15px 15px 35px rgba(255,107,107,0.2),
+                0 0 30px rgba(255,107,107,0.15);
+        }
+
+        .contact-card.effect-wave:hover {
+            border-color: #7c4dff;
+            transform: translateY(-10px) skewY(-3deg);
+            box-shadow: 
+                10px 15px 30px rgba(124,77,255,0.2),
+                0 0 25px rgba(124,77,255,0.15);
         }
 
         .contact-icon {
@@ -1361,13 +1524,31 @@
             text-align: center;
             transition: all 0.3s ease;
             cursor: default;
+            animation: miniCardFadeIn 0.5s ease backwards;
+        }
+
+        /* 赞助小卡片随机效果 */
+        .sponsor-mini-card:nth-child(3n+1) { animation-delay: 0.1s; }
+        .sponsor-mini-card:nth-child(3n+2) { animation-delay: 0.2s; }
+        .sponsor-mini-card:nth-child(3n) { animation-delay: 0.3s; }
+
+        @keyframes miniCardFadeIn {
+            from { opacity: 0; transform: translateY(10px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .sponsor-mini-card:hover {
-            transform: translateY(-3px) scale(1.03);
+            transform: translateY(-5px) scale(1.05) rotate(2deg);
             border-color: rgba(255,215,0,0.3);
-            box-shadow: 0 8px 25px rgba(255,215,0,0.15);
-            background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,107,107,0.08) 100%);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.15);
+            background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,107,107,0.08) 100%);
+        }
+
+        .sponsor-mini-card:nth-child(even):hover {
+            transform: translateY(-5px) scale(1.05) rotate(-2deg);
+            border-color: rgba(0,212,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,212,255,0.15);
+            background: linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(124,77,255,0.08) 100%);
         }
 
         .sponsor-mini-name {
@@ -1471,6 +1652,9 @@
     <!-- 鼠标跟随光效 -->
     <div class="cursor-glow" id="cursorGlow"></div>
     <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- 滚动进度条 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- 星空背景 -->
     <div class="stars" id="stars"></div>
@@ -1702,7 +1886,7 @@
             <div class="sponsor-full-grid" id="silverSponsors"></div>
 
             <div style="text-align: center; margin: 2rem 0 1rem;">
-                <span class="sponsor-tier-badge tier-bronze">🥉 铜牌赞助 (¥1-49)</span>
+                <span class="sponsor-tier-badge tier-bronze">🥉 铜牌赞助 (¥5-49)</span>
             </div>
             <div class="sponsor-full-grid" id="bronzeSponsors"></div>
         </div>
@@ -1806,8 +1990,15 @@
         // 返回顶部按钮
         const backToTop = document.getElementById('backToTop');
         const nav = document.querySelector('nav');
+        const scrollProgress = document.getElementById('scrollProgress');
         
         window.addEventListener('scroll', () => {
+            // 滚动进度条
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+            
             if (window.scrollY > 500) {
                 backToTop.classList.add('visible');
             } else {
@@ -1899,37 +2090,54 @@
         }
         animateGlow();
 
-        // 3D 卡片倾斜效果
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
+        // 团队卡片随机3D效果
+        const effects = ['effect-tilt', 'effect-bounce', 'effect-rotate', 'effect-flip', 'effect-wave', 'effect-perspective'];
+        document.querySelectorAll('.team-card').forEach(card => {
+            const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+            card.classList.add(randomEffect);
         });
 
-        // 团队卡片3D效果
-        document.querySelectorAll('.team-card').forEach(card => {
+        // 联系卡片随机3D效果
+        const contactEffects = ['effect-tilt', 'effect-bounce', 'effect-rotate', 'effect-wave'];
+        document.querySelectorAll('.contact-card').forEach(card => {
+            const randomEffect = contactEffects[Math.floor(Math.random() * contactEffects.length)];
+            card.classList.add(randomEffect);
+        });
+
+        // 特色卡片随机3D效果
+        const featureEffects = ['effect-tilt', 'effect-bounce', 'effect-rotate', 'effect-wave', 'effect-perspective'];
+        document.querySelectorAll('.feature-card').forEach(card => {
+            const randomEffect = featureEffects[Math.floor(Math.random() * featureEffects.length)];
+            card.dataset.effect = randomEffect;
+            
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 15;
-                const rotateY = (centerX - x) / 15;
                 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+                switch(card.dataset.effect) {
+                    case 'effect-tilt':
+                        const rotateX1 = (y - centerY) / 10;
+                        const rotateY1 = (centerX - x) / 10;
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX1}deg) rotateY(${rotateY1}deg) translateY(-15px)`;
+                        break;
+                    case 'effect-bounce':
+                        card.style.transform = `translateY(-15px) scale(1.05)`;
+                        break;
+                    case 'effect-rotate':
+                        card.style.transform = `translateY(-15px) rotateY(10deg) rotateX(3deg)`;
+                        break;
+                    case 'effect-wave':
+                        const skewY = (y - centerY) / 30;
+                        card.style.transform = `translateY(-10px) skewY(${skewY}deg)`;
+                        break;
+                    case 'effect-perspective':
+                        const perspAngle = (y - centerY) / 8;
+                        card.style.transform = `perspective(500px) translateY(-15px) rotateX(${perspAngle}deg)`;
+                        break;
+                }
             });
             
             card.addEventListener('mouseleave', () => {
@@ -2077,8 +2285,13 @@
             ]
         };
 
+        // 赞助列表是否已渲染
+        let sponsorsRendered = false;
+
         // 渲染赞助列表
         function renderSponsors() {
+            if (sponsorsRendered) return; // 防止重复渲染
+            
             const goldContainer = document.getElementById('goldSponsors');
             const silverContainer = document.getElementById('silverSponsors');
             const bronzeContainer = document.getElementById('bronzeSponsors');
@@ -2095,7 +2308,11 @@
                 bronzeContainer.innerHTML += `<div class="sponsor-mini-card"><div class="sponsor-mini-name">${s.name}</div><div class="sponsor-mini-amount">¥${s.amount.toFixed(2)}</div></div>`;
             });
 
-            // 计算统计数据
+            sponsorsRendered = true;
+        }
+
+        // 计算统计数据
+        function calculateStats() {
             const topSponsors = [
                 { name: '笑问哈哈哈', amount: 5000 },
                 { name: '但愿人长久', amount: 1543 },
@@ -2116,6 +2333,27 @@
             document.getElementById('totalAmount').textContent = '¥' + totalAmount.toFixed(2);
             document.getElementById('avgAmount').textContent = '¥' + avgAmount.toFixed(2);
         }
+
+        // 页面加载时计算统计
+        calculateStats();
+
+        // 按钮波纹效果
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const ripple = document.createElement('span');
+                ripple.className = 'btn-ripple';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
 
         // 展开/收起赞助名单
         function toggleFullSponsors() {
