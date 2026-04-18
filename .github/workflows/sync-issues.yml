@@ -1,0 +1,13 @@
+name: 同步 Gitee Issues 到 GitHub
+on:
+  repository_dispatch:
+    types: [gitee_issue]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 创建或更新 GitHub Issue
+        uses: fjogeleit/github-issue-sync-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
