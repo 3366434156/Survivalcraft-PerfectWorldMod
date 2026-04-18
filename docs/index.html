@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>完美世界 Mod - 修仙之旅</title>
+    <title>完美世界 Mod - Survivalcraft 修仙之旅</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
     <style>
@@ -108,16 +108,26 @@
             top: 0;
             width: 100%;
             padding: 1rem 2rem;
-            background: linear-gradient(180deg, rgba(10,10,26,0.95) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(10,10,26,0.8) 0%, transparent 100%);
             backdrop-filter: blur(10px);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10,10,26,0.95);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
         }
 
         [data-theme="light"] nav {
-            background: linear-gradient(180deg, rgba(245,245,250,0.95) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(245,245,250,0.8) 0%, transparent 100%);
+        }
+
+        [data-theme="light"] nav.scrolled {
+            background: rgba(245,245,250,0.95);
         }
 
         .logo {
@@ -199,7 +209,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+            padding: 8rem 2rem 4rem;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -271,6 +281,51 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Survivalcraft徽章 */
+        .survivalcraft-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, rgba(124,77,255,0.2) 0%, rgba(0,212,255,0.2) 100%);
+            border: 1px solid rgba(124,77,255,0.4);
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out, badgeGlow 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        .sc-icon {
+            font-size: 1.3rem;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .sc-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #7c4dff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes badgeGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(124,77,255,0.2);
+                border-color: rgba(124,77,255,0.4);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(0,212,255,0.3);
+                border-color: rgba(0,212,255,0.6);
+            }
+        }
+
         .hero-image-container {
             position: relative;
             margin: 2rem 0;
@@ -287,41 +342,62 @@
             transition: transform 0.3s ease;
         }
 
+        /* 多层炫彩环绕效果 */
         .hero-image-container::before {
             content: '';
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
             background: linear-gradient(135deg, 
                 var(--primary) 0%, 
                 var(--secondary) 25%, 
                 var(--accent) 50%, 
-                var(--secondary) 75%, 
+                #7c4dff 75%,
                 var(--primary) 100%);
             background-size: 400% 400%;
-            border-radius: 25px;
+            border-radius: 30px;
             z-index: 1;
-            animation: borderGradient 3s ease infinite;
-            opacity: 0.8;
+            animation: borderGradient 4s ease infinite, borderPulse 2s ease-in-out infinite;
+            opacity: 0.9;
+            filter: blur(3px);
         }
 
+        /* 外层光晕 */
         .hero-image-container::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--darker);
-            border-radius: 20px;
-            z-index: 1;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            background: linear-gradient(135deg, 
+                rgba(255,215,0,0.3) 0%,
+                rgba(255,107,107,0.2) 25%,
+                rgba(0,212,255,0.2) 50%,
+                rgba(124,77,255,0.2) 75%,
+                rgba(255,215,0,0.3) 100%);
+            background-size: 400% 400%;
+            border-radius: 40px;
+            z-index: 0;
+            animation: borderGradient 6s ease infinite, outerGlow 3s ease-in-out infinite;
+            filter: blur(15px);
         }
 
         @keyframes borderGradient {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
+        }
+
+        @keyframes borderPulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        @keyframes outerGlow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
         }
 
         @keyframes float {
@@ -439,11 +515,52 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: sectionGradient 4s ease infinite;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            transform-style: preserve-3d;
+            perspective: 500px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            background-size: 200% 200%;
+            animation: sectionGradient 4s ease infinite;
+            border-radius: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
+            filter: blur(8px);
         }
 
         @keyframes sectionGradient {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
+        }
+
+        /* 标题悬浮动画 */
+        section h2.section-title {
+            animation: sectionGradient 4s ease infinite, titleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         /* 特色卡片 - 3D效果 */
@@ -498,6 +615,13 @@
             display: inline-block;
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             filter: drop-shadow(0 0 10px rgba(255,215,0,0.3));
+            animation: emojiFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes emojiFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(-3deg); }
+            75% { transform: translateY(5px) rotate(3deg); }
         }
 
         .feature-card:hover .feature-icon {
@@ -536,7 +660,137 @@
             color: rgba(255,255,255,0.9);
         }
 
-        /* 团队表格 */
+        /* 团队表格 - 升级为3D卡片 */
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            perspective: 1000px;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(-3deg);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.3),
+                0 0 30px rgba(255,215,0,0.15),
+                inset 0 0 20px rgba(255,255,255,0.05);
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        .team-card.main-dev {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .team-card.main-dev::before {
+            background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6b6b);
+            height: 5px;
+        }
+
+        .team-role {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(255,107,107,0.2) 100%);
+            border-radius: 15px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .team-card.main-dev .team-role {
+            background: linear-gradient(135deg, rgba(255,215,0,0.3) 0%, rgba(255,140,0,0.3) 100%);
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-qq {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .team-qq a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .team-qq a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+
+        .team-contribution {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        [data-theme="light"] .team-contribution {
+            color: rgba(0,0,0,0.7);
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
+        }
+
+        .section-divider span {
+            font-size: 1.5rem;
+            animation: dividerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dividerPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* 团队表格 - 保留旧样式兼容 */
         .team-table {
             width: 100%;
             border-collapse: collapse;
@@ -627,6 +881,12 @@
             color: var(--primary);
             margin-bottom: 0.5rem;
             transition: all 0.3s;
+            animation: sponsorNameGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes sponsorNameGlow {
+            0%, 100% { text-shadow: 0 0 5px rgba(255,215,0,0.2); }
+            50% { text-shadow: 0 0 15px rgba(255,215,0,0.4); }
         }
 
         .sponsor-card:hover .sponsor-name {
@@ -797,11 +1057,24 @@
             margin-bottom: 1rem;
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             display: inline-block;
+            animation: contactIconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes contactIconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(-5deg); }
+            75% { transform: translateY(5px) rotate(5deg); }
         }
 
         .contact-card:hover .contact-icon {
-            transform: scale(1.3) rotate(-10deg);
+            transform: scale(1.3) rotate(-15deg);
             filter: drop-shadow(0 0 15px rgba(0,212,255,0.5));
+            animation: contactIconBounce 0.6s ease;
+        }
+
+        @keyframes contactIconBounce {
+            0%, 100% { transform: scale(1.3) rotate(-15deg); }
+            50% { transform: scale(1.5) rotate(15deg); }
         }
 
         .contact-card h3 {
@@ -912,13 +1185,57 @@
         /* 鼠标跟随光效 */
         .cursor-glow {
             position: fixed;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, 
+                rgba(255,215,0,0.2) 0%, 
+                rgba(255,107,107,0.15) 25%,
+                rgba(0,212,255,0.1) 50%,
+                transparent 70%);
             pointer-events: none;
             z-index: 0;
             transform: translate(-50%, -50%);
             transition: opacity 0.3s;
+            filter: blur(2px);
+        }
+
+        .cursor-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, 
+                rgba(255,215,0,0.4) 0%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: cursorPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes cursorPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,215,0,0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: all 0.15s ease-out;
+        }
+
+        .cursor-ring.hover {
+            width: 40px;
+            height: 40px;
+            border-color: rgba(0,212,255,0.8);
+            background: rgba(0,212,255,0.1);
         }
 
         /* 赞赏码区域 */
@@ -1153,6 +1470,7 @@
 <body>
     <!-- 鼠标跟随光效 -->
     <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <!-- 星空背景 -->
     <div class="stars" id="stars"></div>
@@ -1173,6 +1491,10 @@
 
     <!-- Hero 区域 -->
     <section class="hero" id="top">
+        <div class="survivalcraft-badge">
+            <span class="sc-icon">🎮</span>
+            <span class="sc-text">Survivalcraft Mod</span>
+        </div>
         <h1>完美世界 Mod</h1>
         <p class="hero-subtitle">修仙之旅 · 由此启程</p>
         <div class="hero-image-container">
@@ -1226,65 +1548,58 @@
         <h2 class="section-title">👥 开发团队</h2>
         
         <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">👑 主开发者</h3>
-        <table class="team-table">
-            <thead>
-                <tr>
-                    <th>成员</th>
-                    <th>QQ</th>
-                    <th>主要贡献</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>隐形守护者</strong></td>
-                    <td><a href="https://wpa.qq.com/msgrd?v=3&uin=3366434156&site=qq&menu=yes">3366434156</a></td>
-                    <td>SC 完美世界Mod原作者，规划发展方向，完成几乎所有源码工作</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="team-section">
+            <div class="team-card main-dev">
+                <div class="team-role">👑 Mod创始人</div>
+                <div class="team-name">隐形守护者</div>
+                <div class="team-qq"><a href="https://wpa.qq.com/msgrd?v=3&uin=3366434156&site=qq&menu=yes">🐧 3366434156</a></div>
+                <div class="team-contribution">SC 完美世界Mod原作者，规划发展方向，完成几乎所有源码工作，是完美世界的核心创造者与灵魂人物</div>
+            </div>
+        </div>
 
-        <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: var(--primary);">🛠️ 核心成员</h3>
-        <table class="team-table">
-            <thead>
-                <tr>
-                    <th>成员</th>
-                    <th>QQ</th>
-                    <th>主要贡献</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>再回首</strong></td>
-                    <td>1926***138</td>
-                    <td>多维度，交易，超大型建筑自然生成，修复部分难以解决的bug</td>
-                </tr>
-                <tr>
-                    <td><strong>筠槛</strong></td>
-                    <td>3308***767</td>
-                    <td>制作各种buff图标、生物贴图染色、植物贴图，完成悦灵城主体建筑(95%)，给交易定价</td>
-                </tr>
-                <tr>
-                    <td><strong>多人君</strong></td>
-                    <td>1920***653</td>
-                    <td>剑意系统</td>
-                </tr>
-                <tr>
-                    <td><strong>gg</strong></td>
-                    <td>4196***83</td>
-                    <td>入侵包模型系列改制，部分模型自购于淘宝，制作部分物品</td>
-                </tr>
-                <tr>
-                    <td><strong>星途</strong></td>
-                    <td>1635***562</td>
-                    <td>制作部分生物贴图，以及部分植物贴图</td>
-                </tr>
-                <tr>
-                    <td><strong>峥嵘岁月</strong></td>
-                    <td>3590***354</td>
-                    <td>完美世界Mod高玩，2024.3.4加入制作组，负责0.5.4版本之前的数值平衡</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="section-divider">
+            <span>✨</span>
+        </div>
+
+        <h3 style="text-align: center; margin: 1.5rem 0; color: var(--primary);">🛠️ 核心成员</h3>
+        <div class="team-section">
+            <div class="team-card">
+                <div class="team-role">🔧 技术开发</div>
+                <div class="team-name">再回首</div>
+                <div class="team-qq">🐧 1926***138</div>
+                <div class="team-contribution">多维度、交易系统、超大型建筑自然生成，修复部分难以解决的bug</div>
+            </div>
+            <div class="team-card">
+                <div class="team-role">🎨 美术设计</div>
+                <div class="team-name">筠槛</div>
+                <div class="team-qq">🐧 3308***767</div>
+                <div class="team-contribution">制作各种buff图标、生物贴图染色、植物贴图，完成悦灵城主体建筑(95%)</div>
+            </div>
+            <div class="team-card">
+                <div class="team-role">⚔️ 系统设计</div>
+                <div class="team-name">多人君</div>
+                <div class="team-qq">🐧 1920***653</div>
+                <div class="team-contribution">剑意系统核心设计与实现，让玩家体验御剑飞行的快感</div>
+            </div>
+            <div class="team-card">
+                <div class="team-role">🧱 模型制作</div>
+                <div class="team-name">gg</div>
+                <div class="team-qq">🐧 4196***83</div>
+                <div class="team-contribution">入侵包模型系列改制，部分模型自购于淘宝，制作部分物品</div>
+            </div>
+            <div class="team-card">
+                <div class="team-role">🖌️ 贴图设计</div>
+                <div class="team-name">星途</div>
+                <div class="team-qq">🐧 1635***562</div>
+                <div class="team-contribution">制作部分生物贴图以及植物贴图，为世界增添色彩</div>
+            </div>
+            <div class="team-card">
+                <div class="team-role">⚖️ 数值平衡</div>
+                <div class="team-name">峥嵘岁月</div>
+                <div class="team-qq">🐧 3590***354</div>
+                <div class="team-contribution">完美世界Mod高玩，2024.3.4加入制作组，负责0.5.4版本之前的数值平衡</div>
+            </div>
+        </div>
     </section>
 
     <!-- 赞助鸣谢 -->
@@ -1447,8 +1762,8 @@
 
     <!-- 页脚 -->
     <footer>
-        <p>🌍 完美世界 Mod | 修仙之旅 · 由此启程</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Made with 💖 by 隐形守护者 & 团队</p>
+        <p>🌍 完美世界 Mod | Survivalcraft 修仙之旅 · 由此启程</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Made with 💖 by 隐形守护者 & 团队 | Powered by Survivalcraft</p>
     </footer>
 
     <!-- 返回顶部 -->
@@ -1490,12 +1805,20 @@
 
         // 返回顶部按钮
         const backToTop = document.getElementById('backToTop');
+        const nav = document.querySelector('nav');
         
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
                 backToTop.classList.add('visible');
             } else {
                 backToTop.classList.remove('visible');
+            }
+            
+            // 导航栏滚动效果
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
         });
 
@@ -1542,19 +1865,36 @@
 
         // 鼠标跟随光效
         const cursorGlow = document.getElementById('cursorGlow');
+        const cursorRing = document.getElementById('cursorRing');
         let mouseX = 0, mouseY = 0;
         let glowX = 0, glowY = 0;
+        let ringX = 0, ringY = 0;
         
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
 
+        // 鼠标悬停在交互元素上
+        const interactiveElements = document.querySelectorAll('a, button, .feature-card, .sponsor-card, .contact-card, .team-card, .team-table tr, .qr-image-wrapper');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+        });
+
         function animateGlow() {
-            glowX += (mouseX - glowX) * 0.1;
-            glowY += (mouseY - glowY) * 0.1;
+            // 大光晕慢速跟随
+            glowX += (mouseX - glowX) * 0.08;
+            glowY += (mouseY - glowY) * 0.08;
             cursorGlow.style.left = glowX + 'px';
             cursorGlow.style.top = glowY + 'px';
+            
+            // 光环快速跟随
+            ringX += (mouseX - ringX) * 0.2;
+            ringY += (mouseY - ringY) * 0.2;
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top = ringY + 'px';
+            
             requestAnimationFrame(animateGlow);
         }
         animateGlow();
@@ -1577,6 +1917,223 @@
                 card.style.transform = '';
             });
         });
+
+        // 团队卡片3D效果
+        document.querySelectorAll('.team-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // 完整赞助数据
+        const sponsorsData = {
+            gold: [
+                { name: 'spirit', amount: 400 },
+                { name: 'Excalibur', amount: 400 },
+                { name: '勿', amount: 316 },
+                { name: '天勤', amount: 252 },
+                { name: '周周', amount: 250 },
+                { name: '勿扰', amount: 250 },
+                { name: '猫先森', amount: 210 },
+                { name: 'byd', amount: 200 },
+                { name: 'lstx', amount: 200 },
+                { name: '逸淤', amount: 200 },
+                { name: '筠槛', amount: 200 },
+                { name: '闲心', amount: 200 },
+                { name: '羽轩', amount: 200 },
+                { name: '大古', amount: 200 },
+                { name: '七', amount: 200 }
+            ],
+            silver: [
+                { name: '铁石心肠的源龙星人', amount: 188 },
+                { name: '长青', amount: 150 },
+                { name: '渊云川', amount: 150 },
+                { name: 'Floatingdream', amount: 130 },
+                { name: '林兮', amount: 121.66 },
+                { name: '峥嵘岁月', amount: 120 },
+                { name: '面包爱上了酸奶', amount: 100 },
+                { name: '远方星游', amount: 100 },
+                { name: '郑玩手机', amount: 100 },
+                { name: '林中鹿', amount: 100 },
+                { name: '杨枝甘露', amount: 100 },
+                { name: '浪漫至死不渝', amount: 100 },
+                { name: '超心塞的兔头帮', amount: 100 },
+                { name: '星辰信使', amount: 100 },
+                { name: '木偶戏', amount: 100 },
+                { name: '佚名', amount: 100 },
+                { name: '以木', amount: 100 },
+                { name: '吃面的迪迦', amount: 100 },
+                { name: '旧守一个梦', amount: 100 },
+                { name: '猫南北', amount: 100 },
+                { name: '清风', amount: 90 },
+                { name: '遥遥无期', amount: 88.88 },
+                { name: '如沐春风', amount: 88 },
+                { name: '散文', amount: 86 },
+                { name: 'う思あ', amount: 85 },
+                { name: 'EGARSA', amount: 70 },
+                { name: '小桃先生', amount: 66.88 },
+                { name: '八脚章鱼万花筒三只眼', amount: 66.60 },
+                { name: '良人陪', amount: 66 },
+                { name: '暗黑大帝', amount: 66 },
+                { name: '佚名', amount: 66 },
+                { name: '。', amount: 66 },
+                { name: '懒羊羊', amount: 66 },
+                { name: '不吃鱼的猫项', amount: 60 },
+                { name: 'TRY(老巫)', amount: 60 },
+                { name: '锦瑟华年', amount: 60 },
+                { name: '山海', amount: 55 },
+                { name: '一顿狂炫十八碗', amount: 52 }
+            ],
+            bronze: [
+                { name: '佚名', amount: 50 },
+                { name: '山茶暮鱼', amount: 50 },
+                { name: '仰望星空', amount: 50 },
+                { name: '玄无', amount: 50 },
+                { name: 'aspirition', amount: 50 },
+                { name: '不满的汤', amount: 50 },
+                { name: '拓木', amount: 50 },
+                { name: '飞宇', amount: 50 },
+                { name: '白愁', amount: 40 },
+                { name: '李云', amount: 30 },
+                { name: '千雪红梅', amount: 30 },
+                { name: '酒窖以空', amount: 26.88 },
+                { name: '赖某宝', amount: 23 },
+                { name: '无因', amount: 20 },
+                { name: '大罗金仙', amount: 20 },
+                { name: '游太亮', amount: 20 },
+                { name: '芜水平', amount: 20 },
+                { name: '0321', amount: 20 },
+                { name: '手高金戈', amount: 20 },
+                { name: '佚名', amount: 20 },
+                { name: '末鸢', amount: 20 },
+                { name: '以木', amount: 20 },
+                { name: 'Q.W', amount: 20 },
+                { name: '容易记的人', amount: 20 },
+                { name: '蓝', amount: 20 },
+                { name: '嘿嘿', amount: 20 },
+                { name: '是他啊', amount: 20 },
+                { name: '聆箫', amount: 20 },
+                { name: '0321', amount: 20 },
+                { name: '華翛', amount: 20 },
+                { name: '苏焅宇', amount: 20 },
+                { name: '郑伟伟', amount: 20 },
+                { name: '寒蝉已噤', amount: 16.50 },
+                { name: 'L.Lank', amount: 15 },
+                { name: '二郎神涮狗肉', amount: 15 },
+                { name: '麻瓜', amount: 15 },
+                { name: '^0^', amount: 14 },
+                { name: '佚名', amount: 12 },
+                { name: 'king', amount: 11 },
+                { name: '千反田', amount: 10 },
+                { name: '齾魆', amount: 10 },
+                { name: '起名难', amount: 10 },
+                { name: 'sc殇', amount: 10 },
+                { name: '小温', amount: 10 },
+                { name: '星君', amount: 10 },
+                { name: '正景', amount: 10 },
+                { name: '只你太美', amount: 10 },
+                { name: '佚名', amount: 10 },
+                { name: '明日晴转小雨', amount: 10 },
+                { name: '流时璃夕', amount: 10 },
+                { name: '大古同茗', amount: 10 },
+                { name: 'Limru.', amount: 10 },
+                { name: '碇真嗣', amount: 10 },
+                { name: '思', amount: 10 },
+                { name: '白洁莉娜·贝纳勒斯', amount: 10 },
+                { name: '简笔画', amount: 10 },
+                { name: 'C小CC', amount: 8.88 },
+                { name: '囍', amount: 6.67 },
+                { name: '佚名', amount: 6.66 },
+                { name: '靠岸了', amount: 6.66 },
+                { name: '佚名', amount: 6.66 },
+                { name: '黯骑', amount: 6.66 },
+                { name: '天渝', amount: 6 },
+                { name: '归星似剑', amount: 5 },
+                { name: '杰西', amount: 5 },
+                { name: '佚名', amount: 5 },
+                { name: '嘿，学习吗', amount: 5 },
+                { name: '异世界公主', amount: 5 },
+                { name: '憨豆', amount: 5 },
+                { name: 'Ec', amount: 5 },
+                { name: '东方子弦', amount: 5 },
+                { name: '羽楚呐', amount: 5 },
+                { name: '山海', amount: 5 },
+                { name: '人文初祖', amount: 5 },
+                { name: '唤雨', amount: 5 },
+                { name: 'AwA', amount: 5 },
+                { name: '一纸荒凉', amount: 5 }
+            ]
+        };
+
+        // 渲染赞助列表
+        function renderSponsors() {
+            const goldContainer = document.getElementById('goldSponsors');
+            const silverContainer = document.getElementById('silverSponsors');
+            const bronzeContainer = document.getElementById('bronzeSponsors');
+
+            sponsorsData.gold.forEach(s => {
+                goldContainer.innerHTML += `<div class="sponsor-mini-card"><div class="sponsor-mini-name">${s.name}</div><div class="sponsor-mini-amount">¥${s.amount.toFixed(2)}</div></div>`;
+            });
+
+            sponsorsData.silver.forEach(s => {
+                silverContainer.innerHTML += `<div class="sponsor-mini-card"><div class="sponsor-mini-name">${s.name}</div><div class="sponsor-mini-amount">¥${s.amount.toFixed(2)}</div></div>`;
+            });
+
+            sponsorsData.bronze.forEach(s => {
+                bronzeContainer.innerHTML += `<div class="sponsor-mini-card"><div class="sponsor-mini-name">${s.name}</div><div class="sponsor-mini-amount">¥${s.amount.toFixed(2)}</div></div>`;
+            });
+
+            // 计算统计数据
+            const topSponsors = [
+                { name: '笑问哈哈哈', amount: 5000 },
+                { name: '但愿人长久', amount: 1543 },
+                { name: '云', amount: 1110 },
+                { name: '瑞雪', amount: 1100 },
+                { name: '嫦梦留痕', amount: 1000 },
+                { name: '咕咕蝎·孤蝎', amount: 1000 },
+                { name: '浮世三千', amount: 750 },
+                { name: '非洲酋长', amount: 500 }
+            ];
+            
+            const allSponsors = [...topSponsors, ...sponsorsData.gold, ...sponsorsData.silver, ...sponsorsData.bronze];
+            const totalCount = allSponsors.length;
+            const totalAmount = allSponsors.reduce((sum, s) => sum + s.amount, 0);
+            const avgAmount = totalAmount / totalCount;
+
+            document.getElementById('totalSponsors').textContent = totalCount;
+            document.getElementById('totalAmount').textContent = '¥' + totalAmount.toFixed(2);
+            document.getElementById('avgAmount').textContent = '¥' + avgAmount.toFixed(2);
+        }
+
+        // 展开/收起赞助名单
+        function toggleFullSponsors() {
+            const list = document.getElementById('fullSponsorList');
+            const text = document.getElementById('toggleText');
+            const arrow = document.getElementById('toggleArrow');
+            
+            if (list.style.display === 'none') {
+                list.style.display = 'block';
+                text.textContent = '收起完整赞助名单';
+                arrow.textContent = '▲';
+                renderSponsors();
+            } else {
+                list.style.display = 'none';
+                text.textContent = '展开完整赞助名单';
+                arrow.textContent = '▼';
+            }
+        }
     </script>
 </body>
 </html>
