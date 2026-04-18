@@ -920,6 +920,234 @@
             transform: translate(-50%, -50%);
             transition: opacity 0.3s;
         }
+
+        /* 赞赏码区域 */
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,107,107,0.08) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(255,215,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-section::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background-size: 400% 400%;
+            border-radius: 27px;
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+            opacity: 0.4;
+        }
+
+        .qr-container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .qr-image-wrapper {
+            position: relative;
+            padding: 10px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.4),
+                0 0 40px rgba(255,215,0,0.15);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .qr-image-wrapper:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 
+                0 30px 80px rgba(0,0,0,0.5),
+                0 0 60px rgba(255,215,0,0.3);
+        }
+
+        .qr-image-wrapper img {
+            width: 260px;
+            height: 260px;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .qr-text {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .qr-text h3 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255,215,0,0.3);
+        }
+
+        .qr-text p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        [data-theme="light"] .qr-text p {
+            color: rgba(0,0,0,0.7);
+        }
+
+        .qr-text .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* 完整赞助列表 */
+        .sponsor-full-list {
+            margin-top: 3rem;
+        }
+
+        .sponsor-full-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.8rem;
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .sponsor-full-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sponsor-full-grid::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+
+        .sponsor-full-grid::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .sponsor-mini-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 0.8rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .sponsor-mini-card:hover {
+            transform: translateY(-3px) scale(1.03);
+            border-color: rgba(255,215,0,0.3);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.15);
+            background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,107,107,0.08) 100%);
+        }
+
+        .sponsor-mini-name {
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        [data-theme="light"] .sponsor-mini-name {
+            color: rgba(0,0,0,0.8);
+        }
+
+        .sponsor-mini-amount {
+            font-size: 0.85rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .sponsor-tier-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .tier-top { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; }
+        .tier-gold { background: linear-gradient(135deg, #ff8c00, #ff6b6b); color: #fff; }
+        .tier-silver { background: linear-gradient(135deg, #7c4dff, #b388ff); color: #fff; }
+        .tier-bronze { background: linear-gradient(135deg, #00d4ff, #00e676); color: #000; }
+
+        /* 展开收起按钮 */
+        .toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            margin: 2rem auto 0;
+            background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(0,212,255,0.15) 100%);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 30px;
+            color: var(--primary);
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.2);
+            border-color: var(--primary);
+        }
+
+        .sponsor-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--glass);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.3rem;
+        }
+
+        [data-theme="light"] .stat-label {
+            color: rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body>
@@ -1063,7 +1291,44 @@
     <section id="sponsors" class="fade-in">
         <h2 class="section-title">💖 赞助鸣谢</h2>
         <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 2rem;">感谢以下玩家的慷慨支持，让完美世界Mod越来越好！</p>
-        
+
+        <!-- 赞助统计 -->
+        <div class="sponsor-stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalSponsors">0</div>
+                <div class="stat-label">赞助人数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalAmount">¥0</div>
+                <div class="stat-label">累计赞助</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="avgAmount">¥0</div>
+                <div class="stat-label">人均赞助</div>
+            </div>
+        </div>
+
+        <!-- 赞赏码 -->
+        <div class="qr-section">
+            <h3 style="font-family: 'Ma Shan Zheng', cursive; font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(255,215,0,0.3);">💰 扫码赞赏</h3>
+            <div class="qr-container">
+                <div class="qr-image-wrapper">
+                    <img src="赞赏码.webp" alt="赞赏码">
+                </div>
+                <div class="qr-text">
+                    <h3>用爱发电 ❤️</h3>
+                    <p>
+                        制作组本着用爱发电的原则来创造模组，如果你喜欢本模组，可以扫描左边的赞赏码进行赞赏。
+                        <br><br>
+                        每一位赞赏者都会出现在赞助名单中（如果名单有漏的可以联系我）。<br><br>
+                        另外，<span class="highlight">赞赏的人有机会加入相关形象的人形生物作为修士</span>存在于完美世界Mod中！<br><br>
+                        感谢各位的支持 💖
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 头部赞助 -->
         <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">🏆 头部赞助</h3>
         <div class="sponsors-grid">
             <div class="sponsor-card">
@@ -1098,6 +1363,33 @@
                 <div class="sponsor-name">非洲酋长</div>
                 <div class="sponsor-amount">¥500.00</div>
             </div>
+        </div>
+
+        <!-- 展开/收起完整赞助 -->
+        <div style="text-align: center;">
+            <button class="toggle-btn" id="toggleSponsors" onclick="toggleFullSponsors()">
+                <span>📜</span>
+                <span id="toggleText">展开完整赞助名单</span>
+                <span id="toggleArrow">▼</span>
+            </button>
+        </div>
+
+        <!-- 完整赞助列表（默认隐藏） -->
+        <div class="sponsor-full-list" id="fullSponsorList" style="display: none;">
+            <div style="text-align: center; margin: 2rem 0 1rem;">
+                <span class="sponsor-tier-badge tier-gold">🎖️ 金牌赞助 (¥200+)</span>
+            </div>
+            <div class="sponsor-full-grid" id="goldSponsors"></div>
+
+            <div style="text-align: center; margin: 2rem 0 1rem;">
+                <span class="sponsor-tier-badge tier-silver">🥈 银牌赞助 (¥50-199)</span>
+            </div>
+            <div class="sponsor-full-grid" id="silverSponsors"></div>
+
+            <div style="text-align: center; margin: 2rem 0 1rem;">
+                <span class="sponsor-tier-badge tier-bronze">🥉 铜牌赞助 (¥1-49)</span>
+            </div>
+            <div class="sponsor-full-grid" id="bronzeSponsors"></div>
         </div>
     </section>
 
