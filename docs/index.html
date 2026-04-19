@@ -640,11 +640,16 @@
         }
 
         /* 特色卡片随机效果边框 */
-        .feature-card.effect-tilt { border-left: 3px solid var(--primary); }
-        .feature-card.effect-bounce { border-top: 3px solid var(--accent); }
-        .feature-card.effect-rotate { border-right: 3px solid var(--secondary); }
-        .feature-card.effect-wave { border-bottom: 3px solid #7c4dff; }
-        .feature-card.effect-perspective { border-left: 3px solid #00e676; }
+        .feature-card.fx-tilt { border-left: 3px solid var(--primary); }
+        .feature-card.fx-bounce { border-top: 3px solid var(--accent); }
+        .feature-card.fx-rotate { border-right: 3px solid var(--secondary); }
+        .feature-card.fx-wave { border-bottom: 3px solid #7c4dff; }
+        .feature-card.fx-perspective { border-left: 3px solid #00e676; }
+        .feature-card.fx-neon { border: 1px solid rgba(0,255,255,0.3); }
+        .feature-card.fx-hologram { border: 1px solid rgba(255,0,255,0.3); }
+        .feature-card.fx-cube { border: 1px solid rgba(255,215,0,0.3); }
+        .feature-card.fx-morph { border: 1px solid rgba(0,230,118,0.3); }
+        .feature-card.fx-float { border: 1px solid rgba(255,107,107,0.3); }
 
         .feature-card::before {
             content: '';
@@ -779,64 +784,498 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
         }
 
-        /* 随机3D效果 - 效果1: 倾斜翻转 */
-        .team-card.effect-tilt:hover {
+        /* ===== Galaxy 风格 3D 效果库 (25种) ===== */
+
+        /* 效果1: 倾斜翻转 - 经典3D tilt */
+        .fx-tilt:hover {
             transform: translateY(-10px) rotateX(10deg) rotateY(-5deg);
-            box-shadow: 
-                0 25px 50px rgba(0,0,0,0.3),
-                0 0 30px rgba(255,215,0,0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 30px rgba(255,215,0,0.15);
             border-color: rgba(255,215,0,0.3);
         }
 
-        /* 随机3D效果 - 效果2: 弹跳缩放 */
-        .team-card.effect-bounce:hover {
-            transform: translateY(-15px) scale(1.05);
-            animation: cardBounce 0.5s ease;
-            box-shadow: 
-                0 30px 60px rgba(0,0,0,0.4),
-                0 0 40px rgba(0,212,255,0.2);
+        /* 效果2: 弹跳缩放 */
+        .fx-bounce:hover {
+            animation: fxBounce 0.6s ease forwards;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,212,255,0.2);
             border-color: rgba(0,212,255,0.4);
         }
-
-        @keyframes cardBounce {
-            0% { transform: translateY(-15px) scale(1.05); }
-            50% { transform: translateY(-20px) scale(1.08); }
+        @keyframes fxBounce {
+            0% { transform: translateY(-10px) scale(1); }
+            40% { transform: translateY(-22px) scale(1.08); }
+            70% { transform: translateY(-16px) scale(1.04); }
             100% { transform: translateY(-15px) scale(1.05); }
         }
 
-        /* 随机3D效果 - 效果3: 旋转立体 */
-        .team-card.effect-rotate:hover {
+        /* 效果3: 旋转立体 */
+        .fx-rotate:hover {
             transform: translateY(-10px) rotateY(15deg) rotateX(5deg);
-            box-shadow: 
-                -20px 20px 40px rgba(0,0,0,0.3),
-                0 0 30px rgba(255,107,107,0.2);
+            box-shadow: -20px 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(255,107,107,0.2);
             border-color: rgba(255,107,107,0.4);
         }
 
-        /* 随机3D效果 - 效果4: 翻转 */
-        .team-card.effect-flip:hover {
-            transform: translateY(-10px) rotateX(180deg);
-            box-shadow: 
-                0 25px 50px rgba(0,0,0,0.4);
+        /* 效果4: 深度翻转 - 完全180度 */
+        .fx-flip:hover {
+            transform: perspective(800px) translateY(0) rotateX(180deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
         }
 
-        /* 随机3D效果 - 效果5: 波浪倾斜 */
-        .team-card.effect-wave:hover {
+        /* 效果5: 波浪扭曲 */
+        .fx-wave:hover {
             transform: translateY(-10px) skewY(-3deg) skewX(3deg);
-            box-shadow: 
-                15px 15px 30px rgba(0,0,0,0.3),
-                0 0 25px rgba(124,77,255,0.2);
+            box-shadow: 15px 15px 30px rgba(0,0,0,0.3), 0 0 25px rgba(124,77,255,0.2);
             border-color: rgba(124,77,255,0.4);
         }
 
-        /* 随机3D效果 - 效果6: 透视变形 */
-        .team-card.effect-perspective:hover {
+        /* 效果6: 透视变形 - Galaxy 风格 */
+        .fx-perspective:hover {
             transform: perspective(500px) translateY(-10px) rotateX(20deg);
+            box-shadow: 0 40px 60px rgba(0,0,0,0.4), 0 0 30px rgba(255,215,0,0.2);
+            border-color: rgba(255,215,0,0.4);
+        }
+
+        /* 效果7: 霓虹脉冲 - 全息霓虹风格 */
+        .fx-neon:hover {
+            transform: translateY(-12px) scale(1.02);
             box-shadow: 
-                0 40px 60px rgba(0,0,0,0.4),
+                0 0 15px rgba(0,255,255,0.4),
+                0 0 30px rgba(0,255,255,0.2),
+                0 0 60px rgba(124,77,255,0.15),
+                0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(0,255,255,0.6);
+            animation: fxNeonPulse 1s ease-in-out infinite alternate;
+        }
+        @keyframes fxNeonPulse {
+            0% { box-shadow: 0 0 15px rgba(0,255,255,0.4), 0 0 30px rgba(0,255,255,0.2), 0 20px 40px rgba(0,0,0,0.3); }
+            100% { box-shadow: 0 0 20px rgba(124,77,255,0.5), 0 0 40px rgba(124,77,255,0.25), 0 0 80px rgba(255,0,255,0.1), 0 25px 50px rgba(0,0,0,0.35); border-color: rgba(124,77,255,0.6); }
+        }
+
+        /* 效果8: 全息彩虹 - Galaxy 彩色渐变边框 */
+        .fx-hologram:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-image: linear-gradient(135deg, #ff0000, #ff8800, #ffff00, #00ff00, #00ffff, #0088ff, #8800ff, #ff00ff) 1;
+            box-shadow: 
+                0 0 20px rgba(255,0,255,0.3),
+                0 0 40px rgba(0,255,255,0.2),
+                inset 0 0 30px rgba(255,255,255,0.05),
+                0 20px 40px rgba(0,0,0,0.3);
+            animation: fxHologram 2s linear infinite;
+        }
+        @keyframes fxHologram {
+            0% { filter: hue-rotate(0deg) brightness(1.1); }
+            100% { filter: hue-rotate(360deg) brightness(1.1); }
+        }
+
+        /* 效果9: 磁吸吸附 - 从鼠标方向吸入 */
+        .fx-magnetic:hover {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s;
+            box-shadow: 0 30px 60px rgba(255,107,107,0.3), 0 0 20px rgba(255,107,107,0.15);
+            border-color: rgba(255,107,107,0.5);
+        }
+
+        /* 效果10: 立方体旋转 - 3D 立方体感 */
+        .fx-cube:hover {
+            transform: perspective(600px) rotateX(-8deg) rotateY(12deg) translateZ(20px);
+            box-shadow: 
+                8px 8px 0 rgba(255,215,0,0.15),
+                16px 16px 0 rgba(255,215,0,0.08),
+                0 30px 50px rgba(0,0,0,0.3);
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        /* 效果11: 纸张折角 - 模拟纸张翻起 */
+        .fx-fold:hover {
+            transform: perspective(800px) rotateY(-8deg) rotateX(3deg) translateX(-5px);
+            box-shadow: 
+                -5px 5px 0 rgba(0,212,255,0.1),
+                -10px 10px 0 rgba(0,212,255,0.05),
+                0 20px 40px rgba(0,0,0,0.25);
+            border-color: rgba(0,212,255,0.4);
+            border-left-width: 3px;
+        }
+
+        /* 效果12: 浮空升起 - 带阴影扩展的升空 */
+        .fx-float:hover {
+            transform: translateY(-25px) scale(1.02);
+            box-shadow: 
+                0 50px 80px rgba(0,0,0,0.4),
+                0 0 25px rgba(255,215,0,0.15);
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        /* 效果13: 扭曲变形 - 有机形变 */
+        .fx-morph:hover {
+            transform: translateY(-10px) rotate(1deg) scale(1.03);
+            border-radius: 8px 24px 8px 24px;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.3),
+                0 0 30px rgba(0,230,118,0.15);
+            border-color: rgba(0,230,118,0.4);
+        }
+
+        /* 效果14: 旋转边框光 - Galaxy 旋转光线 */
+        .fx-spin-border {
+            position: relative;
+        }
+        .fx-spin-border::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--primary));
+            animation: fxSpinBorder 3s linear infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .fx-spin-border:hover::after {
+            opacity: 1;
+        }
+        .fx-spin-border:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border-color: transparent;
+        }
+        @keyframes fxSpinBorder {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== Galaxy 新增 3D 效果库 (22种) ===== */
+
+        /* 效果15: Glitch 抖动 */
+        .fx-glitch:hover {
+            animation: fxGlitch 0.4s linear infinite;
+            box-shadow:
+                4px 0 rgba(255,0,100,0.6),
+                -4px 0 rgba(0,255,255,0.6),
+                0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255,50,100,0.6);
+        }
+        @keyframes fxGlitch {
+            0%   { transform: translate(0) skewX(0deg); clip-path: inset(0 0 0 0); }
+            10%  { transform: translate(-3px, 1px) skewX(-2deg); clip-path: inset(10% 0 60% 0); }
+            20%  { transform: translate(3px, -1px) skewX(2deg); clip-path: inset(40% 0 20% 0); }
+            30%  { transform: translate(-2px, 2px) skewX(-1deg); clip-path: inset(0 0 0 0); }
+            40%  { transform: translate(2px, -2px) skewX(1deg); clip-path: inset(70% 0 5% 0); }
+            50%  { transform: translate(0) skewX(0deg); clip-path: inset(0 0 0 0); }
+            60%  { transform: translate(-1px, 1px) skewX(-0.5deg); clip-path: inset(20% 0 50% 0); }
+            70%  { transform: translate(1px, -1px) skewX(0.5deg); clip-path: inset(0 0 0 0); }
+            80%  { transform: translate(-2px, 0) skewX(-1deg); clip-path: inset(55% 0 15% 0); }
+            90%  { transform: translate(2px, 1px) skewX(1deg); clip-path: inset(0 0 0 0); }
+            100% { transform: translate(0) skewX(0deg); clip-path: inset(0 0 0 0); }
+        }
+
+        /* 效果16: 极光脉冲 Aurora Pulse */
+        .fx-aurora:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                0 0 20px rgba(0,255,136,0.4),
+                0 0 40px rgba(0,191,255,0.3),
+                0 0 80px rgba(138,43,226,0.2),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(0,255,136,0.5);
+            animation: fxAurora 2s ease-in-out infinite;
+        }
+        @keyframes fxAurora {
+            0%,100% { box-shadow: 0 0 20px rgba(0,255,136,0.4),0 0 40px rgba(0,191,255,0.3),0 25px 50px rgba(0,0,0,0.35); border-color: rgba(0,255,136,0.5); }
+            33%     { box-shadow: 0 0 20px rgba(0,191,255,0.4),0 0 40px rgba(138,43,226,0.3),0 25px 50px rgba(0,0,0,0.35); border-color: rgba(0,191,255,0.5); }
+            66%     { box-shadow: 0 0 20px rgba(138,43,226,0.4),0 0 40px rgba(0,255,136,0.3),0 25px 50px rgba(0,0,0,0.35); border-color: rgba(138,43,226,0.5); }
+        }
+
+        /* 效果17: 电力冲击 Electric Shock */
+        .fx-electric:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                0 0 10px rgba(0,255,255,0.8),
+                0 0 25px rgba(0,200,255,0.5),
+                0 0 50px rgba(255,255,0,0.3),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(0,255,255,0.7);
+            animation: fxElectric 0.15s linear infinite;
+        }
+        @keyframes fxElectric {
+            0%,100% { border-color: rgba(0,255,255,0.7); box-shadow: 0 0 10px rgba(0,255,255,0.8),0 0 25px rgba(0,200,255,0.5),0 0 50px rgba(255,255,0,0.3),0 25px 50px rgba(0,0,0,0.35); }
+            50%     { border-color: rgba(255,255,0,0.7); box-shadow: 0 0 10px rgba(255,255,0,0.8),0 0 25px rgba(255,200,0,0.5),0 0 50px rgba(0,255,255,0.3),0 25px 50px rgba(0,0,0,0.35); }
+        }
+
+        /* 效果18: 旋涡透视 Vortex */
+        .fx-vortex:hover {
+            transform: perspective(800px) translateY(-15px) rotateX(25deg) rotateZ(-3deg);
+            box-shadow:
+                0 40px 70px rgba(0,0,0,0.45),
+                0 0 30px rgba(124,77,255,0.25);
+            border-color: rgba(124,77,255,0.5);
+        }
+
+        /* 效果19: 等离子能量 Plasma */
+        .fx-plasma:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow:
+                0 0 20px rgba(255,50,200,0.5),
+                0 0 40px rgba(50,50,255,0.35),
+                0 0 80px rgba(0,200,255,0.2),
+                inset 0 0 30px rgba(255,150,50,0.15),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(255,50,200,0.6);
+            animation: fxPlasma 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes fxPlasma {
+            0%   { box-shadow: 0 0 20px rgba(255,50,200,0.5),0 0 40px rgba(50,50,255,0.35),0 0 80px rgba(0,200,255,0.2),inset 0 0 30px rgba(255,150,50,0.15),0 25px 50px rgba(0,0,0,0.35); filter: hue-rotate(0deg); }
+            100% { box-shadow: 0 0 20px rgba(50,50,255,0.5),0 0 40px rgba(0,200,255,0.35),0 0 80px rgba(255,50,200,0.2),inset 0 0 30px rgba(50,255,150,0.15),0 25px 50px rgba(0,0,0,0.35); filter: hue-rotate(60deg); }
+        }
+
+        /* 效果20: 棱镜折射 Prism */
+        .fx-prism:hover {
+            transform: translateY(-12px) scale(1.03) rotateY(5deg) rotateX(3deg);
+            box-shadow:
+                -15px 0 30px rgba(255,0,0,0.2),
+                15px 0 30px rgba(0,255,255,0.2),
+                0 30px 60px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.3);
+            animation: fxPrism 1s ease-in-out infinite;
+        }
+        @keyframes fxPrism {
+            0%,100% { filter: hue-rotate(0deg) brightness(1.1); }
+            25%     { filter: hue-rotate(90deg) brightness(1.2); }
+            50%     { filter: hue-rotate(180deg) brightness(1.1); }
+            75%     { filter: hue-rotate(270deg) brightness(1.2); }
+        }
+
+        /* 效果21: 量子隧穿 Quantum */
+        .fx-quantum:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow:
+                0 0 20px rgba(0,255,255,0.5),
+                0 0 40px rgba(255,0,255,0.3),
+                0 0 80px rgba(255,255,0,0.15),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(0,255,255,0.6);
+        }
+
+        .fx-quantum { animation: none; }
+        .fx-quantum:hover { animation: fxQuantum 0.8s ease-in-out infinite; }
+        @keyframes fxQuantum {
+            0%,100% { transform: translateY(-12px) scale(1.03) rotate(0deg); }
+            25%     { transform: translateY(-12px) scale(1.06) rotate(1deg); }
+            50%     { transform: translateY(-15px) scale(1.03) rotate(0deg); }
+            75%     { transform: translateY(-12px) scale(1.06) rotate(-1deg); }
+        }
+
+        /* 效果22: 弹力弹簧 Elastic */
+        .fx-elastic:hover {
+            animation: fxElastic 0.7s cubic-bezier(0.68,-0.55,0.265,1.55) forwards;
+            box-shadow: 0 35px 70px rgba(255,107,107,0.35),0 0 35px rgba(255,107,107,0.2);
+            border-color: rgba(255,107,107,0.5);
+        }
+        @keyframes fxElastic {
+            0%   { transform: translateY(0) scale(1); }
+            30%  { transform: translateY(-28px) scale(1.12); }
+            50%  { transform: translateY(-18px) scale(1.06); }
+            70%  { transform: translateY(-24px) scale(1.09); }
+            85%  { transform: translateY(-20px) scale(1.04); }
+            100% { transform: translateY(-22px) scale(1.05); }
+        }
+
+        /* 效果23: 星光闪烁 Starburst */
+        .fx-starburst:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow:
+                0 0 15px rgba(255,215,0,0.7),
+                0 0 30px rgba(255,255,255,0.4),
+                0 0 60px rgba(0,212,255,0.25),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(255,215,0,0.7);
+            animation: fxStarburst 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes fxStarburst {
+            0%   { box-shadow: 0 0 15px rgba(255,215,0,0.7),0 0 30px rgba(255,255,255,0.4),0 0 60px rgba(0,212,255,0.25),0 25px 50px rgba(0,0,0,0.35); }
+            100% { box-shadow: 0 0 20px rgba(255,255,255,0.8),0 0 40px rgba(255,215,0,0.5),0 0 80px rgba(0,212,255,0.35),0 25px 50px rgba(0,0,0,0.35); }
+        }
+
+        /* 效果24: 视差深度 Parallax */
+        .fx-parallax:hover {
+            transform: perspective(1000px) translateY(-15px) rotateX(15deg) rotateY(-8deg) translateZ(15px);
+            box-shadow:
+                12px 12px 0 rgba(255,215,0,0.12),
+                24px 24px 0 rgba(0,212,255,0.08),
+                0 35px 60px rgba(0,0,0,0.4);
+            border-color: rgba(255,215,0,0.35);
+        }
+
+        /* 效果25: 冰霜凝结 Frost */
+        .fx-frost:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                0 0 20px rgba(180,240,255,0.6),
+                0 0 40px rgba(100,200,255,0.4),
+                inset 0 0 20px rgba(180,240,255,0.1),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(180,240,255,0.7);
+            animation: fxFrost 1.2s ease-in-out infinite alternate;
+        }
+        @keyframes fxFrost {
+            0%   { filter: brightness(1) saturate(1); }
+            100% { filter: brightness(1.15) saturate(1.3); }
+        }
+
+        /* 效果26: 火焰燃烧 Inferno */
+        .fx-inferno:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                0 0 20px rgba(255,80,0,0.6),
+                0 0 40px rgba(255,150,0,0.4),
+                0 0 80px rgba(255,200,0,0.2),
+                0 25px 50px rgba(0,0,0,0.4);
+            border-color: rgba(255,80,0,0.7);
+            animation: fxInferno 0.6s ease-in-out infinite alternate;
+        }
+        @keyframes fxInferno {
+            0%   { box-shadow: 0 0 20px rgba(255,80,0,0.6),0 0 40px rgba(255,150,0,0.4),0 0 80px rgba(255,200,0,0.2),0 25px 50px rgba(0,0,0,0.4); }
+            100% { box-shadow: 0 0 25px rgba(255,150,0,0.7),0 0 50px rgba(255,200,0,0.5),0 0 100px rgba(255,80,0,0.3),0 25px 50px rgba(0,0,0,0.4); }
+        }
+
+        /* 效果27: 核爆冲击 Shockwave */
+        .fx-shockwave:hover {
+            transform: translateY(-12px) scale(1.02);
+            animation: fxShockwave 0.8s ease-out forwards;
+            box-shadow:
+                0 0 20px rgba(0,255,136,0.6),
+                0 0 50px rgba(0,200,255,0.35),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(0,255,136,0.6);
+        }
+        @keyframes fxShockwave {
+            0%   { transform: translateY(-12px) scale(1.02); }
+            50%  { transform: translateY(-12px) scale(1.08); box-shadow: 0 0 40px rgba(0,255,136,0.8),0 0 80px rgba(0,200,255,0.5),0 25px 50px rgba(0,0,0,0.35); }
+            100% { transform: translateY(-12px) scale(1.02); }
+        }
+
+        /* 效果28: 星际穿越 Warp */
+        .fx-warp:hover {
+            transform: perspective(1000px) translateY(-15px) scale(1.03) rotateX(10deg);
+            box-shadow:
+                0 0 25px rgba(124,77,255,0.5),
+                0 0 50px rgba(0,212,255,0.3),
+                0 40px 70px rgba(0,0,0,0.45);
+            border-color: rgba(124,77,255,0.6);
+            animation: fxWarp 1.5s ease-in-out infinite;
+        }
+        @keyframes fxWarp {
+            0%,100% { filter: blur(0px) brightness(1.05); }
+            50%     { filter: blur(0.5px) brightness(1.15); }
+        }
+
+        /* 效果29: 脉冲溶解 Pulse Melt */
+        .fx-pulse-melt:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                0 0 20px rgba(255,0,100,0.4),
+                0 0 40px rgba(255,100,0,0.3),
+                inset 0 0 25px rgba(255,255,0,0.1),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(255,100,0,0.6);
+            animation: fxPulseMelt 1.2s ease-in-out infinite alternate;
+        }
+        @keyframes fxPulseMelt {
+            0%   { border-radius: 20px; filter: hue-rotate(0deg) saturate(1.2); }
+            100% { border-radius: 28px 16px 28px 16px; filter: hue-rotate(30deg) saturate(1.5); }
+        }
+
+        /* 效果30: 镜像分身 Mirror */
+        .fx-mirror:hover {
+            transform: translateY(-12px) scale(1.03) scaleX(-1);
+            box-shadow:
+                0 25px 50px rgba(0,0,0,0.4),
+                0 0 30px rgba(0,212,255,0.3);
+            border-color: rgba(0,212,255,0.5);
+        }
+
+        /* 效果31: 重力扭曲 Gravity */
+        .fx-gravity:hover {
+            transform: perspective(600px) translateY(-12px) rotateX(30deg);
+            box-shadow:
+                0 60px 100px rgba(0,0,0,0.5),
                 0 0 30px rgba(255,215,0,0.2);
             border-color: rgba(255,215,0,0.4);
         }
+
+        /* 效果32: 磁场旋转 Magnetic Field */
+        .fx-magnetic-field:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow:
+                0 0 20px rgba(0,255,136,0.5),
+                0 0 40px rgba(0,136,255,0.3),
+                0 0 80px rgba(255,136,0,0.2),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(0,136,255,0.6);
+            animation: fxMagField 2s linear infinite;
+        }
+        @keyframes fxMagField {
+            0%   { box-shadow: 0 0 20px rgba(0,255,136,0.5),0 0 40px rgba(0,136,255,0.3),0 0 80px rgba(255,136,0,0.2),0 25px 50px rgba(0,0,0,0.35); }
+            33%  { box-shadow: 0 0 20px rgba(0,136,255,0.5),0 0 40px rgba(255,136,0,0.3),0 0 80px rgba(0,255,136,0.2),0 25px 50px rgba(0,0,0,0.35); }
+            66%  { box-shadow: 0 0 20px rgba(255,136,0,0.5),0 0 40px rgba(0,255,136,0.3),0 0 80px rgba(0,136,255,0.2),0 25px 50px rgba(0,0,0,0.35); }
+            100% { box-shadow: 0 0 20px rgba(0,255,136,0.5),0 0 40px rgba(0,136,255,0.3),0 0 80px rgba(255,136,0,0.2),0 25px 50px rgba(0,0,0,0.35); }
+        }
+
+        /* 效果33: 空间折叠 Space Fold */
+        .fx-space-fold:hover {
+            transform: perspective(500px) translateY(-12px) rotateX(20deg) rotateY(-15deg) scale(1.03);
+            box-shadow:
+                -10px 10px 30px rgba(0,0,0,0.4),
+                10px -10px 30px rgba(0,0,0,0.2),
+                0 0 30px rgba(138,43,226,0.3);
+            border-color: rgba(138,43,226,0.6);
+        }
+
+        /* 效果34: 传送门 Portal */
+        .fx-portal:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                inset 0 0 30px rgba(138,43,226,0.4),
+                0 0 30px rgba(138,43,226,0.4),
+                0 0 60px rgba(0,0,0,0.3),
+                0 25px 50px rgba(0,0,0,0.4);
+            border-color: rgba(138,43,226,0.7);
+            animation: fxPortal 1s linear infinite;
+        }
+        @keyframes fxPortal {
+            0%   { box-shadow: inset 0 0 30px rgba(138,43,226,0.4),0 0 30px rgba(138,43,226,0.4),0 25px 50px rgba(0,0,0,0.4); filter: hue-rotate(0deg); }
+            100% { box-shadow: inset 0 0 30px rgba(0,100,255,0.4),0 0 30px rgba(0,100,255,0.4),0 25px 50px rgba(0,0,0,0.4); filter: hue-rotate(360deg); }
+        }
+
+        /* 效果35: 时间扭曲 Time Warp */
+        .fx-time-warp:hover {
+            animation: fxTimeWarp 1s ease-in-out infinite;
+            box-shadow:
+                0 0 20px rgba(255,215,0,0.5),
+                0 0 40px rgba(255,107,107,0.3),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(255,215,0,0.6);
+        }
+        @keyframes fxTimeWarp {
+            0%,100% { transform: translateY(-12px) scale(1.03) rotate(0deg); filter: blur(0px); }
+            25%     { transform: translateY(-15px) scale(1.05) rotate(1deg); filter: blur(0.3px); }
+            50%     { transform: translateY(-12px) scale(1.03) rotate(-1deg); filter: blur(0px); }
+            75%     { transform: translateY(-15px) scale(1.05) rotate(0.5deg); filter: blur(0.3px); }
+        }
+
+        /* 效果36: 波浪冲浪 Wave Rider */
+        .fx-wave-rider:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow:
+                0 0 20px rgba(0,200,255,0.5),
+                0 0 40px rgba(0,255,136,0.3),
+                0 25px 50px rgba(0,0,0,0.35);
+            border-color: rgba(0,200,255,0.6);
+            animation: fxWaveRider 1.5s ease-in-out infinite;
+        }
+        @keyframes fxWaveRider {
+            0%,100% { transform: translateY(-12px) scale(1.02) rotateX(0deg); }
+            50%     { transform: translateY(-18px) scale(1.04) rotateX(5deg); }
+        }
+
+        /* ========== team-card 独立专属效果 ========== */
 
         .team-card.main-dev {
             grid-column: 1 / -1;
@@ -1182,38 +1621,79 @@
             opacity: 1;
         }
 
-        /* 联系卡片随机3D效果 */
-        .contact-card.effect-tilt:hover {
+        /* 联系卡片Galaxy风格随机3D效果 */
+        .contact-card.fx-tilt:hover {
             border-color: var(--accent);
             transform: translateY(-10px) rotateX(8deg) rotateY(-5deg);
-            box-shadow: 
-                0 25px 50px rgba(0,212,255,0.25),
-                0 0 35px rgba(0,212,255,0.15);
+            box-shadow: 0 25px 50px rgba(0,212,255,0.25), 0 0 35px rgba(0,212,255,0.15);
         }
-
-        .contact-card.effect-bounce:hover {
+        .contact-card.fx-bounce:hover {
             border-color: var(--primary);
             transform: translateY(-15px) scale(1.05);
-            box-shadow: 
-                0 30px 60px rgba(255,215,0,0.25),
-                0 0 40px rgba(255,215,0,0.15);
+            box-shadow: 0 30px 60px rgba(255,215,0,0.25), 0 0 40px rgba(255,215,0,0.15);
         }
-
-        .contact-card.effect-rotate:hover {
+        .contact-card.fx-rotate:hover {
             border-color: var(--secondary);
             transform: translateY(-10px) rotateY(12deg);
-            box-shadow: 
-                -15px 15px 35px rgba(255,107,107,0.2),
-                0 0 30px rgba(255,107,107,0.15);
+            box-shadow: -15px 15px 35px rgba(255,107,107,0.2), 0 0 30px rgba(255,107,107,0.15);
         }
-
-        .contact-card.effect-wave:hover {
+        .contact-card.fx-wave:hover {
             border-color: #7c4dff;
             transform: translateY(-10px) skewY(-3deg);
-            box-shadow: 
-                10px 15px 30px rgba(124,77,255,0.2),
-                0 0 25px rgba(124,77,255,0.15);
+            box-shadow: 10px 15px 30px rgba(124,77,255,0.2), 0 0 25px rgba(124,77,255,0.15);
         }
+        .contact-card.fx-neon:hover {
+            border-color: rgba(0,255,255,0.6);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 0 15px rgba(0,255,255,0.4), 0 0 30px rgba(0,255,255,0.2), 0 20px 40px rgba(0,0,0,0.3);
+            animation: fxNeonPulse 1s ease-in-out infinite alternate;
+        }
+        .contact-card.fx-hologram:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-image: linear-gradient(135deg, #ff0000, #ff8800, #ffff00, #00ff00, #00ffff, #0088ff, #8800ff) 1;
+            box-shadow: 0 0 20px rgba(255,0,255,0.3), 0 0 40px rgba(0,255,255,0.2), 0 20px 40px rgba(0,0,0,0.3);
+            animation: fxHologram 2s linear infinite;
+        }
+        .contact-card.fx-glow-orb:hover {
+            border-color: rgba(255,215,0,0.5);
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 0 40px rgba(255,215,0,0.3), 0 0 80px rgba(255,107,107,0.15), 0 25px 50px rgba(0,0,0,0.3);
+        }
+        .contact-card.fx-float:hover {
+            border-color: rgba(255,215,0,0.3);
+            transform: translateY(-25px) scale(1.02);
+            box-shadow: 0 50px 80px rgba(0,0,0,0.4), 0 0 25px rgba(255,215,0,0.15);
+        }
+        .contact-card.fx-elastic:hover  { animation: fxElastic 0.7s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; }
+        .contact-card.fx-quantum:hover  { animation: fxQuantum 0.8s ease-in-out infinite; }
+        .contact-card.fx-plasma:hover    { animation: fxPlasma 1.5s ease-in-out infinite alternate; }
+        .contact-card.fx-aurora:hover    { animation: fxAurora 2s ease-in-out infinite; }
+        .contact-card.fx-electric:hover  { animation: fxElectric 0.15s linear infinite; }
+        .contact-card.fx-starburst:hover { animation: fxStarburst 0.5s ease-in-out infinite alternate; }
+        .contact-card.fx-inferno:hover   { animation: fxInferno 0.6s ease-in-out infinite alternate; }
+        .contact-card.fx-portal:hover   { animation: fxPortal 1s linear infinite; }
+        .contact-card.fx-time-warp:hover { animation: fxTimeWarp 1s ease-in-out infinite; }
+        .contact-card.fx-shockwave:hover { animation: fxShockwave 0.8s ease-out forwards; }
+        .contact-card.fx-magfield:hover  { animation: fxMagField 2s linear infinite; }
+        .contact-card.fx-warp:hover      { animation: fxWarp 1.5s ease-in-out infinite; }
+        .contact-card.fx-pulse-melt:hover { animation: fxPulseMelt 1.2s ease-in-out infinite alternate; }
+        .contact-card.fx-frost:hover     { animation: fxFrost 1.2s ease-in-out infinite alternate; }
+        .contact-card.fx-wave-rider:hover { animation: fxWaveRider 1.5s ease-in-out infinite; }
+
+        /* sponsor-card 新效果动画补充 */
+        .sponsor-card.fx-elastic:hover   { animation: fxElastic 0.7s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; }
+        .sponsor-card.fx-quantum:hover   { animation: fxQuantum 0.8s ease-in-out infinite; }
+        .sponsor-card.fx-plasma:hover     { animation: fxPlasma 1.5s ease-in-out infinite alternate; }
+        .sponsor-card.fx-aurora:hover    { animation: fxAurora 2s ease-in-out infinite; }
+        .sponsor-card.fx-electric:hover  { animation: fxElectric 0.15s linear infinite; }
+        .sponsor-card.fx-starburst:hover { animation: fxStarburst 0.5s ease-in-out infinite alternate; }
+        .sponsor-card.fx-portal:hover   { animation: fxPortal 1s linear infinite; }
+        .sponsor-card.fx-shockwave:hover { animation: fxShockwave 0.8s ease-out forwards; }
+        .sponsor-card.fx-time-warp:hover { animation: fxTimeWarp 1s ease-in-out infinite; }
+        .sponsor-card.fx-warp:hover      { animation: fxWarp 1.5s ease-in-out infinite; }
+        .sponsor-card.fx-pulse-melt:hover { animation: fxPulseMelt 1.2s ease-in-out infinite alternate; }
+        .sponsor-card.fx-frost:hover     { animation: fxFrost 1.2s ease-in-out infinite alternate; }
+        .sponsor-card.fx-wave-rider:hover { animation: fxWaveRider 1.5s ease-in-out infinite; }
 
         .contact-icon {
             font-size: 2.5rem;
@@ -1585,6 +2065,30 @@
         }
 
         .tier-top { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; }
+
+        /* Galaxy 效果名角标 */
+        .fx-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.85), rgba(255,107,107,0.85));
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            z-index: 10;
+            box-shadow: 0 0 12px rgba(255,215,0,0.4);
+        }
+        .feature-card .fx-label,
+        .team-card .fx-label,
+        .contact-card .fx-label { font-size: 0.6rem; padding: 2px 8px; }
+        .sponsor-mini-card .fx-label { font-size: 0.55rem; padding: 1px 6px; top: 5px; right: 5px; }
         .tier-gold { background: linear-gradient(135deg, #ff8c00, #ff6b6b); color: #fff; }
         .tier-silver { background: linear-gradient(135deg, #7c4dff, #b388ff); color: #fff; }
         .tier-bronze { background: linear-gradient(135deg, #00d4ff, #00e676); color: #000; }
@@ -2090,60 +2594,87 @@
         }
         animateGlow();
 
-        // 团队卡片随机3D效果
-        const effects = ['effect-tilt', 'effect-bounce', 'effect-rotate', 'effect-flip', 'effect-wave', 'effect-perspective'];
-        document.querySelectorAll('.team-card').forEach(card => {
-            const randomEffect = effects[Math.floor(Math.random() * effects.length)];
-            card.classList.add(randomEffect);
-        });
+        // ============================================================
+        // 🎯 随机 3D 效果系统 — 每次悬停随机抽效果（非刷新时固定）
+        // ============================================================
+        // 36种效果池（fx- 开头，与 CSS :hover 规则对应）
+        const fxPool = [
+            'fx-tilt','fx-bounce','fx-rotate','fx-wave','fx-perspective',
+            'fx-neon','fx-hologram','fx-cube','fx-fold','fx-float',
+            'fx-morph','fx-spin-border','fx-glitch','fx-aurora','fx-electric',
+            'fx-vortex','fx-plasma','fx-prism','fx-quantum','fx-elastic',
+            'fx-starburst','fx-parallax','fx-frost','fx-inferno','fx-shockwave',
+            'fx-warp','fx-pulse-melt','fx-mirror','fx-gravity','fx-magnetic-field',
+            'fx-space-fold','fx-portal','fx-time-warp','fx-wave-rider'
+        ];
 
-        // 联系卡片随机3D效果
-        const contactEffects = ['effect-tilt', 'effect-bounce', 'effect-rotate', 'effect-wave'];
-        document.querySelectorAll('.contact-card').forEach(card => {
-            const randomEffect = contactEffects[Math.floor(Math.random() * contactEffects.length)];
-            card.classList.add(randomEffect);
-        });
-
-        // 特色卡片随机3D效果
-        const featureEffects = ['effect-tilt', 'effect-bounce', 'effect-rotate', 'effect-wave', 'effect-perspective'];
-        document.querySelectorAll('.feature-card').forEach(card => {
-            const randomEffect = featureEffects[Math.floor(Math.random() * featureEffects.length)];
-            card.dataset.effect = randomEffect;
-            
+        // 高阶鼠标追踪 tilt（模拟 Galaxy/Magnetic 效果）
+        function enableMagneticTilt(card) {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                switch(card.dataset.effect) {
-                    case 'effect-tilt':
-                        const rotateX1 = (y - centerY) / 10;
-                        const rotateY1 = (centerX - x) / 10;
-                        card.style.transform = `perspective(1000px) rotateX(${rotateX1}deg) rotateY(${rotateY1}deg) translateY(-15px)`;
-                        break;
-                    case 'effect-bounce':
-                        card.style.transform = `translateY(-15px) scale(1.05)`;
-                        break;
-                    case 'effect-rotate':
-                        card.style.transform = `translateY(-15px) rotateY(10deg) rotateX(3deg)`;
-                        break;
-                    case 'effect-wave':
-                        const skewY = (y - centerY) / 30;
-                        card.style.transform = `translateY(-10px) skewY(${skewY}deg)`;
-                        break;
-                    case 'effect-perspective':
-                        const perspAngle = (y - centerY) / 8;
-                        card.style.transform = `perspective(500px) translateY(-15px) rotateX(${perspAngle}deg)`;
-                        break;
-                }
+                const cx = rect.width  / 2;
+                const cy = rect.height / 2;
+                const dx = (x - cx) / cx;   // -1 ~ 1
+                const dy = (y - cy) / cy;   // -1 ~ 1
+                // 柔和倾斜，最多 ±15deg
+                card.style.transform =
+                    `perspective(800px) translateY(-15px) rotateX(${-dy*15}deg) rotateY(${dx*15}deg) scale(1.03)`;
             });
-            
             card.addEventListener('mouseleave', () => {
                 card.style.transform = '';
             });
-        });
+        }
+
+        // 为所有卡片应用「随机每次悬停」效果
+        function applyRandomHoverFX(selector) {
+            document.querySelectorAll(selector).forEach(card => {
+                // 每个卡片的每次 hover 随机抽一个效果
+                card.addEventListener('mouseenter', () => {
+                    // 移除旧效果类（让动画可重复触发）
+                    fxPool.forEach(cls => card.classList.remove(cls));
+                    // 抽一个随机效果
+                    const fx = fxPool[Math.floor(Math.random() * fxPool.length)];
+                    card.classList.add(fx);
+                    // 显示效果名提示（Galaxy 风格小角标）
+                    showFXLabel(card, fx);
+                });
+                card.addEventListener('mouseleave', () => {
+                    // 保留 fx 类让 hover 自然结束；清理 magnetic tilt
+                    card.style.transform = '';
+                    // 隐藏标签
+                    const label = card.querySelector('.fx-label');
+                    if (label) label.style.opacity = '0';
+                });
+
+                // 所有卡片启用鼠标追踪 tilt 增强
+                enableMagneticTilt(card);
+            });
+        }
+
+        // Galaxy 风格效果名角标
+        function showFXLabel(card, fxName) {
+            // 从 fx-tilt → Tilt 格式
+            const labelText = fxName.replace(/^fx-/, '').replace(/-/g, ' ');
+            let label = card.querySelector('.fx-label');
+            if (!label) {
+                label = document.createElement('span');
+                label.className = 'fx-label';
+                card.appendChild(label);
+            }
+            label.textContent = labelText;
+            label.style.opacity = '1';
+        }
+
+        // 应用到所有卡片类型
+        applyRandomHoverFX('.feature-card');
+        applyRandomHoverFX('.team-card');
+        applyRandomHoverFX('.contact-card');
+        applyRandomHoverFX('.sponsor-card');
+        applyRandomHoverFX('.sponsor-mini-card');
+        applyRandomHoverFX('.qr-image-wrapper');
+        applyRandomHoverFX('.toggle-btn');
 
         // 完整赞助数据
         const sponsorsData = {
